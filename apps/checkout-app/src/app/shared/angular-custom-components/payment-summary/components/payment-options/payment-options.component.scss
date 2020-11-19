@@ -1,0 +1,48 @@
+@import "../styles/style.scss";
+
+.text--bold {
+  font-weight: var(--fw-sb);
+}
+.tertiary-text {
+  color: var(--tertiary-text);
+}
+.points-text {
+  color: var(--secondary-text);
+}
+.padding-top-16 {
+  padding-top: var(--spacing-05);
+}
+.bottom-padding-16 {
+  padding-bottom: var(--spacing-05);
+}
+
+.payment-options__form--apply-btn {
+  margin-top: var(--spacing-03);
+}
+.orxe-grid {
+  grid-gap: 0;
+}
+.add-grid--gap {
+  grid-gap: var(--gap-grid, var(--spacing-05));
+}
+.payment-options__form--mt-16 {
+  margin-top: var(--spacing-05);
+}
+.payment-option--error-alert {
+   margin-top: var(--spacing-04);
+}
+orxe-button orxe-spinner-loader {
+  display: inline-block;
+  vertical-align: middle;
+   --loader-size: 35;
+   --loader-dot-color: var(--neutral);
+}
+.payment-options__radio--skeleton {
+  min-height: 400px;
+  orxe-spinner-loader {
+    display: inline-block;
+    vertical-align: middle;
+     --loader-size: 48;
+     --loader-dot-color: var(--secondary);
+  }
+}

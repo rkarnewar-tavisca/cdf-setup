@@ -1,0 +1,12 @@
+.reward-card__note {
+  color: var(--tertiary-text);
+  letter-spacing: 0;
+  margin-top: var(--spacing-05);
+}
+
+.card-issuer__list {
+  margin-top: var(--spacing-03);
+  .card-issuer__logo {
+    margin-right: var(--spacing-03);
+  }
+}

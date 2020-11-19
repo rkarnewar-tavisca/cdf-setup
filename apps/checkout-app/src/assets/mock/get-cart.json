@@ -1,0 +1,267 @@
+{
+  "id": "0f8fad5b-d9cb-461f-a165-70867728951z",
+  "currency": "USD",
+  "pointsType": "points",
+  "trackingId": "123456",
+  "clpEnabled": true,
+  "items": [
+    {
+      "id": "PROD12345",
+      "productId": "fad5b-d9cb-461f-a165-7086772895",
+      "productType": "Hotel",
+      "dependsOn": {
+        "itemRefId": "15sed-d9cb-461f-a165-70qk7se1w85"
+      },
+      "costPrice": {
+        "amount": 3000,
+        "amountWithoutTax": 2500
+      },
+      "sellingPrice": {
+        "amount": 1200,
+        "points": 5000,
+        "breakup": {
+          "paymentOptions": [
+            {
+              "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+              "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+              "amount": 1400,
+              "points": 6000
+            }
+          ],
+          "rewardFee": {
+            "id": "14s0q-d4sb-2asf-a165-q2w123sa",
+            "type": "rewardFee",
+            "desc": "fee applied for the payment option you have selected",
+            "amount": 100,
+            "points": 500,
+            "refId": "63h6u-d4sb-2asf-a165-q2w123sa",
+            "waivedComponent": {
+              "desc": "Manual refund for the inconvenience of the customer.",
+              "amount": -100,
+              "points": -500
+            }
+          },
+          "offers": [
+            {
+              "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+              "type": "promotionalDiscount",
+              "desc": "LuckyTop10 offer applied for cart",
+              "amount": -100,
+              "points": -1000,
+              "refId": "LuckyTop10"
+            }
+          ],
+          "adjustments": [{}]
+        }
+      },
+      "productDetailsLink": "../assets/mock/product-details.json"
+    },
+    {
+      "id": "PROD123456",
+      "productId": "17125830911717576",
+      "productType": "Flight",
+      "dependsOn": {
+        "itemRefId": "PROD123456-i"
+      },
+      "costPrice": {
+        "amount": 3000,
+        "amountWithoutTax": 2500
+      },
+      "sellingPrice": {
+        "amount": 1200,
+        "points": 5000,
+        "breakup": {
+          "paymentOptions": [
+            {
+              "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+              "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+              "amount": 1400,
+              "points": 6000
+            }
+          ],
+          "rewardFee": {
+            "id": "14s0q-d4sb-2asf-a165-q2w123sa",
+            "type": "rewardFee",
+            "desc": "fee applied for the payment option you have selected",
+            "amount": 100,
+            "points": 500,
+            "refId": "63h6u-d4sb-2asf-a165-q2w123sa",
+            "waivedComponent": {
+              "desc": "Manual refund for the inconvenience of the customer.",
+              "amount": -100,
+              "points": -500
+            }
+          },
+          "offers": [
+            {
+              "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+              "type": "promotionalDiscount",
+              "desc": "LuckyTop10 offer applied for cart",
+              "amount": -100,
+              "points": -1000,
+              "refId": "LuckyTop10"
+            }
+          ],
+          "adjustments": [{}]
+        }
+      },
+      "productDetailsLink": "../assets/mock/product-details-flights.json"
+    },
+    {
+      "id": "sdea34-d9cb-461f-a165-7086772w324",
+      "productId": "fad5b-d9cb-461f-a165-7086772895",
+      "productType": "hotel",
+      "dependsOn": {
+        "itemRefId": "15sed-d9cb-461f-a165-70qk7se1w85"
+      },
+      "costPrice": {
+        "amount": 3000,
+        "amountWithoutTax": 2500
+      },
+      "sellingPrice": {
+        "amount": 1200,
+        "points": 5000,
+        "breakup": {
+          "paymentOptions": [
+            {
+              "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+              "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+              "amount": 1400,
+              "points": 6000,
+              "rewardFee": {
+                "id": "14s0q-d4sb-2asf-a165-q2w123sa",
+                "amount": 100,
+                "points": 500,
+                "waivedComponent": {
+                  "desc": "Manual refund for the inconvenience of the customer.",
+                  "amount": 100,
+                  "points": 500
+                }
+              }
+            }
+          ],
+          "offers": [
+            {
+              "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+              "amount": 100,
+              "points": 1000,
+              "code": "LuckyTop10"
+            }
+          ],
+          "adjustments": [
+            {
+              "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+              "type": "waivefee",
+              "desc": "Manual relaxation due to infant in lap",
+              "amount": -100,
+              "points": -1000
+            }
+          ]
+        }
+      },
+      "productDetailsLink": "http://cart-api.tavisca.io/details/123"
+    },
+    {
+      "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+      "productId": "fad5b-d9cb-461f-a165-7086772895",
+      "productType": "insurance",
+      "dependsOn": {
+        "itemRefId": "sdea34-d9cb-461f-a165-7086772w324"
+      },
+      "costPrice": {
+        "amount": 56,
+        "amountWithoutTax": 56
+      },
+      "sellingPrice": {
+        "amount": 56,
+        "points": 0,
+        "breakup": {
+          "paymentOptions": [
+            {
+              "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+              "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+              "amount": 1400,
+              "points": 6000
+            }
+          ]
+        }
+      },
+      "productDetailsLink": "http://cart-api.tavisca.io/details/123"
+    },
+    {
+      "id": "PROD123456-i",
+      "productId": "fad5b-d9cb-461f-a165-7086772895",
+      "productType": "insurance",
+      "dependsOn": {
+        "itemRefId": "PROD123456"
+      },
+      "costPrice": {
+        "amount": 56,
+        "amountWithoutTax": 56
+      },
+      "sellingPrice": {
+        "amount": 56,
+        "points": 0,
+        "breakup": {
+          "paymentOptions": [
+            {
+              "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+              "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+              "amount": 1400,
+              "points": 6000
+            }
+          ]
+        }
+      },
+      "productDetailsLink": "http://cart-api.tavisca.io/details/123"
+    }
+  ],
+  "price": {
+    "amount": 1200,
+    "points": 5000,
+    "breakup": {
+      "fees": [
+        {
+          "id": "99q9q-d4sb-2asf-a165-q2w123sa",
+          "type": "orderFee",
+          "desc": "fee applied for processing order",
+          "amount": 400,
+          "points": 500,
+          "waivedComponent": {
+            "desc": "waiver for order level fees.",
+            "amount": -100,
+            "points": -500
+          }
+        }
+      ],
+      "offers": [
+        {
+          "id": "22s6t-d4sb-2asf-a165-q2w123sa",
+          "type": "promotionalDiscount",
+          "desc": "LuckyTop10 offer applied for cart",
+          "amount": -100,
+          "points": -1000,
+          "refId": "LuckyTop10"
+        }
+      ],
+      "adjustments": [
+        {
+          "id": "55r6t-d4sb-2asf-a165-q2w123sa",
+          "type": "waiveOrderFee",
+          "desc": "Manual refund for the inconvenience of the customer.",
+          "amount": -100,
+          "points": -500,
+          "refId": "99q9q-d4sb-2asf-a165-q2w123sa"
+        }
+      ],
+      "paymentOptions": []
+    }
+  },
+  "chargePrice": {
+    "currency": "INR",
+    "amount": 35692,
+    "points": 4900
+  },
+  "createdAtUtc": "2018-01-01T00:00:00Z",
+  "updatedAtUtc": "2018-01-01T00:03:00Z"
+}

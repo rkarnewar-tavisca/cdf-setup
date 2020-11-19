@@ -1,0 +1,9 @@
+<p class="txt--md-r-lg reward-card__note">
+  <!-- TODO drive from culture -->
+  {{ "review-and-pay-screen.billing_info.reward_card_note" | orxeTranslate }}
+</p>
+<div class="card-issuer__list">
+  <ng-container *ngFor="let card of allowedCardImages;">
+    <span class="card-issuer__logo" [innerHTML]="card.logo"></span>
+  </ng-container>
+</div>

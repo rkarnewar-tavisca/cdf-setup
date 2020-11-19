@@ -1,0 +1,11 @@
+/**
+ * @description - Create those variables which are not available in ORXe theme library
+ * This file is for checkout specific theming
+ */
+
+$bg-success: rgba(35, 135, 56, 0.1);
+
+:root {
+  --checkout-primary-text: #222222;
+  --checkout-secondary-text: #262626;
+}

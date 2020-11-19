@@ -1,0 +1,232 @@
+{
+  "trackingId": "123456",
+  "status": "Failure",
+  "currency": "USD",
+  "pointsType": "Miles",
+  "customer": {
+    "userId": "Customer123",
+    "name": {
+      "title": "Ms",
+      "first": "Jimmy",
+      "middle": "John",
+      "last": "Jos",
+      "suffix": "Sr"
+    },
+    "email": "Jack@customer.com",
+    "organization": {
+      "clientId": "client123",
+      "programId": "1117"
+    }
+  },
+  "items": [
+    {
+      "id": "PROD12345",
+      "name": "hotel taj mahal",
+      "type": "Hotel",
+      "quantity": 1,
+      "status": "Failure",
+      "thumbnailUrl": "https://images.cxloyalty.com/flight/aa.png",
+      "productDetailsUrl": "https://product-details.com/details",
+      "productDetailsId": "PROD123455",
+      "consumptionDatesInUtc": {
+        "start": "2020-02-29T14:34:345Z",
+        "end": "2020-03-02T14:34:345Z"
+      },
+      "addOnItemExternalIds": ["6vr54tht"],
+      "price": {
+        "quotedPrice": {
+          "baseAmount": 100,
+          "taxes": [
+            {
+              "code": "RT",
+              "amount": 10,
+              "desc": "Road Tax"
+            }
+          ],
+          "fees": [
+            {
+              "type": "supplier-related-fee",
+              "amount": 10,
+              "desc": "Reward Fee"
+            }
+          ],
+          "discounts": [
+            {
+              "type": "percent",
+              "desc": "flat 15% off",
+              "amount": 10
+            }
+          ],
+          "additionalCharges": [
+            {
+              "type": "HolidaySurcharge",
+              "amount": 15,
+              "taxInclusive": false,
+              "calculationBasis": {
+                "unitType": "PerDay",
+                "quantity": 1,
+                "amount": 15
+              },
+              "desc": "Extra fees for holiday season booking"
+            }
+          ]
+        },
+        "otherCharges": [
+          {
+            "type": "resortFee",
+            "desc": "To be paid at the hotel as the Resort Fees",
+            "amount": 50,
+            "currency": "GBP"
+          }
+        ]
+      },
+      "paymentBreakup": {
+        "paymentOptions": [
+          {
+            "points": 1000,
+            "amount": 10,
+            "rewardFee": {
+              "id": "Fee12345",
+              "amount": 5,
+              "points": 100,
+              "type": "rewardFees",
+              "waivedComponent": {
+                "amount": 10,
+                "points": 0,
+                "desc": "Waived off rewards fee as the customer faced issues"
+              }
+            }
+          }
+        ],
+        "offers": [
+          {
+            "code": "HOTELS15",
+            "amount": 10,
+            "desc": "Flat 10% off",
+            "points": 15000
+          }
+        ],
+        "adjustments": [
+          {
+            "id": "Adj12345",
+            "amount": 5,
+            "desc": "Manual refund for the inconvenience of the customer.",
+            "points": 0
+          }
+        ]
+      },
+      "earnings": [
+        {
+          "id": "Earn12229",
+          "type": "Festive Earning",
+          "amount": 10,
+          "currency": "USD",
+          "points": 1000,
+          "pointsType": "Miles",
+          "desc": "Spend to Earn during festival period",
+          "metadata": {
+            "key1": "value1",
+            "key2": "value2"
+          }
+        }
+      ],
+      "consumers": [
+        {
+          "id": "123",
+          "firstName": "Shane",
+          "middleName": "",
+          "lastName": "Warne",
+          "title": "",
+          "suffix": "",
+          "email": "",
+          "phoneNo": ""
+        }
+      ],
+      "vouchers": [
+        {
+          "id": "123",
+          "number": "4567",
+          "issuedBy": "supplier",
+          "issuedOn": "2018-01-01T00:00:00Z",
+          "status": "Confirmed",
+          "consumerRefId": "123",
+          "confirmationDetails": [
+            {
+              "type": "Supplier Confirmation",
+              "number": "CONF12345678"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "autoRecapId": "451287",
+        "key2": "value2"
+      }
+    }
+  ],
+  "price": {
+    "amount": 100,
+    "points": 1200,
+    "breakup": {
+      "fees": [
+        {
+          "id": "Fee12345",
+          "type": "OrderLevelFee",
+          "amount": 13,
+          "desc": "Client Assessed Order Level Fee",
+          "points": 0,
+          "waivedComponent": {
+            "amount": 5,
+            "points": 0,
+            "desc": "Manual refund for the inconvenience of the customer."
+          }
+        }
+      ],
+      "offers": [
+        {
+          "id": "Off12345",
+          "code": "PROMO15",
+          "amount": 15,
+          "desc": "Festive Season discount",
+          "points": 15000
+        }
+      ],
+      "adjustments": [
+        {
+          "id": "Adj12345",
+          "amount": 5,
+          "desc": "Manual refund for the inconvenience of the customer.",
+          "points": 0
+        }
+      ],
+      "paymentOptions": [
+        {
+          "id": "63h6u-d4sb-2asf-a165-q2w123sa",
+          "rewardId": "98t7u-d4sb-2asf-a165-q2w123sa",
+          "amount": 1400,
+          "points": 6000
+        }
+      ]
+    }
+  },
+  "charges": [
+    {
+      "id": "14309",
+      "amount": 100,
+      "pointsEquiv": 40000,
+      "merchant": "Agency",
+      "formOfPayment": {
+        "type": "card",
+        "maskedNumber": "123*********456"
+      },
+      "transactions": {
+        "id": "transactionId123",
+        "currency": "USD",
+        "amount": 125,
+        "type": "Charged",
+        "status": "Success",
+        "timestamp": "2018-01-01T00:00:00Z"
+      }
+    }
+  ]
+}

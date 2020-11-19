@@ -1,0 +1,56 @@
+<!-- <ng-container
+  *skeletonUntil="productsList; svg: 'traveler-product-placeholder'"
+>
+  <div class="col-grid-full" *ngFor="let item of productsList; let i = index">
+    <orxe-card
+      attr.orxe-id="{{ item?.productType }}-travler-section"
+      class="orxe-grid orxe-card-style mb-8"
+      role="region"
+      attr.aria-labelledby="{{ item.productType }}{{ i + 1 }}-traveler-info"
+    >
+      <div
+        class="col-grid-full"
+        attr.orxe-id="{{ item.productType }}{{ i + 1 }}-traveler-info"
+      >
+        {{ item.productType }} Traveller Info Product Placeholder
+      </div>
+    </orxe-card>
+  </div>
+</ng-container> -->
+
+<ng-template ngFor [ngForOf]="viewModel.productsList" let-item>
+  <orxe-card
+    class="orxe-grid orxe-card-style mb-8"
+    role="region"
+    attr.aria-labelledby="{{ item?.productType }}{{
+      item?.productId
+    }}-traveler-info"
+    *ngIf="!item?.settings; else dynamicComponentBlock"
+  >
+    <div class="col-grid-full txt--lg-sb-lg product--placeholder">
+      {{ item.productType }} Traveller Info Product Placeholder
+    </div>
+  </orxe-card>
+  <ng-template #dynamicComponentBlock>
+    <div class="mb-8 txt--lg-sb-lg product--placeholder">
+      <orxe-dynamic-element-loader
+        [orxe-id]="item?.settings?.resources?.tagName"
+        [module-url]="item?.settings?.resources?.modulePath"
+        [url]="item?.settings?.resources?.path"
+        [tag]="item?.settings?.resources?.tagName"
+        [props]="item | dynamicComponentProps: item?.settings?.input"
+        [events]="item?.settings?.events?.toString()"
+        (status)="status($event)"
+        (loaded)="productLoadedEvent($event, item)"
+        (submitted)="productInfoOnSubmitted($event)"
+      >
+        <div slot="loader">
+          <app-skeleton-loader
+            [dynamicSkeleton]="'product-detail'"
+          ></app-skeleton-loader>
+        </div>
+        <div slot="error"></div>
+      </orxe-dynamic-element-loader>
+    </div>
+  </ng-template>
+</ng-template>

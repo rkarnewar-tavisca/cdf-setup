@@ -1,0 +1,109 @@
+{
+  "profile": {
+    "id": "54iw05z2tx6",
+    "ownerId": "54iw019z441",
+    "basicInfo": {
+      "name": {
+        "title": "Mr",
+        "first": "John",
+        "middle": "P",
+        "last": "Smith"
+      },
+      "gender": "MALE",
+      "dob": "1990-07-13",
+      "email": "jsmith@gmail.com"
+    },
+    "addresses": [{
+      "id": "54iw066f05t",
+      "type": "Home",
+      "line1": "1010 South connexions loyalty Boulevard",
+      "line2": "South Northern Ireland MS 110001",
+      "city": {
+        "code": "AUS",
+        "name": "Austin"
+      },
+      "state": {
+        "code": "Tx",
+        "name": "Texas"
+      },
+      "countryCode": "United States",
+      "postalCode": "73301"
+    }],
+    "phones": [{
+      "id": "54iw06bkf4h",
+      "areaCode": "200",
+      "type": "Office",
+      "countryCode": "+1",
+      "ext": "123",
+      "num": "5556136635"
+    }],
+    "emails": [{
+        "id": "54iw06bsuj5",
+        "type": "Business",
+        "value": "johnsmith@gmail.com"
+      },
+      {
+        "id": "54iw06bbw8q",
+        "type": "Personal",
+        "value": "jsmith@gmail.com"
+      }
+    ],
+    "cards": [{
+        "id": "sddwe-123",
+        "num": "**** **** **** 1111",
+        "token": "~$^726d9ee7-5562-4d25-9f9b-113a4f5f1e2d~$^",
+        "nameOnCard": "John Doe",
+        "issuedBy": "VI",
+        "expiry": {
+          "month": 10,
+          "year": 2022
+        },
+        "billingAddress": {
+          "id": "DummyId1",
+          "type": "Industry",
+          "line1": "VimanNagar",
+          "line2": "Near Novotel Hotel, Nagar Road",
+          "city": {
+            "code": "",
+            "name": "Pune"
+          },
+          "state": {
+            "code": "",
+            "name": ""
+          },
+          "countryCode": "IN",
+          "postalCode": "411014"
+        }
+      },
+      {
+        "id": "sddwe-124",
+        "num": "**** **** **** 4448",
+        "token": "~$^7307c17a-1d91-472f-927f-db066155720b~$^",
+        "nameOnCard": "Johny",
+        "issuedBy": "CA",
+        "expiry": {
+          "month": 8,
+          "year": 2025
+        },
+        "billingAddress": {
+          "id": "DummyId2",
+          "type": "Office",
+          "line1": "Dummy address line 1",
+          "line2": "Dummy address line 2",
+          "city": {
+            "code": "AUS",
+            "name": "Austin"
+          },
+          "state": {
+            "code": "Tx",
+            "name": "Texas"
+          },
+          "countryCode": "United States",
+          "postalCode": "73301"
+        }
+      }
+    ]
+
+  },
+  "subProfiles": []
+}

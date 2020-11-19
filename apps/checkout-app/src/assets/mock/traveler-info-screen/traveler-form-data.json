@@ -1,0 +1,28 @@
+{
+  "id": "TestProductId",
+  "productId": "No_Change",
+  "productType": "giftcard",
+  "valid": true,
+  "bookingInfo": {
+    "profiles": "NEW",
+    "firstName": "TestFirst",
+    "middleName": null,
+    "lastName": "TestLast",
+    "suffix": null,
+    "gender": "MALE",
+    "email": "test@test.com",
+    "message": "Test message"
+  },
+  "selectedProfiles": [{
+    "name": {
+      "title": null,
+      "first": "TestFirst",
+      "middle": null,
+      "last": "TestLast"
+    },
+    "gender": "MALE",
+    "email": "test@test.com",
+    "type": "profile",
+    "id": "NEW"
+  }]
+}

@@ -1,0 +1,52 @@
+<!-- Payment Summary - Client Program Fee - Start -->
+<orxe-card
+  orxe-id="client-program"
+  class="orxe-card-style mb-8"
+>
+  <ng-template ngFor [ngForOf]="breakup" let-item>
+    <div
+      class="product-type orxe-grid col-grid-full"
+      *ngIf="item?.type === PAYMENT_SUMMARY_CONST.orderFee"
+    >
+      <span
+        orxe-id="client-program--order-fee-label"
+        class="col-grid-half txt--lg-sb-lg container__fees-section"
+      >
+        {{
+          PAYMENT_SUMMARY_CONST[item?.type]
+            ? ("payment-summary.order_fee_label" | orxeTranslate)
+            : item?.type
+        }}
+      </span>
+      <span
+        orxe-id="client-program--paymentinfo"
+        class="col-grid-half align-right txt--lg-sb-lg"
+      >
+        <ng-template
+          *ngTemplateOutlet="paymentInfoSection; context: { $implicit: item }"
+        ></ng-template
+      ></span>
+      <span
+        orxe-id="client-program--non-refund-text"
+        class="col-grid-full txt--md-r-md container__fees-section__content"
+      >
+        {{ "confirmation-page.non_refund" | orxeTranslate }}
+      </span>
+    </div>
+  </ng-template>
+  <!-- Payment Summary - Client Program Fee - End -->
+
+  <!-- Payment Summary - Payment Info - Start -->
+  <ng-template orxe-id="client-program--price" #paymentInfoSection let-item>
+    <div class="container__fees-section">
+      <ng-template orxe-id="client-program--price-points" [ngIf]="item?.points">
+        {{ item?.points | orxeDecimal }} points</ng-template
+      >
+      <ng-template [ngIf]="item?.points && item?.amount"> + </ng-template>
+      <ng-template orxe-id="client-program--price-amount" [ngIf]="item?.amount">
+        {{ item?.amount | orxeCurrency }}
+      </ng-template>
+    </div>
+  </ng-template>
+</orxe-card>
+<!-- Payment Summary - Payment Info - End -->

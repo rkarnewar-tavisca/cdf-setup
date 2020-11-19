@@ -1,0 +1,65 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/**
+* @description - The style used here is to defined grid.css propertes
+*/
+
+:root {
+  --grid-col-full: 4;
+  --grid-col-half: 2;
+  --grid-col-one-fourth: 1;
+  --grid-col-one-third: 3;
+  --grid-row-half: 2;
+}
+
+.orxe-grid {
+  grid-gap: 0;
+}
+
+.col-grid-full {
+  --col-grid: span var(--grid-col-full);
+}
+
+.col-grid-half {
+  --col-grid: span var(--grid-col-half);
+}
+
+.col-grid-one-fourth {
+  --col-grid: span var(--grid-col-one-fourth);
+}
+
+.col-grid-one-third {
+  --col-grid: span var(--grid-col-one-third);
+}
+
+.row-grid-half {
+  --row-grid: span var(--grid-row-half);
+}
+
+.align-right {
+  text-align: right;
+}
+.py-16 {
+  padding: var(--spacing-05) 0;
+}
+.border-bottom {
+  border-bottom: 1px solid var(--separator-01);
+}
+
+.justify--align-end {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.orxe-card-style {
+  display: flex;
+  flex-direction: column;
+}
+

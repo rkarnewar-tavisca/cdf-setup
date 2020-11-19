@@ -1,0 +1,10 @@
+<!-- <p>{{ "welcome.message" | orxeTranslate }} {{ (user$ | async)?.name }}</p> -->
+<ng-container *ngIf="isInitialized; else loading">
+  <div class="checkout-container">
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <span>Loading...</span>
+</ng-template>

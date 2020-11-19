@@ -1,0 +1,10 @@
+{
+    "code": "500",
+    "message": "Internal server error",
+    "info": [
+      {
+        "code": "598",
+        "message": "Claimed Promo code expired"
+      }
+    ]
+  }

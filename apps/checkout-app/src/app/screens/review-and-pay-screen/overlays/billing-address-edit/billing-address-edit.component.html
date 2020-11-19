@@ -1,0 +1,68 @@
+<orxe-overlay
+  aria-modal="true"
+  role="dialog"
+  (onClose)="close()"
+  attr.aria-labelledby="billing-address--overlay-title"
+  orxe-id="billing-address--overlay"
+  fullscreen="true"
+  [isOpen]="isOpen"
+  name="billingAddressEditOverlay"
+>
+  <div slot="modal-heading">
+    <div class="overlay-title" orxe-id="billing-address--overlay-title">
+      {{
+        "review-and-pay-screen.overlay.edit-billing-address.overlay-heading"
+          | orxeTranslate
+      }}
+    </div>
+  </div>
+  <div slot="modal-content">
+    <div
+      class="orxe-grid overlay-container"
+      orxe-id="billing-address--edit-content"
+    >
+      <div class="col-grid-full" orxe-id="billing-address--edit-container">
+        <app-billing-address-form
+          [submittedBillingAddressFormData]="submittedBillingAddressFormData"
+          [formSubmitted]="formSubmitted"
+          [selectedAddressProfile]="selectedAddressProfile"
+          (onSubmitFormData)="submitBillingAddressForm($event)"
+        >
+        </app-billing-address-form>
+      </div>
+
+      <div
+        class="col-grid-half"
+        orxe-id="billing-address--cancel-btn-container"
+      >
+        <orxe-button
+          orxe-id="billing-address--cancel-btn"
+          id="cancel-btn"
+          size="medium"
+          kind="tertiary"
+          (click)="close()"
+        >
+          {{
+            "review-and-pay-screen.overlay.edit-billing-address.cancel-btn"
+              | orxeTranslate
+          }}
+        </orxe-button>
+      </div>
+      <div class="col-grid-half" orxe-id="billing-address--save-btn-container">
+        <orxe-button
+          orxe-id="billing-address--save-btn"
+          id="share-btn"
+          size="medium"
+          kind="secondary"
+          (click)="saveAddress()"
+          [disabled]=""
+        >
+          {{
+            "review-and-pay-screen.overlay.edit-billing-address.save-btn"
+              | orxeTranslate
+          }}
+        </orxe-button>
+      </div>
+    </div>
+  </div>
+</orxe-overlay>

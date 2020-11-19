@@ -1,0 +1,10 @@
+{
+    "code": "554",
+    "message": "Promo cannot be applied",
+    "info": [
+      {
+        "code": "598",
+        "message": "Claimed Promo code expired"
+      }
+    ]
+  }

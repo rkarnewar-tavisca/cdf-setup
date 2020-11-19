@@ -1,0 +1,162 @@
+<div class="payment-options">
+  <div class="orxe-grid">
+    <orxe-alert
+      type="error"
+      hide-close-icon="true"
+      hide-title-icon="true"
+      [showAlert]="showErrorMsg"
+    >
+      {{ errorMsg }}
+    </orxe-alert>
+    <form
+      [formGroup]="paymentOptionsForm"
+      class="col-grid-full txt--md-sb-sm payment-options__form--mt-16"
+    >
+      <orxe-radio-card-group
+        radio-button-name="payment-option"
+        #paymentOption
+        [value]="payment"
+      >
+        <orxe-radio-card
+          class="col-grid-full"
+          label="{{ 'payment-summary.use_my_points' | orxeTranslate }}"
+          value="points"
+          (click)="validate(PAYMENT_SUMMARY_CONST.POINTS_LABEL, $event)"
+          orxe-id="use-points"
+          [disabled]="disablePoints"
+          id="use-my-points-radio"
+        >
+          <div class="orxe-grid">
+            <div class="col-grid-full tertiary-text txt--sm-r-lg">
+              {{ "payment-summary.choose_points_to_apply" | orxeTranslate }}
+            </div>
+            <div class="col-grid-full tertiary-text txt--md-r-sm py-16">
+              {{ "payment-summary.available_points" | orxeTranslate }}:
+              <span class="text--bold" orxe-id="payment-options__available-point-balance"
+                >{{ userProfile?.programCurrency?.value | orxeDecimal }}
+                {{ "payment-summary.points_label" | orxeTranslate }}</span
+              >
+            </div>
+
+            <div class="orxe-grid col-grid-full add-grid--gap">
+              <div class="col-grid-half txt--md-sb-sm">
+                <orxe-input
+                  class="input"
+                  orxe-id="points-input"
+                  label="{{
+                    'payment-summary.points_redeemed' | orxeTranslate
+                  }}"
+                  placeholder="{{
+                    'payment-summary.points_redeemed' | orxeTranslate
+                  }}"
+                  type="number"
+                  clear-input-icon="true"
+                  always-floated-label
+                  formControlName="pointsToRedeem"
+                  [invalid]="errorState('pointsToRedeem')"
+                  (blur)="onBlurValidateInputs('pointsToRedeem')"
+                ></orxe-input>
+              </div>
+              <div class="payment-options__form--apply-btn col-grid-half">
+                <orxe-button
+                  size="large"
+                  kind="secondary"
+                  (click)="updatePoints(PAYMENT_SUMMARY_CONST.POINTS_LABEL)"
+                  [disabled]="disableBtn"
+                  orxe-id="apply-payment-options"
+                  >{{
+                    disableCash
+                      ? ""
+                      : ("payment-summary.apply_button" | orxeTranslate)
+                  }}
+                  <orxe-spinner-loader
+                    *ngIf="disableCash"
+                    loading="disableCash"
+                  >
+                  </orxe-spinner-loader>
+                </orxe-button>
+              </div>
+            </div>
+            <div
+              class="payment-option--error-alert"
+              *ngIf="errorState(PAYMENT_SUMMARY_CONST.POINT_TO_REDEEM)"
+            >
+              <orxe-alert
+                type="error"
+                hide-close-icon="true"
+                hide-title-icon="true"
+                [showAlert]="errorState(PAYMENT_SUMMARY_CONST.POINT_TO_REDEEM)"
+                disable-auto-hide="true"
+              >
+                {{ returnValidationMsg() }}
+              </orxe-alert>
+            </div>
+          </div>
+          <div class="col-grid-full padding-top-16 txt--md-r-sm">
+            <div>
+              {{ "payment-summary.balance_due" | orxeTranslate }}:
+              <span class="text--bold">
+                {{
+                  cartDetails?.price?.amount | currency: cartDetails?.currency
+                }}</span
+              >
+            </div>
+            <!-- TO DO : Order level fee integration in next sprint -->
+            <div class="txt--sm-r-sm points-text">
+              <app-cart-level-fee [cartDetails] = cartDetails></app-cart-level-fee>
+            </div>
+          </div>
+          <div class="col-grid-full py-16 txt--sm-r-sm points-text">
+            {{ "payment-summary.remaining_points" | orxeTranslate }}:
+            <span class="text--bold"
+              >{{
+                userProfile?.programCurrency?.value - cartDetails?.price?.points
+                  | orxeDecimal
+              }}
+              {{ "payment-summary.points_label" | orxeTranslate }}</span
+            >
+          </div>
+        </orxe-radio-card>
+        <orxe-radio-card
+          orxe-id="use-cash"
+          [disabled]="disableCash"
+          class="col-grid-full"
+          label="{{ 'payment-summary.keep_my_points' | orxeTranslate }} {{
+            cartDetails?.price?.amount +
+              cartDetails?.price?.points / PAYMENT_SUMMARY_CONST.CONVERSION_UNIT
+              | currency: cartDetails?.currency
+          }}"
+          value="cash"
+          (click)="validate(PAYMENT_SUMMARY_CONST.CASH_LABEL, $event)"
+        >
+          <div class="col-grid-full txt--md-r-sm">
+            {{ "payment-summary.points_redeemed" | orxeTranslate }}:
+            <span class="text--bold">
+              0 {{ "payment-summary.points_label" | orxeTranslate }}</span
+            >
+          </div>
+          <div class="col-grid-full py-16 txt--md-r-sm">
+            <div>
+              {{ "payment-summary.balance_due" | orxeTranslate }}:
+              <span class="text--bold">
+                {{
+                  cartDetails?.price?.amount +
+                    cartDetails?.price?.points /
+                      PAYMENT_SUMMARY_CONST.CONVERSION_UNIT
+                    | currency: cartDetails?.currency
+                }}</span
+              >
+            </div>
+          </div>
+          <div class="col-grid-full points-text txt--sm-r-sm bottom-padding-16">
+            {{ "payment-summary.remaining_points" | orxeTranslate }}:
+            <span class="text--bold"
+              >{{ userProfile?.programCurrency?.value | orxeDecimal }}
+              {{ "payment-summary.points_label" | orxeTranslate }}</span
+            >
+          </div>
+        </orxe-radio-card>
+      </orxe-radio-card-group>
+    </form>
+  </div>
+</div>

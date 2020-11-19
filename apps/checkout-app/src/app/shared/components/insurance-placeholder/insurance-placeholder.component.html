@@ -1,0 +1,20 @@
+<!-- Product Add-on / Insurances Start -->
+<div
+  class="col-grid-full"
+  *skeletonUntil="addonProductList; svg: 'addon-product'"
+>
+  <orxe-card
+    class="orxe-grid orxe-card-style mb-8"
+    *ngIf="addonProductList?.length"
+    role="region"
+    aria-labelledby="{{ CHECKOUT_CONST.ADD_ON_PRODUCT }}_container"
+  >
+    <div
+      class="col-grid-full txt--lg-sb-lg"
+      attr.orxe-id="{{ CHECKOUT_CONST.ADD_ON_PRODUCT }}_container"
+    >
+      {{ CHECKOUT_CONST.ADD_ON_PRODUCT | titlecase }} Product Placeholder
+    </div>
+  </orxe-card>
+</div>
+<!-- Product Add-on / Insurances End -->

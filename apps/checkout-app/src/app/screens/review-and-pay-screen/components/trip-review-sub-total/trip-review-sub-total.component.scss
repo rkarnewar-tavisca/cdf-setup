@@ -1,0 +1,30 @@
+.container__sub-total {
+  .payable-amount {
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--subheading-secondary-font-size);
+    line-height: 22px;
+    color: var(--primary);
+    padding-top: var(--spacing-06);
+
+    .fees-note {
+      font-weight: var(--font-weight-regular);
+      font-size: var(--caption-font-size);
+      line-height: 15px;
+      color: var(--secondary-text);
+    }
+  }
+  .remain-amount-section {
+    font-weight: var(--font-weight-semi-bold);
+    line-height: 13px;
+    font-size: var(--caption-font-size);
+    color: var(--primary-text);
+    padding: var(--spacing-03) 0 var(--spacing-05) 0;
+  }
+  .merchant-extra-label {
+    font-weight: var(--font-weight-semi-bold);
+    font-size: var(--caption-font-size);
+    line-height: 15px;
+    color: var(--secondary-text);
+    padding-top: var(--spacing-03);
+  }
+}

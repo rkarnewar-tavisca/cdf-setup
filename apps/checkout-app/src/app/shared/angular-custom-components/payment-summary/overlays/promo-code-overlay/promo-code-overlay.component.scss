@@ -1,0 +1,20 @@
+.promo-code-overlay--input-bg-color {
+  background-color: var(--neutral);
+}
+.btn--apply {
+  margin-top: var(--spacing-03);
+}
+.btn--cancel {
+  margin-top: var(--spacing-05);
+  text-align: right;
+}
+orxe-input {
+  --input-error-icon-color: var(--primary);
+  --input-label-font-weight: var(--fw-sb);
+}
+orxe-button orxe-spinner-loader {
+  display: inline-block;
+  vertical-align: middle;
+   --loader-size: 35;
+   --loader-dot-color: var(--neutral);
+}

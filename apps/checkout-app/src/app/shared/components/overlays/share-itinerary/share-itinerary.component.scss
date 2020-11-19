@@ -1,0 +1,11 @@
+.overlay-container {
+  color: var(--primary-text);
+  margin-top: var(--spacing-05);
+}
+
+orxe-spinner-loader {
+  display: inline-block;
+  vertical-align: middle;
+  --loader-size: 35;
+  --loader-dot-color: var(--neutral);
+}

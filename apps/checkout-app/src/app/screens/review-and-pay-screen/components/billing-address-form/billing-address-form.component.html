@@ -1,0 +1,159 @@
+<form [formGroup]="billingAddressForm">
+  <div orxe-id="billing-address--form" class="orxe-grid">
+    <div class="col-grid-full">
+      <orxe-dropdown orxe-id="billing-address--form-country-dropdown" placeholder="{{
+          'review-and-pay-screen.billing_address.placeholder.country'
+            | orxeTranslate
+        }}" attr.label-value="{{
+          'review-and-pay-screen.billing_address.label.country'
+            | orxeTranslate
+        }}" [items]="countryData" formControlName="countryCode" required extra-label-text="*" attr.error-message="{{
+          'review-and-pay-screen.billing_address.validations_blank.country'
+            | orxeTranslate
+        }}" validate-on-blur (onChange)="onChangeOfCountry($event)">
+      </orxe-dropdown>
+    </div>
+    <ng-template [ngIf]="
+        billingAddressForm?.value?.countryCode ===
+        BILLING_ADDRESS_FORM_CONFIG?.usMilitary?.countryCode
+      ">
+      <div class="col-grid-one-third">
+        <orxe-checkbox orxe-id="billing-address--form-address-usmilitary" formControlName="usMilitary" #usMilitaryRef
+          (onChange)="onChangeOfUsMilitary($event)">
+          {{
+            "review-and-pay-screen.billing_address.label.us_military"
+              | orxeTranslate
+          }}
+        </orxe-checkbox>
+      </div>
+      <div class="col-grid-one-fourth"></div>
+    </ng-template>
+    <div class="col-grid-full">
+      <orxe-input orxe-id="billing-address--form-address-line1-input" always-floated-label placeholder="{{
+          'review-and-pay-screen.billing_address.label.address_line_1'
+            | orxeTranslate
+        }}" label="{{
+          'review-and-pay-screen.billing_address.label.address_line_1'
+            | orxeTranslate
+        }}" clear-input-icon formControlName="line1" extra-label-text="*" [invalid]="errorState('line1')"
+        required="true" validation-reg-ex="^[a-zA-Z0-9 ',;\/.#&-]*$" attr.error-message-blank-field="{{
+          'review-and-pay-screen.billing_address.validations_blank.address_line'
+            | orxeTranslate
+        }}" attr.error-message-invalid-data="{{
+          'review-and-pay-screen.billing_address.validations_invalid.address_line'
+            | orxeTranslate
+        }}" (onBlur)="onBlurValidateInputs('line1')">
+      </orxe-input>
+    </div>
+    <div class="col-grid-full">
+      <orxe-input orxe-id="billing-address--form-address-line2-input" always-floated-label label="{{
+          'review-and-pay-screen.billing_address.label.address_line_2'
+            | orxeTranslate
+        }}" placeholder="{{
+          'review-and-pay-screen.billing_address.label.address_line_2'
+            | orxeTranslate
+        }}" clear-input-icon formControlName="line2" validation-reg-ex="^[a-zA-Z0-9 ',;\/.#&-]*$"
+        [invalid]="errorState('line2')" attr.error-message-invalid-data="{{
+          'review-and-pay-screen.billing_address.validations_invalid.address_line'
+            | orxeTranslate
+        }}" (onBlur)="onBlurValidateInputs('line2')">
+      </orxe-input>
+    </div>
+    <div class="col-grid-full" formGroupName="city">
+      <orxe-input orxe-id="billing-address--form-address-city-input" label="{{
+          'review-and-pay-screen.billing_address.label.city' | orxeTranslate
+        }}" placeholder="{{
+          'review-and-pay-screen.billing_address.label.city' | orxeTranslate
+        }}" always-floated-label formControlName="name" clear-input-icon extra-label-text="*" required="true"
+        validation-reg-ex="^[a-zA-Z ]*$" [invalid]="errorState('city.name')" attr.error-message-blank-field="{{
+          'review-and-pay-screen.billing_address.validations_blank.city'
+            | orxeTranslate
+        }}" attr.error-message-invalid-data="{{
+          'review-and-pay-screen.billing_address.validations_invalid.city'
+            | orxeTranslate
+        }}" (onBlur)="onBlurValidateInputs('city.name')">
+      </orxe-input>
+    </div>
+    <div class="col-grid-full" *ngIf="selectedCountryObject?.fields.includes('postOffice')">
+      <orxe-dropdown orxe-id="billing-address--form-address-postoffice-dropdown" placeholder="{{
+          'review-and-pay-screen.billing_address.placeholder.post_office'
+            | orxeTranslate
+        }}" attr.label-value="{{
+          'review-and-pay-screen.billing_address.label.post_office'
+            | orxeTranslate
+        }}" [items]="postOfficeList" formControlName="postOffice" extra-label-text="*" clear-input-icon
+        validate-on-blur required="true" attr.error-message="{{
+          'review-and-pay-screen.billing_address.validations_blank.postOffice'
+            | orxeTranslate
+        }}" (onBlur)="onBlurValidateInputs('postOffice')">
+      </orxe-dropdown>
+    </div>
+    <div orxe-id="billing-address--form-address" formGroupName="state" class="col-grid-half">
+      <div class="col-grid-half" *ngIf="selectedCountryObject?.fields.includes('stateInput')">
+        <orxe-input orxe-id="billing-address--form-address-state-input" label="{{
+            'review-and-pay-screen.billing_address.label.state'
+              | orxeTranslate
+          }}" placeholder="{{
+            'review-and-pay-screen.billing_address.label.state'
+              | orxeTranslate
+          }}" clear-input-icon formControlName="name" [invalid]="errorState('state.name')" extra-label-text="*"
+          validation-reg-ex="^[a-zA-Z ]*$" always-floated-label attr.error-message-invalid-data="{{
+            'review-and-pay-screen.billing_address.validations_invalid.state'
+              | orxeTranslate
+          }}" attr.error-message-blank-field="{{
+            'review-and-pay-screen.billing_address.validations_blank.state'
+              | orxeTranslate
+          }}" (onBlur)="onBlurValidateInputs('state.name')">
+        </orxe-input>
+      </div>
+      <div class="col-grid-half" *ngIf="selectedCountryObject?.fields.includes('stateDropdown')">
+        <orxe-dropdown orxe-id="billing-address--form-address-state-dropdown" placeholder="{{
+            'review-and-pay-screen.billing_address.placeholder.state'
+              | orxeTranslate
+          }}" attr.label-value="{{
+            'review-and-pay-screen.billing_address.label.state'
+              | orxeTranslate
+          }}" clear-input-icon [items]="billingAddressForm.value.usMilitary ? stateOptionsMilitary : stateOptions"
+          formControlName="code" extra-label-text="*" required="true" attr.error-message="{{
+            'review-and-pay-screen.billing_address.validations_blank.state'
+              | orxeTranslate
+          }}" (onBlur)="onBlurValidateInputs('state.code')" validate-on-blur>
+        </orxe-dropdown>
+      </div>
+    </div>
+    <div class="col-grid-half" *ngIf="selectedCountryObject?.fields.includes('zipCode')">
+      <orxe-input orxe-id="billing-address--form-address-zip-input" label="{{
+          selectedCountryObject?.zipCodelabel
+            ? _cultureService.orxeTranslate(selectedCountryObject.zipCodelabel)
+            : _cultureService.orxeTranslate(
+                BILLING_ADDRESS_FORM_CONFIG.defaultZipCodeLabel
+              )
+        }}" placeholder="{{
+          selectedCountryObject?.zipCodelabel
+            ? _cultureService.orxeTranslate(selectedCountryObject.zipCodelabel)
+            : _cultureService.orxeTranslate(
+                BILLING_ADDRESS_FORM_CONFIG.defaultZipCodeLabel
+              )
+        }}" formControlName="postalCode" clear-input-icon extra-label-text="*" required="true" [invalid]="errorState('postalCode')"
+        min-length="1" max-length="10" always-floated-label validation-reg-ex="^[a-zA-Z0-9]{1,10}$"
+        attr.error-message-blank-field="{{
+          selectedCountryObject?.zipCodeBlank
+            ? _cultureService.orxeTranslate(selectedCountryObject.zipCodeBlank)
+            : _cultureService.orxeTranslate(
+                BILLING_ADDRESS_FORM_CONFIG.defaultZipCodeBlank
+              )
+        }}" attr.error-message-invalid-data="
+        {{
+          selectedCountryObject?.zipCodeInvalid
+            ? _cultureService.orxeTranslate(
+                selectedCountryObject.zipCodeInvalid
+              )
+            : _cultureService.orxeTranslate(
+                BILLING_ADDRESS_FORM_CONFIG.defaultZipCodeInvalid
+              )
+        }}" (onBlur)="onBlurValidateInputs('postalCode')">
+      </orxe-input>
+    </div>
+
+  </div>
+</form>

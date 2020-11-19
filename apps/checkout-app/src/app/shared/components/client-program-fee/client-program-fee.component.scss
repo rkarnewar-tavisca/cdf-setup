@@ -1,0 +1,10 @@
+.align-right {
+  text-align: right;
+}
+.container__fees-section {
+  color: var(--primary-text);
+
+  .container__fees-section__content {
+    color: var(--secondary-text);
+  }
+}

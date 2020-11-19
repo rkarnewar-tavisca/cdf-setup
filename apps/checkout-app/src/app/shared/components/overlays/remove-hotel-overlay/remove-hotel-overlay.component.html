@@ -1,0 +1,46 @@
+<orxe-overlay
+  orxe-id="remove-hotel-overlay"
+  fullscreen="true"
+  (onClose)="close()"
+  [isOpen]="isOpen"
+  name="removeHotelOverlay"
+>
+  <div slot="modal-heading">
+    <div
+      orxe-id="remove-hotel-overlay--title"
+      class="remove-item-heading overlay-title"
+    >
+      Remove Hotel
+    </div>
+  </div>
+  <div
+    orxe-id="remove-hotel-overlay--content"
+    slot="modal-content"
+    class="overlay-content"
+  >
+    <div class="orxe-grid">
+      <div class="col-grid-full">
+        <h3 orxe-id="remove-hotel-overlay--content-text">
+          Are you sure you want to remove this hotel?
+        </h3>
+      </div>
+      <div class="col-grid-half">
+        <orxe-button
+          orxe-id="remove-hotel-overlay--content-cancel-remove-hotel-btn"
+          size="large"
+          kind="tertiary"
+          (click)="close()"
+          >Cancel</orxe-button
+        >
+      </div>
+      <div class="col-grid-half">
+        <orxe-button
+          orxe-id="remove-hotel-overlay--content-remove-hotel-submit-btn"
+          size="large"
+          kind="secondary"
+          >Remove</orxe-button
+        >
+      </div>
+    </div>
+  </div>
+</orxe-overlay>

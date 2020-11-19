@@ -1,0 +1,185 @@
+<div class="orxe-grid">
+  <div class="col-grid-full">
+    <checkout-header
+      [title]="'landing-screen.header_title' | orxeTranslate"
+      [leftIconA11y]="'landing-screen.header_left_icon' | orxeTranslate"
+      leftIcon="ic-arrow-left"
+      role="banner"
+      orxe-id="trip-cart-header"
+    >
+    </checkout-header>
+  </div>
+  <div class="col-grid-full" role="main">
+    <!-- Currency To Point Note Placeholder Starts -->
+    <div
+      class="orxe-card-style"
+      *skeletonUntil="
+        !viewModel?.cartDetails?.loading;
+        svg: 'currency-points';
+        inline: true
+      "
+    >
+      <div
+        orxe-id="landing-currency-point-section"
+        class="col-grid-full trip-cart--points-to-currency txt--sm-r-md"
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+        "
+      >
+        <orxe-points-header
+          points="{{ CHECKOUT_CONST.POINTS_VALUE }}"
+          amount="{{ CHECKOUT_CONST.AMOUNT_VALUE }}"
+        >
+        </orxe-points-header>
+      </div>
+    </div>
+    <!-- Currency To Point Note Placeholder End -->
+
+    <!-- Product Placeholders Starts-->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'product-detail';
+        inline: false
+      "
+    >
+      <app-product-placeholder
+        [productsList]="
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.productsList
+        "
+        (onClickRemoveItemEvent)="onClickRemoveItemEvent($event)"
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+        "
+      >
+      </app-product-placeholder>
+    </div>
+
+    <!-- Client program fee section start -->
+    <div
+      class="col-grid-full mb-8"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'trip-cart-client-program-fee-card';
+        inline: false
+      "
+    >
+      <client-fee
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0 &&
+          viewModel?.clientProgramFee > 0
+        "
+        [clientProgramFee]="viewModel.clientProgramFee"
+      ></client-fee>
+    </div>
+    <!-- Client program fee section end -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'trip-cart-insurance-placeholder';
+        inline: false
+      "
+    >
+      <app-insurance-placeholder
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+        "
+        [addonProductList]="
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.addOnProductsList
+        "
+      ></app-insurance-placeholder>
+    </div>
+    <!-- Product Placeholders End-->
+
+    <!-- Payment Summary Start -->
+    <div
+      class="col-grid-full orxe-card-style"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'trip-cart-payment-summary';
+        inline: false
+      "
+      [ngClass]="
+        viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+          ? 'mb-8'
+          : 'mb-0'
+      "
+    >
+      <orxe-payment-summary
+        [cartDetail]="viewModel?.cartDetails?.cartInfo?.cartDetails"
+        [userProfile]="userSessionDetails$ | async"
+        [userData]="selectUser$ | async"
+        [flow]="clpFlow$ | async"
+        [readOnly]="false"
+        [screen]="CHECKOUT_CONST.LANDING_SCREEN"
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+        "
+        (updateCart)="updateCart($event)"
+        [clientPrgramFee]="viewModel?.clientProgramFee"
+        [paymentOption]="viewModel?.paymentOption"
+      >
+      </orxe-payment-summary>
+      <!-- skeleton is removed adn ngif is introduced need to check -->
+    </div>
+    <!-- Payment Summary End -->
+
+    <!-- Cross Sale Placeholder Start-->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'trip-cart-cross-sale';
+        inline: false
+      "
+    >
+      <cross-sale
+        *ngIf="
+          !viewModel?.cartDetails?.loading &&
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+        "
+      >
+      </cross-sale>
+    </div>
+    <!-- Cross Sale Placeholder End-->
+
+    <div
+      class="col-grid-full trip-cart--enter-traveler-info"
+      *ngIf="
+        !viewModel?.cartDetails?.loading &&
+        viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length > 0
+      "
+    >
+      <orxe-button
+        type="primary"
+        orxe-id="add-travler-link"
+        size="large"
+        (click)="navigateTo()"
+      >
+        {{ "landing-screen.traveler_info_btn" | orxeTranslate }}</orxe-button
+      >
+    </div>
+    <!-- </ng-template> -->
+
+    <!-- Empty Cart Template - Start -->
+
+    <div
+      *ngIf="
+        !viewModel?.cartDetails?.loading &&
+        (viewModel?.cartDetails?.cartInfo?.cartDetails?.error ||
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.items?.length == 0)
+      "
+      class="col-grid-full"
+    >
+      <empty-cart></empty-cart>
+    </div>
+  </div>
+  <!-- Empty Cart Template - End -->
+</div>

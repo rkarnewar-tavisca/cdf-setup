@@ -1,0 +1,8 @@
+{
+  "project": {
+    "version": "0.0.1",
+    "name": "checkout-app",
+    "type": "microapp",
+    "prefix": "orxe"
+  }
+}

@@ -1,0 +1,43 @@
+<div
+  orxe-id="product-insurance"
+  class="col-grid-full border-bottom py-16"
+  *ngIf="addOnProductsList?.length > 0"
+>
+  <div orxe-id="product-insurance--panel">
+    <div orxe-id="product-insurance--panel-content">
+      <ng-template ngFor [ngForOf]="addOnProductsList" let-item>
+        <ng-template
+          *ngTemplateOutlet="insuranceInfoSection; context: { $implicit: item }"
+        ></ng-template>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Summary - Insurance Payment Info section - Start -->
+<ng-template #insuranceInfoSection let-item let-i="index">
+  <div
+    orxe-id="insurance-info-section"
+    class="orxe-grid col-grid-full"
+    role="region"
+    attr.aria-labelledby="{{ item.mainProductType }}-{{ item?.productType }}{{
+      i + 1
+    }}-payment-summary"
+  >
+    <div
+      attr.orxe-id="insurance-info-section-{{ item?.mainProductType }}-type"
+      class="col-grid-half"
+      id="{{ item.mainProductType }}-{{ item?.productType }}{{
+        i + 1
+      }}-payment-summary"
+    >
+      {{ item?.mainProductType | titlecase }} {{ item?.productType }}
+    </div>
+    <div class="col-grid-half align-right">
+      <app-payment-info
+        [paymentBreakup]="item?.sellingPrice"
+      ></app-payment-info>
+    </div>
+  </div>
+</ng-template>
+<!-- Payment Summary - Insurance Payment Info section - End -->

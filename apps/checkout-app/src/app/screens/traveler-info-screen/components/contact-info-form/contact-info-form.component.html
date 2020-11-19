@@ -1,0 +1,214 @@
+<orxe-card
+  orxe-id="contact-info-form"
+  class="orxe-card-style container__payment-summary-section"
+  role="region"
+  aria-labelledby="traveler-contact-form-heading"
+>
+  <div orxe-id="contact-info-form--section">
+    <h3
+      class="container__heading txt--lg-sb-lg"
+      orxe-id="contact-info-form--section-heading"
+    >
+      {{ "traveler-info.traveler_contact_form.heading" | orxeTranslate }}
+    </h3>
+    <span class="txt--md-r-lg" orxe-id="contact-info-form--section-subheading">
+      {{ "traveler-info.traveler_contact_form.sub-heading" | orxeTranslate }}
+    </span>
+    <!-- Contact Form starts here -->
+    <form class="mt-16" [formGroup]="contactForm">
+      <div class="orxe-grid">
+        <orxe-dropdown
+          orxe-id="contact-travler-profile-dropdown"
+          attr.label-value="{{
+            'traveler-info.traveler_contact_form.profile.label' | orxeTranslate
+          }}"
+          [items]="profilesData"
+          class="dropdown col-grid-full"
+          value="{{ selectedProfile | async }}"
+          always-floated-label
+          formControlName="profiles"
+          placeholder="{{
+            'traveler-info.traveler_contact_form.profile.placeholder'
+              | orxeTranslate
+          }}"
+          (onChange)="onProfileChange($event)"
+        >
+        </orxe-dropdown>
+
+        <div
+          class="orxe-grid"
+          *ngIf="
+            !viewModel.editContactInfoFlag;
+            else savedInfo
+          "
+        >
+          <orxe-input
+            orxe-id="contact-traveler-phone-input"
+            label="{{
+              'traveler-info.traveler_contact_form.phone.label' | orxeTranslate
+            }}"
+            clear-input-icon
+            class="container-contact-info__input__bg col-grid-full"
+            always-floated-label
+            formControlName="phone"
+            attr.error-message-invalid-data="{{
+              'traveler-info.traveler_contact_form.phone.validations.invalid'
+                | orxeTranslate
+            }}"
+            attr.error-message-blank-field="{{
+              'traveler-info.traveler_contact_form.phone.validations.blank'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'traveler-info.traveler_contact_form.phone.placeholder'
+                | orxeTranslate
+            }}"
+            [invalid]="setInvalidPhone"
+            max-length="10"
+            validation-reg-ex="^[0-9]{10,15}$"
+            (onBlur)="onBlurValidateInputs('phone')"
+            (keydown)="restrict($event)"
+            required
+          >
+          </orxe-input>
+
+          <orxe-input
+            orxe-id="contact-traveler-secondary-phone-input"
+            label="{{
+              'traveler-info.traveler_contact_form.secondaryPhone.label'
+                | orxeTranslate
+            }}"
+            clear-input-icon
+            class="container-contact-info__input__bg col-grid-full"
+            always-floated-label
+            formControlName="secondaryPhone"
+            attr.error-message-invalid-data="{{
+              'traveler-info.traveler_contact_form.phone.validations.invalid'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'traveler-info.traveler_contact_form.secondaryPhone.placeholder'
+                | orxeTranslate
+            }}"
+            [invalid]="setInvalidSecondaryPhone"
+            max-length="10"
+            validation-reg-ex="^[0-9]{10,15}$"
+            (onBlur)="onBlurValidateInputs('secondaryPhone')"
+            (keydown)="restrict($event)"
+          >
+          </orxe-input>
+
+          <orxe-input
+            orxe-id="contact-travler-email-input"
+            label="{{
+              'traveler-info.traveler_contact_form.emailId.label'
+                | orxeTranslate
+            }}"
+            clear-input-icon
+            class="container-contact-info__input__bg col-grid-full"
+            always-floated-label
+            formControlName="email"
+            attr.error-message-invalid-data="{{
+              'traveler-info.traveler_contact_form.emailId.validations.invalid'
+                | orxeTranslate
+            }}"
+            attr.error-message-blank-field="{{
+              'traveler-info.traveler_contact_form.emailId.validations.blank'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'traveler-info.traveler_contact_form.emailId.placeholder'
+                | orxeTranslate
+            }}"
+            validation-reg-ex="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$"
+            [invalid]="setInvalidEmail"
+            required
+            (onBlur)="onBlurValidateInputs('email')"
+          >
+          </orxe-input>
+
+          <orxe-input
+            orxe-id="contact-travler-verifyemail-input"
+            label="{{
+              'traveler-info.traveler_contact_form.verifyEmailId.label'
+                | orxeTranslate
+            }}"
+            clear-input-icon
+            class="container-contact-info__input__bg col-grid-full"
+            always-floated-label
+            formControlName="verifyEmail"
+            attr.error-message-invalid-data="{{
+              'traveler-info.traveler_contact_form.verifyEmailId.validations.invalid'
+                | orxeTranslate
+            }}"
+            attr.error-message-blank-field="{{
+              'traveler-info.traveler_contact_form.verifyEmailId.validations.blank'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'traveler-info.traveler_contact_form.verifyEmailId.placeholder'
+                | orxeTranslate
+            }}"
+            [invalid]="setInvalidVerifyEmail"
+            required
+            (onBlur)="onBlurValidateInputs('verifyEmail')"
+            #reTypeEmailInputRef
+          >
+          </orxe-input>
+        </div>
+        <ng-template #savedInfo>
+          <div class="contact-info__section">
+            <div orxe-id="program-fee-section" class="orxe-grid col-grid-full">
+              <span class="col-grid-half txt--md-r-lg">
+                {{
+                  "traveler-info.traveler_contact_form.contact_info.phone_number"
+                    | orxeTranslate
+                }}</span
+              >
+              <span
+                class="col-grid-half align-right"
+                orxe-id="program-fee-section"
+              >
+                <orxe-button
+                  orxe-id="cart-total-section-edit-point-link"
+                  href="javascript:void(0)"
+                  size="large"
+                  (click)="onClickEditBtn()"
+                >
+                  {{
+                    "traveler-info.traveler_contact_form.contact_info.edit_btn"
+                      | orxeTranslate
+                  }}</orxe-button
+                >
+              </span>
+            </div>
+            <div class="orxe-grid">
+              <span class="col-grid-full txt--md-sb-lg mb-8">{{
+                contactForm.value.phone
+              }}</span>
+              <span class="col-grid-full txt--md-r-lg" *ngIf="contactForm.value.secondaryPhone">
+                {{
+                  "traveler-info.traveler_contact_form.contact_info.secondary_phone_number"
+                    | orxeTranslate
+                }}</span
+              >
+              <span class="col-grid-full txt--md-sb-lg mb-8" *ngIf="contactForm.value.secondaryPhone">{{
+                contactForm.value.secondaryPhone
+              }}</span>
+              <span class="col-grid-full txt--md-r-lg">
+                {{
+                  "traveler-info.traveler_contact_form.contact_info.email"
+                    | orxeTranslate
+                }}</span
+              >
+              <span class="col-grid-full txt--md-sb-lg">{{
+                contactForm.value.email
+              }}</span>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </form>
+    <!-- Contact Form Ends here -->
+  </div>
+</orxe-card>

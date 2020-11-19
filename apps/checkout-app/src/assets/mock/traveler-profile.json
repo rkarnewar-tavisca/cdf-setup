@@ -1,0 +1,41 @@
+{
+  "travelerProfiles": [{
+    "label": "Alex",
+    "value": "1",
+    "firstName": "Alex",
+    "middelName": "",
+    "lastName": "",
+    "birthDate": "04-27-1995",
+    "email": "alex@gmail.com",
+    "verifyEmail": "",
+    "phone": ""
+  }],
+  "suffixs": [{
+    "label": "None"
+  }, {
+    "label": "SR",
+    "value": 1
+  }, {
+    "label": "JR",
+    "value": 2
+  }, {
+    "label": "I",
+    "value": 3
+  }, {
+    "label": "II",
+    "value": 4
+  }, {
+    "label": "III",
+    "value": 5
+  }, {
+    "label": "IV",
+    "value": 6
+  }, {
+    "label": "ESQ",
+    "value": 7
+  }],
+  "loyalaltyPrograms": [{
+    "label": "P10000",
+    "value": 1
+  }]
+}

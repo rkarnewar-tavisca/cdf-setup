@@ -1,0 +1,28 @@
+.redeem-section {
+  margin-top: 36.33px;
+
+  .overlay-heading {
+    font-size: var(--subheading-secondary-font-size);
+    line-height: 20px;
+    text-align: left;
+    font-weight: var(--font-weight-semi-bold);
+  }
+
+  .sub-heading-wrapper {
+    margin-top: var(--spacing-03);
+  }
+  .overlay-sub-heading {
+    font-size: var(--body-font-size);
+    line-height: 17px;
+    color: var(--secondary-text);
+  }
+
+  .options-container {
+    margin-top: var(--spacing-06);
+    margin-bottom: var(--spacing-08);
+  }
+}
+
+.mr-15 {
+  margin-right: 15px;
+}

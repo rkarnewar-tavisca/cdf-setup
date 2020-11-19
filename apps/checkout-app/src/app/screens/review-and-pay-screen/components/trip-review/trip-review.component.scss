@@ -1,0 +1,24 @@
+.container__trip-review__heading {
+  font-size: var(--subheading-font-size);
+  line-height: 22px;
+  font-weight: var(--font-weight-semi-bold);
+  padding-top: var(--spacing-02);
+  padding-bottom: var(--spacing-05);
+  color: var(--primary-text);
+}
+
+.container__traveler-details {
+  &.orxe-grid {
+    grid-gap: 0;
+  }
+  color: var(--primary-text);
+  font-size: var(--body-font-size);
+  border-bottom: 1px solid var(--separator-01);
+  padding-bottom: var(--spacing-05);
+
+  .container__traveler-details__heading {
+    font-weight: var(--font-weight-semi-bold);
+    line-height: 17px;
+    padding-top: var(--spacing-03);
+  }
+}

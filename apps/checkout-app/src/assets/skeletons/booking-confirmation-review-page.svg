@@ -1,0 +1,27 @@
+<svg viewBox="0 0 288 167" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>0E821FE8-4CBC-4C94-8829-4D0C38948615</title>
+<defs>
+    <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+        <stop stop-color="#F5F8FB" offset="0%"></stop>
+        <stop stop-color="#E1E6ED" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+        <stop stop-color="#F5F8FB" offset="0%"></stop>
+        <stop stop-color="#E1E6ED" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-3">
+        <stop stop-color="#F5F8FB" offset="0%"></stop>
+        <stop stop-color="#E1E6ED" offset="100%"></stop>
+    </linearGradient>
+</defs>
+<g id="Skeleton-Loader" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Skeleton-Loader---Billing-Information" transform="translate(-16.000000, -2390.000000)">
+        <g id="Confirm-booking-card-Copy" transform="translate(16.000000, 2390.000000)">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="288" height="167"></rect>
+            <rect id="Rectangle-Copy-37" fill="url(#linearGradient-1)" x="0" y="0" width="16" height="16" rx="1"></rect>
+            <rect id="Rectangle-Copy-38" fill="url(#linearGradient-2)" x="24" y="0" width="264" height="102" rx="1"></rect>
+            <rect id="Rectangle-Copy-39" fill="url(#linearGradient-3)" x="0" y="118" width="288" height="49" rx="1"></rect>
+        </g>
+    </g>
+</g>
+</svg>

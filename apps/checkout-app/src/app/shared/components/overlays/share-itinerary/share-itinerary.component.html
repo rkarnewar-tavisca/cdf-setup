@@ -1,0 +1,81 @@
+<orxe-overlay
+  (onClose)="close()"
+  fullscreen="true"
+  orxe-id="share-itinerary-overlay"
+  [isOpen]="isOpen"
+  name="shareItineraryOverlay"
+>
+  <div slot="modal-heading">
+    <div class="overlay-title" orxe-id="share-itinerary-overlay---title">
+      {{ "share-itinerary.overlay_heading" | orxeTranslate }}
+    </div>
+  </div>
+  <div slot="modal-content">
+    <div
+      class="orxe-grid overlay-container"
+      orxe-id="share-itinerary-overlay--content"
+    >
+      <span class="col-grid-full txt--lg-r-lg">
+        {{ "share-itinerary.overlay_subheading" | orxeTranslate }}
+      </span>
+      <div
+        class="col-grid-full overlay-container__inputs"
+        orxe-id="share-itinerary-overlay--input-container"
+      >
+        <ng-container #containerRef></ng-container>
+      </div>
+      <div
+        class="col-grid-full mb-8"
+        orxe-id="share-itinerary-overlay--add-email-link-container"
+        *ngIf="!(instanceArr.length === maxEmailsAllowed)"
+      >
+        <orxe-button
+          orxe-id="share-itinerary-overlay--add-email-link"
+          id="add-email-link"
+          href="javascript:void(0)"
+          (click)="onClickAddBtn()"
+          >{{ "share-itinerary.add-email-link" | orxeTranslate }}</orxe-button
+        >
+      </div>
+
+      <div
+        class="col-grid-half"
+        orxe-id="share-itinerary-overlay--cancel-btn-container"
+      >
+        <orxe-button
+          orxe-id="share-itinerary-overlay--cancel-btn"
+          id="cancel-btn"
+          size="large"
+          kind="tertiary"
+          (click)="close()"
+          >{{ "share-itinerary.cancel-btn" | orxeTranslate }}</orxe-button
+        >
+      </div>
+      <div
+        class="col-grid-half"
+        orxe-id="share-itinerary-overlay--share-btn-container"
+      >
+        <orxe-button
+          orxe-id="share-itinerary-overlay--share-btn"
+          id="share-btn"
+          size="large"
+          kind="secondary"
+          (click)="onClickShareBtn()"
+          [disabled]="btnDisableFlag"
+        >
+          <orxe-spinner-loader
+            *ngIf="viewModel?.showSpinnerButton"
+            loading
+            size="regular"
+          >
+          </orxe-spinner-loader>
+          {{
+            viewModel?.showSpinnerButton
+              ? ""
+              : ("share-itinerary.share-btn" | orxeTranslate)
+          }}</orxe-button
+        >
+      </div>
+    </div>
+  </div>
+</orxe-overlay>

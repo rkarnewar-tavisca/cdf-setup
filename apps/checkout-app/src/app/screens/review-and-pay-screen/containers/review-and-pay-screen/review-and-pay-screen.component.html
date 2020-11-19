@@ -1,0 +1,236 @@
+<div class="orxe-grid">
+  <!-- Header -Start -->
+  <div class="col-grid-full">
+    <checkout-header
+      [title]="'review-and-pay-screen.header' | orxeTranslate"
+      leftIcon="ic-arrow-left"
+      [leftIconA11y]="
+        'review-and-pay-screen.header_left_icon_label' | orxeTranslate
+      "
+      role="banner"
+      (onClickIcon)="onClickOfCheckoutHeader($event)"
+      orxe-id="review-pay-header"
+    >
+    </checkout-header>
+  </div>
+  <!-- Header -End -->
+  <div class="col-grid-full" role="main">
+    <!-- Billing Info Section - Start -->
+    <orxe-card
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'billing-Info-card'
+      "
+    >
+      <app-billing-info
+        [savedCardData]="viewModel.savedCardData"
+        [submittedBillingInfoFormData]="viewModel.formsDetail.billingInfo"
+        [errors]="viewModel.bookingError"
+        (billingInfoFormData)="onSubmitBillingInfo($event)"
+      >
+      </app-billing-info>
+      <!-- Billing Info Section - End -->
+
+      <!-- Billing Address Section - Start -->
+
+      <app-billing-address
+        *ngIf="viewModel?.cartDetails?.cartInfo"
+        [newCardFlag]="viewModel.newCardFlag"
+        [savedBillingAddressData]="viewModel.billingAddress"
+        [submittedBillingAddressFormData]="
+          viewModel.submittedMappedBillingAddress
+        "
+        [selectedCardProfile]="selectedCardProfile"
+        (onSubmitFormData)="onSubmitBillingAddress($event)"
+        (onSaveBillingAddress)="onSaveBillingAddress($event)"
+      >
+      </app-billing-address>
+    </orxe-card>
+    <!-- Billing Address Section - End -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo;
+        svg: 'billing-info-review-trip';
+        inline: false
+      "
+    >
+    <div
+      class="col-grid-full review-trip--note-container"
+      orxe-id="review-trip--note-container"
+      aria-labelledby="review-trip--note"
+    >
+      <dl class="col-grid-full review-trip--note">
+        <dd>
+          {{ "review-and-pay-screen.trip_review.price_note" | orxeTranslate }}
+        </dd>
+        <dd>
+          {{
+            "review-and-pay-screen.trip_review.merchant_note" | orxeTranslate
+          }}
+        </dd>
+      </dl>
+      <div
+        class="col-grid-full review-trip--title"
+        orxe-id="review-trip--title"
+      >
+        {{ "review-and-pay-screen.trip_review.heading" | orxeTranslate }}
+      </div>
+    </div>
+  </div>
+    <!-- Product Component section - Start -->
+
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails;
+        svg: 'review-page-product';
+        inline: false
+      "
+    >
+      <app-product-detail-placeholder
+        [productsList]="
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.productsList
+        "
+      ></app-product-detail-placeholder>
+    </div>
+    <!-- Add on Product Details - Ends -->
+
+    <!-- Add on Product Details - Start -->
+
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails;
+        svg: 'review-page-trip-protection';
+        inline: false
+      "
+    >
+      <app-addon-product-detail-placeholder
+        [addOnProductsList]="
+          viewModel?.cartDetails?.cartInfo?.cartDetails?.addOnProductsList
+        "
+      ></app-addon-product-detail-placeholder>
+    </div>
+
+    <!-- Add on Product Details - Ends -->
+
+    <!-- Contact Information Card - Starts -->
+    <!-- TODO need to add skeleton loader after figuring refresh issue
+     *skeletonUntil="
+        (travelerInfo$ | async)?.contactFormData;
+        svg: 'contact-info-card';
+        inline: false
+      " -->
+    <div
+      class="col-grid-full mb-8"
+
+    >
+      <app-contact-info
+        [contactInfo]="(travelerInfo$ | async)?.contactFormData"
+        (onSubmitted)="onContactInfoSubmitted($event)"
+        [contactInfoSaveStatus]="viewModel?.contactInfoSaveStatus"
+      ></app-contact-info>
+    </div>
+    <!-- Contact Information Card - Ends -->
+
+    <!-- payment summary component - Start -->
+    <div
+      class="col-grid-full mb-8"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'payment-summary-billing-page'
+      "
+    >
+      <orxe-payment-summary
+        [cartDetail]="viewModel?.cartDetails?.cartInfo?.cartDetails"
+        [userProfile]="userSessionDetails$ | async"
+        [flow]="clpFlow$ | async"
+        [readOnly]="true"
+        [clientPrgramFee]="viewModel?.clientProgramFee"
+      ></orxe-payment-summary>
+    </div>
+    <!-- payment summary component - End -->
+
+    <!-- Error alert when booking fails -Start -->
+    <div
+      class="col-grid-full section-booking--failure"
+      orxe-id="booking-failure--alert-container"
+      *ngIf="viewModel.bookingStatus?.status === CHECKOUT_CONST.FAILURE_STATUS"
+    >
+      <app-booking-failure-card></app-booking-failure-card>
+    </div>
+    <!-- Error alert when booking fails -End -->
+
+    <!-- Confirm Booking - Start -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'booking-confirmation-review-page'
+      "
+    >
+      <orxe-card
+        class="orxe-grid orxe-card-style mb-8 booking-confirmation-section"
+      >
+        <div class="col-grid-full">
+          <orxe-checkbox
+            orxe-id="terms-and-condition"
+            name="terms-and-condition"
+            #termsAndConditions
+          >
+            <div class="terms-and-conditions">
+              {{
+                "review-and-pay-screen.terms_and_condition_first_label"
+                  | orxeTranslate
+              }}
+              <orxe-button
+                orxe-id="terms-Condition-btn"
+                href="javascript:void(0)"
+                (click)="onClickTermsAndConditions()"
+                size="medium"
+              >
+                {{
+                  "review-and-pay-screen.terms_and_condition_link_label"
+                    | orxeTranslate
+                }}
+              </orxe-button>
+              {{
+                "review-and-pay-screen.terms_and_condition_second_label"
+                  | orxeTranslate
+              }}
+            </div>
+          </orxe-checkbox>
+        </div>
+        <div class="col-grid-full btn-confirm-booking">
+          <orxe-button
+            class="btn-primary"
+            type="primary"
+            orxe-id="review-pay-submit-btn"
+            size="large"
+            (click)="onSubmit()"
+            [disabled]="
+              !termsAndConditions.checked ||
+              !viewModel.billingInfoValidate ||
+              !viewModel.billingAddressValidate
+            "
+            >{{
+              viewModel.showLoader
+                ? ""
+                : ("review-and-pay-screen.submit_button" | orxeTranslate)
+            }}
+            <orxe-spinner-loader
+              *ngIf="viewModel.showLoader"
+              loading
+              size="regular"
+              color="neutral"
+            >
+            </orxe-spinner-loader>
+          </orxe-button>
+        </div>
+      </orxe-card>
+    </div>
+    <!-- Confirm Booking - Ends -->
+  </div>
+</div>

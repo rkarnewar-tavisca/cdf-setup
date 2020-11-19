@@ -1,0 +1,26 @@
+{
+  "userId": "631d4999-cf3c-a6cd-c265-9858e0c6c897",
+  "transitCode": "437fd575-d320-45d6-b761-e4ad439123b1",
+  "agent": {
+    "id": "1234",
+    "email": "johndoe@gmail.com",
+    "name": { "first": "John", "middle": "C", "last": "Doe", "title": "Mr" }
+  },
+  "client": {
+    "id": "5",
+    "name": "CapitalOne",
+    "programGroupId": "115",
+    "programId": "1116",
+    "programName": "VM1 program",
+    "culture": "en-US",
+    "posId": "61",
+    "cnxTenantId": "2oa4yayo000"
+  },
+  "programCurrency": { "value": 60000, "type": "Points" },
+  "profile": {
+    "id": "52lr9ouwask",
+    "basicInfo": { "name": { "first": "John", "last": "Smith" } }
+  },
+  "cartId": "18545292364397709",
+  "additionalInfo": { "Key1": "Value1", "Key2": "Value2" }
+}

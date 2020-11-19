@@ -1,0 +1,34 @@
+{
+  "hotelInfo": {
+    "title": "Cancel Hotel",
+    "description": "Need to cancel or modify your travel plans?",
+    "details": [
+      "To modify your trip, you must cancel your existing travel plans and rebook at current rates and availability.",
+      "If your travel plans contain multiple items, you will need to cancel the items one at a time.",
+      "To proceed with cancellation, select the “YES” button below.",
+      "Points will be credited back to your account for immediate use. If you experience any refund issues, please call for assistance."
+    ]
+  },
+  "rules": {
+    "title": "Rules, Policies and Cancellation",
+    "description": "Please review the complete terms and conditions, and noticies set forth below. Your use of this Web Site (“Site”) or your redemption or purchase or travel components constitutes your agreement to all such terms, conditions and noticies.",
+    "policy_cancellation": [
+      "From booking date to 2020-03-09 14:00:00, 100% penalty will be charged.In case of no show : no refund.Booking cannot be cancelled / modified on or after the check in date and time mentioned in the Hotel Confirmation Voucher.",
+      "Cancellations or modifications received at any time will be subject to program service fees, in addition to any supplier fees, when applicable.",
+      " No shows are non-refundable.",
+      "Cancellations made directly with the hotel Will forfeit any refund.",
+      "Any additional hotel charges, such as resort fees and hotel energy surcharges, and any charges for incidentals that you incur are not included in your reservation rate and must be paid directly to the hotel."
+    ],
+    "cancel_hotel": {
+      "title": "Cancel Hotel",
+      "description": "Need to cancel or modify your travel plans?",
+      "details": [
+        "To modify your trip, you must cancel your existing travel plans and rebook at current rates and availability.",
+        "If your travel plans contain multiple items, you will need to cancel the items one at a time.",
+        "To proceed with cancellation, select the “YES” button below.",
+        "Points will be credited back to your account for immediate use. If you experience any refund issues, please call for assistance."
+      ]
+    }
+  },
+  "orderStatus": "Confirmed"
+}

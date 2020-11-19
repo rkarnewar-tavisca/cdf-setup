@@ -1,0 +1,55 @@
+<orxe-overlay
+  (onClose)="close()"
+  orxe-id="redeem-points-overlay"
+  fullscreen="true"
+  [isOpen]="isOpen"
+  name="redeemPointsOverlay"
+>
+  <div
+    class="overlay-title"
+    orxe-id="redeem-points-overlay--title"
+    slot="modal-heading"
+  >
+    Payment options
+  </div>
+  <div slot="modal-content">
+    <div
+      orxe-id="redeem-points-overlay--content"
+      class="overlay-content orxe-grid"
+    >
+      <div class="redeem-section col-grid-full">
+        <label
+          orxe-id="redeem-points-overlay--content-header"
+          class="overlay-heading"
+          >How many points would you like to redeem?</label
+        >
+        <div class="sub-heading-wrapper">
+          <label
+            orxe-id="redeem-points-overlay--content-subheader"
+            class="overlay-sub-heading"
+            >You have 100,000 points</label
+          >
+        </div>
+        <div class="options-container"></div>
+      </div>
+      <div class="col-grid-half mr-15">
+        <orxe-button
+          orxe-id="redeem-points-overlay--content-cancel-reedemtion-btn"
+          size="medium"
+          kind="tertiary"
+          (click)="cancelRedemption()"
+          >Cancel</orxe-button
+        >
+      </div>
+      <div class="col-grid-half">
+        <orxe-button
+          orxe-id="redeem-points-overlay--content-apply-reedemtion-submit-btn"
+          size="medium"
+          kind="secondary"
+          (click)="redeemPoints()"
+          >Apply</orxe-button
+        >
+      </div>
+    </div>
+  </div>
+</orxe-overlay>

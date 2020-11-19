@@ -1,0 +1,10 @@
+{
+    "code": "55",
+    "message": "Cart not found",
+    "info": [
+      {
+        "code": "598",
+        "message": "Given user Id is invalid"
+      }
+    ]
+  }

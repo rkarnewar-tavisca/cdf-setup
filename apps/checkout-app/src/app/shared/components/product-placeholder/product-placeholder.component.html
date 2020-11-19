@@ -1,0 +1,76 @@
+<!-- Product Placeholder Start -->
+<!-- <ng-container *skeletonUntil="productsList; svg: 'product-detail'">
+  <orxe-card
+    *ngFor="let item of productsList; let i = index"
+    class="orxe-grid orxe-card-style mb-8"
+    role="region"
+    attr.aria-labelledby="{{ item?.productType }}{{ i + 1 }}-summary"
+  >
+    <div class="orxe-grid">
+      <div
+        class="col-grid-half product-name"
+        attr.orxe-id="{{ item?.productType }}{{ i + 1 }}-summary"
+        id="{{ item?.productType }}{{ i + 1 }}-summary"
+      >
+        {{ item?.productType | titlecase }} Product Placeholder
+      </div>
+      <div class="col-grid-half align-right">
+        <orxe-button
+          orxe-id="{{ item?.productType }}{{ i + 1 }}-remove"
+          href="javascript:void(0)"
+          size="small"
+          (click)="removeItem(item?.id)"
+          >Remove {{ item?.productType | titlecase }}</orxe-button
+        >
+      </div>
+    </div>
+  </orxe-card>
+</ng-container> -->
+<!-- Product Placeholder End -->
+
+<ng-template ngFor [ngForOf]="viewModel.productsList" let-item>
+  <orxe-card
+    class="orxe-grid orxe-card-style mb-8"
+    role="region"
+    attr.aria-labelledby="{{ item?.productType }}{{ item?.ProductId }}-summary"
+    attr.orxe-id="{{ item?.productType }}-{{ item?.id }}-placeholder"
+    *ngIf="!item?.settings; else dynamicComponentBlock"
+  >
+  <div class="orxe-grid">
+    <div class="col-grid-full txt--lg-sb-lg">
+      {{ item?.productType | titlecase }} Product Component Placeholder
+    </div>
+    <div class="align-right txt--md-sb-sm">
+      <orxe-button
+        attr.orxe-id="{{ item?.productType }}-{{ item?.id }}-remove"
+        href="javascript:void(0)"
+        size="medium"
+        (click)="removeItem(item?.id)"
+        >Remove {{ item?.productType | titlecase }}</orxe-button
+      >
+    </div>
+    </div>
+  </orxe-card>
+  <ng-template #dynamicComponentBlock>
+    <div class="mb-8 txt--lg-sb-lg">
+      <orxe-dynamic-element-loader
+        [orxe-id]="item?.settings?.resources?.tagName"
+        [module-url]="item?.settings?.resources?.modulePath"
+        [url]="item?.settings?.resources?.path"
+        [tag]="item?.settings?.resources?.tagName"
+        [props]="item | dynamicComponentProps: item?.settings?.input"
+        [events]="item?.settings?.events?.toString()"
+        (status)="status($event)"
+        (loaded)="productLoadedEvent($event, item)"
+        (onClickOfLinks)="onClickOfLinksEvent($event)"
+      >
+        <div slot="loader">
+          <app-skeleton-loader
+            [dynamicSkeleton]="'product-detail'"
+          ></app-skeleton-loader>
+        </div>
+        <div slot="error"></div>
+      </orxe-dynamic-element-loader>
+    </div>
+  </ng-template>
+</ng-template>

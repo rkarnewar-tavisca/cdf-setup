@@ -1,0 +1,55 @@
+[{
+    "id": "sddwe-123",
+    "num": "**** **** **** 1111",
+    "token": "fgfg8-kk89n-5656ki-57hyt",
+    "nameOnCard": "John Doe",
+    "issuedBy": "VI",
+    "expiry": {
+      "month": 10,
+      "year": 2022
+    },
+    "billingAddress": {
+      "id": "DummyId1",
+      "type": "Home",
+      "line1": "1010 South connexions loyalty Boulevard",
+      "line2": "South Northern Ireland MS 110001",
+      "city": {
+        "code": "AUS",
+        "name": "Austin"
+      },
+      "state": {
+        "code": "Tx",
+        "name": "Texas"
+      },
+      "countryCode": "United States",
+      "postalCode": "73301"
+    }
+  },
+  {
+    "id": "sddwe-124",
+    "num": "**** **** **** 4448",
+    "token": "fgfg8-kk89n-5656ki-58hyt",
+    "nameOnCard": "Johny",
+    "issuedBy": "CA",
+    "expiry": {
+      "month": 8,
+      "year": 2025
+    },
+    "billingAddress": {
+      "id": "DummyId1",
+      "type": "Office",
+      "line1": "Beunos Aries 1",
+      "line2": "Dummy address line 2",
+      "city": {
+        "code": "AUS",
+        "name": "Austin"
+      },
+      "state": {
+        "code": "Tx",
+        "name": "Texas"
+      },
+      "countryCode": "United States",
+      "postalCode": "73301"
+    }
+  }
+]

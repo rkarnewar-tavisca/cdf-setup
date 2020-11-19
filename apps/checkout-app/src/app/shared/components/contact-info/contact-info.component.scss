@@ -1,0 +1,13 @@
+.container__contact-info {
+  .container__contact-info__title {
+    color: var(--primary-text);
+  }
+  .container__contact-info__content {
+    color: var(--primary-text);
+  }
+
+  .container__contact-info__edit {
+    padding-top: var(--spacing-01);
+    font-size: var(--txt-md-fs);
+  }
+}

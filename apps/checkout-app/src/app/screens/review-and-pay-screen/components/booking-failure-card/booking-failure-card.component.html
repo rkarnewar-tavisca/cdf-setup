@@ -1,0 +1,25 @@
+<!-- // Error alert with description -->
+<orxe-alert
+  hide-close-icon="true"
+  hide-title-icon="true"
+  type="error"
+  show-description
+  [showAlert]="showAlert"
+  orxe-id="booking-failure--alert"
+>
+  {{ "review-and-pay-screen.booking-failure.message" | orxeTranslate }}
+  <span slot="description" class="txt--md-r-lg booking-error--content">
+    {{
+      "review-and-pay-screen.booking-failure.content-part-one" | orxeTranslate
+    }}
+    <orxe-button
+      orxe-id="booking-error--contact"
+      size="medium"
+      href="javascript:void(0)"
+      >1-800-867-5309
+    </orxe-button>
+    {{
+      "review-and-pay-screen.booking-failure.content-part-two" | orxeTranslate
+    }}
+  </span>
+</orxe-alert>

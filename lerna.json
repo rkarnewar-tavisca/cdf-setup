@@ -1,0 +1,14 @@
+{
+    "version": "independent",
+    "packages": [
+      "apps/*",
+      "components/*",
+      "tools/sdk/*"
+    ],
+    "command": {
+      "run": {
+        "npmClient": "npm"
+      }
+    }
+  }
+  

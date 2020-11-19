@@ -1,0 +1,133 @@
+<orxe-overlay
+  #editContactInfo
+  (onClose)="close()"
+  orxe-id="edit-contact-info--overlay"
+  fullscreen="true"
+  [isOpen]="isOpen"
+  name="contactInfoEditOverlay"
+>
+  <div slot="modal-heading">
+    <div
+      class="txt--lg-sb-lg container__contact-info-edit__heading"
+      orxe-id="edit-contact-info--overlay-title"
+    >
+      {{ "contact-info.overlay_heading" | orxeTranslate }}
+    </div>
+  </div>
+  <div slot="modal-content">
+    <form [formGroup]="editContactForm">
+      <div
+        class="orxe-grid container__contact-info-edit__content"
+        orxe-id="edit-contact-info--content"
+      >
+        <div class="col-grid-full">
+          <span class="txt--lg-r-lg">{{
+            "contact-info.profile_title" | orxeTranslate
+          }}</span>
+          <span class="txt--lg-sb-lg">{{ contactDetail?.profileName }}</span>
+        </div>
+        <orxe-input
+          orxe-id="contact-info--phone-input"
+          id="contact-info-phone-input"
+          label="{{ 'contact-info.phone.label' | orxeTranslate }}"
+          clear-input-icon
+          class="col-grid-full"
+          always-floated-label
+          formControlName="phone"
+          attr.error-message-invalid-data="{{
+            'contact-info.phone.validations.invalid' | orxeTranslate
+          }}"
+          attr.error-message-blank-field="{{
+            'contact-info.phone.validations.blank' | orxeTranslate
+          }}"
+          [invalid]="errorState('phone')"
+          extra-label-text="*"
+          max-length="10"
+          validation-reg-ex="^[0-9]{10,15}$"
+          (onBlur)="onBlurValidateInputs('phone')"
+          (keydown)="restrict($event)"
+          required
+        >
+        </orxe-input>
+        <orxe-input
+          orxe-id="contact-info--secondary-phone-input"
+          label="{{ 'contact-info.secondary_phone.label' | orxeTranslate }}"
+          clear-input-icon
+          class="col-grid-full"
+          always-floated-label
+          formControlName="secondaryPhone"
+          attr.error-message-invalid-data="{{
+            'contact-info.secondary_phone.validations.invalid' | orxeTranslate
+          }}"
+          attr.error-message-blank-field="{{
+            'contact-info.secondary_phone.validations.blank' | orxeTranslate
+          }}"
+          [invalid]="errorState('secondaryPhone')"
+          max-length="10"
+          validation-reg-ex="^[0-9]{10,15}$"
+          (onBlur)="onBlurValidateInputs('secondaryPhone')"
+          (keydown)="restrict($event)"
+        >
+        </orxe-input>
+        <orxe-input
+          orxe-id="contact-info--email-input"
+          label="{{ 'contact-info.email.label' | orxeTranslate }}"
+          clear-input-icon
+          class="input col-grid-full"
+          always-floated-label
+          formControlName="email"
+          attr.error-message-invalid-data="{{
+            'contact-info.email.validations.invalid' | orxeTranslate
+          }}"
+          attr.error-message-blank-field="{{
+            'contact-info.email.validations.blank' | orxeTranslate
+          }}"
+          validation-reg-ex="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$"
+          [invalid]="errorState('email')"
+          extra-label-text="*"
+          required
+          (onBlur)="onBlurValidateInputs('email')"
+          (onChange)="onChangeContactInfoInputs('email')"
+        >
+        </orxe-input>
+        <orxe-input
+          orxe-id="contact-info--verify-email-input"
+          label="{{ 'contact-info.verify_email.label' | orxeTranslate }}"
+          clear-input-icon
+          class="input col-grid-full"
+          always-floated-label
+          formControlName="verifyEmail"
+          attr.error-message-invalid-data="{{
+            'contact-info.verify_email.validations.invalid' | orxeTranslate
+          }}"
+          attr.error-message-blank-field="{{
+            'contact-info.verify_email.validations.blank' | orxeTranslate
+          }}"
+          validation-reg-ex="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$"
+          [invalid]="errorState('verifyEmail')"
+          extra-label-text="*"
+          required
+          (onBlur)="onBlurValidateInputs('verifyEmail')"
+          *ngIf="viewModel?.isNeedToVerifyEmail"
+        >
+        </orxe-input>
+        <orxe-button
+          class="col-grid-half"
+          kind="tertiary"
+          orxe-id="contact-info--edit-cancel-btn"
+          size="large"
+          (click)="cancelContactInfoEdit()"
+          >{{ "contact-info.button_label.cancel" | orxeTranslate }}</orxe-button
+        >
+        <orxe-button
+          class="col-grid-half"
+          kind="secondary"
+          orxe-id="contact-info--submit-btn"
+          size="large"
+          (click)="saveChangesContactInfoEdit()"
+          >{{ "contact-info.button_label.save" | orxeTranslate }}</orxe-button
+        >
+      </div>
+    </form>
+  </div>
+</orxe-overlay>

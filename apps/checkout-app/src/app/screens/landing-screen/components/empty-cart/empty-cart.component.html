@@ -1,0 +1,170 @@
+<!-- Empty cart container starts here -->
+<div
+  orxe-id="empty-card"
+  class="container-empty-cart orxe-grid"
+  screenFullHeight
+>
+  <h1
+    orxe-id="empty-card--heading"
+    class="subheading-font-style col-grid-full text-primary"
+  >
+    {{ "empty-cart.heading" | orxeTranslate }}
+  </h1>
+  <p
+    orxe-id="empty-card--subheading"
+    class="container__subheading col-grid-full text-primary"
+  >
+    {{ "empty-cart.sub_heading" | orxeTranslate }}
+  </p>
+
+  <div
+    orxe-id="empty-card--product"
+    class="container__products col-grid-full orxe-grid"
+  >
+    <!-- Container for each product just like button starts here -->
+    <div
+      attr.orxe-id="empty-card--{{ product?.name }}-navigation-block-"
+      class="product__navigation col-grid-half"
+      [ngClass]="{ 'product--active': product.name === activeTab }"
+      *ngFor="let product of productList"
+      (click)="onClickProduct(product)"
+      tabindex="0"
+    >
+      <div class="orxe-grid product-content text-link">
+        <orxe-icon
+          class="col-grid-full"
+          [icon]="product.icon"
+          size="normal"
+        ></orxe-icon>
+        <div
+          attr.orxe-id="empty-card--{{
+            product?.name
+          }}-navigation-block-product"
+          class="col-grid-full"
+        >
+          {{ product?.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FOR NOW - Add to cart support from UI side - STARTS -->
+<orxe-card
+  class="container__add-to-cart__section orxe-grid orxe-card-style"
+  role="region"
+  aria-labelledby="add-to-cart-heading"
+  orxe-id="add-to-cart-section"
+>
+  <div
+    class="col-grid-full subheading-font-style"
+    orxe-id="add-to-cart-heading"
+    id="add-to-cart-heading"
+  >
+    Add to cart
+  </div>
+  <form [formGroup]="userControl">
+    <div class="col-grid-full">
+      <orxe-dropdown
+        orxe-id="add-to-cart-flow-type"
+        placeholder="Select App flow"
+        label-value="Select App flow"
+        [items]="viewModel.appFlow"
+        formControlName="selectedflowType"
+        (onChange)="updateSession()"
+      >
+      </orxe-dropdown>
+    </div>
+    <div class="col-grid-full">
+      <orxe-dropdown
+        orxe-id="add-to-cart-product-type"
+        placeholder="Select Product Type"
+        label-value="Select Product Type"
+        [items]="viewModel.crossSaleProductList"
+        formControlName="selectedProductType"
+      >
+      </orxe-dropdown>
+    </div>
+    <div class="col-grid-half">
+      <orxe-dropdown
+        orxe-id="add-to-cart-product-type"
+        placeholder="Select Payment Option"
+        label-value="Select Payment Option"
+        [items]="viewModel.rewardIdOptions"
+        formControlName="selectedPaymentOption"
+      >
+      </orxe-dropdown>
+    </div>
+    <div class="col-grid-half">
+      <orxe-input
+        orxe-id="add-to-cart-points"
+        always-floated-label
+        placeholder="Points"
+        label="Points"
+        clear-input-icon
+        formControlName="points"
+        type="number"
+      >
+      </orxe-input>
+    </div>
+    <div class="col-grid-half">
+      <orxe-input
+        orxe-id="add-to-cart-amount"
+        always-floated-label
+        placeholder="Amount"
+        label="Amount"
+        clear-input-icon
+        formControlName="amount"
+        type="number"
+      >
+      </orxe-input>
+    </div>
+    <div class="col-grid-full">
+      <orxe-button
+        orxe-id="add-to-cart-add-button"
+        id="addToCartBtn"
+        size="medium"
+        (click)="addToCart()"
+        [disabled]="viewModel.addToCartBtn"
+        >Add
+        <orxe-spinner-loader
+          *ngIf="viewModel.cartInProgress"
+          loading
+          size="regular"
+          color="secondary"
+        >
+        </orxe-spinner-loader>
+      </orxe-button>
+    </div>
+    <ng-template [ngIf]="viewModel?.productResponse?.length > 0">
+      <div class="col-grid-full subheading-font-style">
+        Items Available in cart
+      </div>
+      <div
+        class="col-grid-full"
+        *ngFor="let item of viewModel?.productResponse"
+      >
+        {{ item?.productType | titlecase }}
+      </div>
+    </ng-template>
+    <div class="col-grid-half">
+      <orxe-dropdown
+        orxe-id="add-to-cart-culture"
+        placeholder="Select Culture"
+        label-value="Select Culture"
+        [items]="viewModel.cultureList"
+        formControlName="selectedCulture"
+      >
+      </orxe-dropdown>
+    </div>
+    <div class="col-grid-full">
+      <orxe-button
+        orxe-id="add-to-cart-view-cart"
+        (click)="viewCart()"
+        kind="secondary"
+        [disabled]="!viewModel.cartResponse"
+        >View Cart</orxe-button
+      >
+    </div>
+  </form>
+</orxe-card>
+<!-- FOR NOW - Add to cart support from UI side - ENDS -->

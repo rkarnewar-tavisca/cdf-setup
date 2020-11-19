@@ -1,0 +1,30 @@
+<div class="orxe-grid col-grid-full mb-16">
+  <span class="col-grid-full txt--md-r-sm mb-8 billing__text--label"
+        orxe-id="billing-info--cardholder-name-label">
+        {{ "review-and-pay-screen.billing_info.label.cardholder_name" | orxeTranslate }}
+  </span>
+  <span orxe-id="billing-info--cardholder-name-value"
+        class="col-grid-full txt--md-sb-sm billing__text--value">
+        {{ billingFormValues?.cardHolderName}}
+  </span>
+</div>
+<div class="orxe-grid col-grid-full mb-16">
+  <span class="col-grid-full txt--md-r-sm mb-8 billing__text--label"
+        orxe-id="billing-info--cardholder-name-label">
+        {{ "review-and-pay-screen.billing_info.label.card_number" | orxeTranslate }}
+      </span>
+  <span orxe-id="billing-info--cardholder-name-value"
+        class="col-grid-full txt--md-sb-sm billing__text--value">
+        {{billingFormValues?.number}}
+  </span>
+</div>
+<div class="orxe-grid col-grid-full">
+  <span class="col-grid-full txt--md-r-sm mb-8 billing__text--label"
+        orxe-id="billing-info--cardholder-name-label">
+        {{ "review-and-pay-screen.billing_info.label.expiration_date_title" | orxeTranslate }}
+  </span>
+  <span orxe-id="billing-info--cardholder-name-value"
+        class="col-grid-full txt--md-sb-sm billing__text--value">
+        {{billingFormValues?.expirationDate?.month}}/{{billingFormValues?.expirationDate?.year}}
+  </span>
+</div>

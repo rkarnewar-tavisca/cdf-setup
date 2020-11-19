@@ -1,0 +1,45 @@
+<!-- <div
+  attr.orxe-id="{{ item?.productType }}-detail-section"
+  class="col-grid-full py-16 border-bottom"
+  *ngFor="let item of productsList"
+>
+  {{ item?.productType | titlecase }} product details component placeholder
+</div> -->
+
+<ng-template ngFor [ngForOf]="viewModel.productsList" let-item>
+  <orxe-card
+    attr.orxe-id="{{ item?.productType }}-detail-section"
+    class="orxe-grid orxe-card-style mb-8"
+    role="region"
+    attr.aria-labelledby="{{ item?.productType }}{{
+      item?.productId
+    }}-traveler-info"
+    *ngIf="!item?.settings; else dynamicComponentBlock"
+  >
+    <div class="col-grid-full txt--lg-sb-lg review-product--placeholder">
+      {{ item?.productType | titlecase }} product details component placeholder
+    </div>
+  </orxe-card>
+
+  <ng-template #dynamicComponentBlock>
+    <!-- TO DO : Need to remove orxe-card when this components comes from their team -->
+    <div
+      class="col-grid-full mb-8"
+      attr.orxe-id="{{ item?.productType }}-detail-section"
+    >
+      <orxe-dynamic-element-loader
+        [orxe-id]="item?.settings?.resources?.tagName"
+        [module-url]="item?.settings?.resources?.modulePath"
+        [url]="item?.settings?.resources?.path"
+        [tag]="item?.settings?.resources?.tagName"
+        [props]="item | dynamicComponentProps: item?.settings?.input"
+        [events]="item?.settings?.events?.toString()"
+        (status)="status($event)"
+        (loaded)="productLoadedEvent($event, item)"
+      >
+        <div slot="loader"></div>
+        <div slot="error"></div>
+      </orxe-dynamic-element-loader>
+    </div>
+  </ng-template>
+</ng-template>

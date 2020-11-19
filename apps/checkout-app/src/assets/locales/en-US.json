@@ -1,0 +1,1242 @@
+{
+  "empty-cart": {
+    "heading": {
+      "value": "Your cart is empty!",
+      "desc": "Empty Cart Heading"
+    },
+    "sub_heading": {
+      "value": "Continue shopping to add items to your cart",
+      "desc": "Cross sale note"
+    }
+  },
+  "landing-screen": {
+    "header_left_icon": {
+      "value": "Go to back page icon",
+      "desc": "Go back header icon"
+    },
+    "header_title": {
+      "value": "Trip Cart",
+      "desc": "Checkout Page Header"
+    },
+    "traveler_info_btn": {
+      "value": "Enter traveler information",
+      "desc": "Button which redirect to Traveler Information Page"
+    },
+    "client_program_fee": {
+      "value": "Client program fee",
+      "desc": "Heading for client program fee card"
+    },
+    "client_program_fee_note": {
+      "value": "Non-refundable",
+      "desc": "Heading for client program fee card"
+    }
+  },
+  "payment-summary": {
+    "heading": {
+      "value": "Payment Summary",
+      "desc": "Payment Summary section heading"
+    },
+    "edit_payment_btn": {
+      "value": "Edit payment",
+      "desc": "Edit Payment link button"
+    },
+    "order_fee_label": {
+      "value": "Client program fee",
+      "desc": "Client program fee label"
+    },
+    "multi_insurance": {
+      "value": "Insurance",
+      "desc": "Insurance Section"
+    },
+    "add_promo_btn": {
+      "value": "Add a promo code",
+      "desc": "Add a promo code link button"
+    },
+    "you_will_pay_label": {
+      "value": "You will pay",
+      "desc": "You will pay label"
+    },
+    "remaining_points": {
+      "value": "Remaining points",
+      "desc": "Remaining points label"
+    },
+    "edit_cart_level_points_btn": {
+      "value": "Want to use less points",
+      "desc": "Want to use less points link button"
+    },
+    "points_label": {
+      "value": "points",
+      "desc": "Points label"
+    },
+    "points_redeemed": {
+      "value": "Points redeemed",
+      "desc": "points redeemed"
+    },
+    "points_to_redeem": {
+      "value": "Points to redeem",
+      "desc": "points to redeem"
+    },
+    "amount_billed": {
+      "value": "Billed to card",
+      "desc": "amount billed"
+    },
+    "card_ending": {
+      "value": "ending in",
+      "desc": "card ending"
+    },
+    "redeem_points_label": {
+      "value": "Redeem points",
+      "desc": "Modal title"
+    },
+    "redeem_points_question": {
+      "value": "How many points would you like to redeem?",
+      "desc": "redeem points question"
+    },
+    "choose_points_to_apply": {
+      "value": "Choose how many points to apply and pay the remaining amount with your credit card",
+      "desc": "choose points to redeem"
+    },
+    "trip_total": {
+      "value": "Trip total",
+      "desc": "trip total"
+    },
+    "use_my_points": {
+      "value": "Use my points",
+      "desc": "use points"
+    },
+    "keep_my_points": {
+      "value": "Keep my points and pay",
+      "desc": "keep points"
+    },
+    "points_min_error": {
+      "value": "To pay with points, you must use a minimum of ",
+      "desc": "entered less than cart min points"
+    },
+    "clp_temp_error": {
+      "value": "Incorrect input. Please try again.",
+      "desc": "Temp error message"
+    },
+    "points_max_error": {
+      "value": "You entered more points than your trip total. Please enter a valid number of points.",
+      "desc": "entered more than cart points"
+    },
+    "points_available_error": {
+      "value": "You entered more points than you have available. Please enter a valid number of points.",
+      "desc": "entered more than available points"
+    },
+    "available_points": {
+      "value": "Available points",
+      "desc": "available points"
+    },
+    "balance_due": {
+      "value": "Amount on card",
+      "desc": "Amount getting charged on the card"
+    },
+    "fee_includes": {
+      "value": "includes",
+      "desc": "CLP includes label"
+    },
+    "fee_label": {
+      "value": "fee",
+      "desc": "CLP fee label"
+    },
+    "remain_point_balance": {
+      "value": "Remaining points balance",
+      "desc": "remaining points balance"
+    },
+    "apply_button": {
+      "value": "Apply",
+      "desc": "apply button"
+    },
+    "cancel_button": {
+      "value": "Cancel",
+      "desc": "cancel button"
+    },
+    "try_changing_points": {
+      "value": "We're sorry! Something happened on our end while trying to save your changes. Please try changing your points again.",
+      "desc": "Error message on update points - service failure"
+    }
+  },
+  "review-and-pay-screen": {
+    "header": {
+      "value": "Payment & review",
+      "desc": "Payment & review header title"
+    },
+    "header_left_icon_label": {
+      "value": "Header left side back icon, go back to previous page",
+      "desc": "Review and Pay header left icon label"
+    },
+    "submit_button": {
+      "value": "Complete booking",
+      "desc": "Review and pay page submit button to complete booking"
+    },
+    "terms_and_condition_first_label": {
+      "value": " By checking this box and clicking Complete Booking, 1) I acknowledge that I have read and hereby agree to the",
+      "desc": "Review and pay page terms and condition label one"
+    },
+    "terms_and_condition_second_label": {
+      "value": "of this transaction, and 2) I confirm the names above exactly match government-issued IDs.",
+      "desc": "Review and pay page terms and condition label two"
+    },
+    "terms_and_condition_link_label": {
+      "value": "Terms and Conditions",
+      "desc": "Terms and conditions link label"
+    },
+    "save_for_future_label": {
+      "value": "Save this card for future use",
+      "desc": "Save your card for future use label"
+    },
+    "save_for_future_extra_label": {
+      "value": "By checking this box I authorize cxLoyalty to save the card information that I have provided above for future purchases in accordance with the Travel Disclosures. (With each purchase, I must provide the 3-digit security code that appears on the card.)",
+      "desc": "Save your card for future use extra label"
+    },
+    "card_number_api_error": {
+      "value": "Something went wrong while processing your card.",
+      "desc": "card number validation api error"
+    },
+    "billing_info": {
+      "heading": {
+        "value": "Payment information",
+        "desc": "Billing information section heading"
+      },
+      "subheading": {
+        "value": "Required fields",
+        "desc": "Billing information section subheading for required fields"
+      },
+      "reward_card_note": {
+        "value": "Remember to use your rewards card to continue to earn points",
+        "desc": "Billing Information section reward card note"
+      },
+      "cvv_info_back": {
+        "value": "For Visa, MasterCard and Discover (left), the 3 digits on the back of your card",
+        "desc": "Billing information cvv more information back detail"
+      },
+      "cvv_info_front": {
+        "value": "For American Express (right), the 4 digits on front of the card",
+        "desc": "Billing information cvv more information front detail"
+      },
+      "label": {
+        "saved_card": {
+          "value": "Payment method",
+          "desc": "Payment method dropdown label"
+        },
+        "cardholder_name": {
+          "value": "Cardholder name",
+          "desc": "Cardholder name input label"
+        },
+        "card_number": {
+          "value": "Card number",
+          "desc": "Card number input label"
+        },
+        "security_code_input": {
+          "value": "Security code",
+          "desc": "Security code input label"
+        },
+        "expiration_date_title": {
+          "value": "Expiration date",
+          "desc": "Expiration date selector tilte"
+        },
+        "expiration_date": {
+          "value": "Month-Year",
+          "desc": "This represents the month and year of Expiration date"
+        }
+      },
+      "placeholder": {
+        "saved_card": {
+          "value": "New card",
+          "desc": "Payment method dropdown placeholder"
+        },
+        "expiration_date": {
+          "value": "MM-YYYY",
+          "desc": "This represents the month and year of Expiration date"
+        }
+      },
+      "validations_invalid": {
+        "cardholder_name": {
+          "value": "Invalid cardholder name",
+          "desc": "This represents cardholder field invalid input message"
+        },
+        "card_number": {
+          "value": "Invalid card number",
+          "desc": "This represents card number field invalid input message"
+        },
+        "cvv": {
+          "value": "Invalid CVV",
+          "desc": "This represents CVV field invalid input message"
+        },
+        "expirationDate": {
+          "value": "You entered an expiration date that has already passed. Please re-enter all card information.",
+          "desc": "This represents expirationDate field invalid input message"
+        }
+      },
+      "validations_blank": {
+        "cardholder_name": {
+          "value": "Please enter a cardholder name",
+          "desc": "This represents cardholder field blank input message"
+        },
+        "card_number": {
+          "value": "Please enter a card number",
+          "desc": "This represents card number field blank input message"
+        },
+        "cvv": {
+          "value": "Please enter CVV",
+          "desc": "This represents CVV field blank input message"
+        }
+      },
+      "cc_component_defaults": {
+        "label": {
+          "value": "Card number",
+          "desc": "Card number component label"
+        },
+        "placeholder": {
+          "value": "Card number",
+          "desc": "Card number component label"
+        },
+        "validations_blank": {
+          "value": "Please provide a card number",
+          "desc": "Card number component blank field error message"
+        },
+        "validations_invalid": {
+          "value": "Invalid card number",
+          "desc": "Card number component invalid field error message"
+        },
+        "validations_forbid_card": {
+          "value": "Invalid card number",
+          "desc": "Card number component forbid case error message"
+        },
+        "extraLabelText": {
+          "value": "*",
+          "desc": "Extra label text for component to denote required filed"
+        }
+      }
+    },
+    "billing_address": {
+      "heading": {
+        "value": "Billing address",
+        "desc": "Billing address section heading"
+      },
+      "subheading": {
+        "value": "Required fields",
+        "desc": "Billing address section subheading for required fields"
+      },
+      "label": {
+        "select_address": {
+          "value": "Use address from profile",
+          "desc": "Use address from profile dropdown label"
+        },
+        "country": {
+          "value": "Country",
+          "desc": "Select country  dropdown label"
+        },
+        "us_military": {
+          "value": "US military address",
+          "desc": "Is US military address checkbox label"
+        },
+        "address_line_1": {
+          "value": "Address line 1",
+          "desc": "Address line 1 input label"
+        },
+        "address_line_2": {
+          "value": "Address line 2",
+          "desc": "Address line 2 input label"
+        },
+        "city": {
+          "value": "City",
+          "desc": "City input label"
+        },
+        "state": {
+          "value": "State",
+          "desc": "Select state  dropdown label"
+        },
+        "zip_code": {
+          "value": "Zip code",
+          "desc": "Zip Code input label"
+        },
+        "post_code": {
+          "value": "Post code",
+          "desc": "Post Code input label"
+        },
+        "postal_code": {
+          "value": "Postal code",
+          "desc": "Postal Code input label"
+        },
+        "post_office": {
+          "value": "Post office",
+          "desc": "This represents the label of post office selector dropdown"
+        }
+      },
+      "placeholder": {
+        "select_address": {
+          "value": "Choose address",
+          "desc": "Select address from profile dropdown placeholder"
+        },
+        "country": {
+          "value": "Choose country",
+          "desc": "Select country dropdown placeholder"
+        },
+        "state": {
+          "value": "Choose state",
+          "desc": "Select state dropdown placeholder"
+        },
+        "post_office": {
+          "value": "Select post office",
+          "desc": "This represents the placeholder text of post office selector dropdown"
+        }
+      },
+      "action": {
+        "edit_address": {
+          "value": "Edit",
+          "desc": "Edit button label for billing address edit"
+        }
+      },
+      "validations_invalid": {
+        "address_line": {
+          "value": "Invalid Address Line",
+          "desc": "This represents Address Line field invalid input message"
+        },
+        "city": {
+          "value": "Invalid city",
+          "desc": "This represents city field invalid input message"
+        },
+        "zip_code": {
+          "value": "Invalid zip code",
+          "desc": "This represents Zip code field invalid input message"
+        },
+        "postal_code": {
+          "value": "Invalid postal code",
+          "desc": "This represents postal code field invalid input message"
+        },
+        "post_code": {
+          "value": "Invalid post code",
+          "desc": "This represents post code field invalid input message"
+        },
+        "state": {
+          "value": "Invalid State",
+          "desc": "This represents State field invalid input message"
+        }
+      },
+      "validations_blank": {
+        "address_line": {
+          "value": "Please enter your address",
+          "desc": "This represents Address Line field required input message"
+        },
+        "country": {
+          "value": "Please select a country",
+          "desc": "This represents country field required input message"
+        },
+        "city": {
+          "value": "Please enter a city",
+          "desc": "This represents city field required input message"
+        },
+        "zip_code": {
+          "value": "Please enter a zip code",
+          "desc": "This represents Zip code field required input message"
+        },
+        "postal_code": {
+          "value": "Please enter a postal code",
+          "desc": "This represents postal code field required input message"
+        },
+        "post_code": {
+          "value": "Please enter a post code",
+          "desc": "This represents post code field required input message"
+        },
+        "state": {
+          "value": "Please select a state",
+          "desc": "This represents State field required input message"
+        },
+        "postOffice": {
+          "value": "Please select a post office",
+          "desc": "This represents Post Office field required input message"
+        }
+      }
+    },
+    "trip_review": {
+      "heading": {
+        "value": "Review your trip",
+        "desc": "Trip Review section heading"
+      },
+      "price_note": {
+        "value": "All prices are quoted in USD.",
+        "desc": "Trip Review section price note message"
+      },
+      "merchant_note": {
+        "value": "The merchant is located in the United States.",
+        "desc": "Trip Review section merchant note message."
+      },
+      "contact_info_heading": {
+        "value": "Contact information",
+        "desc": "Contact information section heading"
+      },
+      "addon_product_title": {
+        "value": "Insurance",
+        "desc": "Insurance section heading"
+      },
+      "you_are_paying": {
+        "value": "You are paying",
+        "desc": "You are paying section heading"
+      },
+      "fees": {
+        "value": "Includes $20 fees per person",
+        "desc": "Includes $20 fees per person label"
+      },
+      "remain_point_balance_label": {
+        "value": "Remaining point balance",
+        "desc": "Remaining point balance label"
+      },
+      "points_label": {
+        "value": "points",
+        "desc": "point balance label"
+      },
+      "merchant_extra_info": {
+        "value": "The merchant is located in the United States. All prices are quoted in USD.",
+        "desc": "The merchant is located in the United States. All prices are quoted in USD."
+      }
+    },
+    "saved_card_options": {
+      "new": {
+        "value": "Add New Card",
+        "desc": "This is one of the saved card option from payment method dropdown"
+      }
+    },
+    "saved_address_options": {
+      "new": {
+        "value": "New",
+        "desc": "This is one of the saved address option from address dropdown"
+      }
+    },
+    "post_office": {
+      "apo": {
+        "value": "Army Post Office (APO)",
+        "desc": "This represents post office type from post office dropdown"
+      },
+      "fpo": {
+        "value": "Fleet Post Office (FPO)",
+        "desc": "This represents post office type from post office dropdown"
+      }
+    },
+    "state_options": {
+      "ae": {
+        "value": "Armed Forces Europe (AE)",
+        "desc": "This is one of the state option from state dropdown"
+      },
+      "ap": {
+        "value": "Armed Forces Pacific (AP)",
+        "desc": "This is one of the state option from state dropdown"
+      },
+      "aa": {
+        "value": "Armed Forces Americas (AA)",
+        "desc": "This is one of the state option from state dropdown"
+      }
+    },
+    "overlay": {
+      "edit-billing-address": {
+        "overlay-heading": {
+          "value": "Edit billing address",
+          "desc": "This represents the heading of edit billing address overlay"
+        },
+        "cancel-btn": {
+          "value": "Cancel",
+          "desc": "This represents the name of cancel button"
+        },
+        "save-btn": {
+          "value": "Save changes",
+          "desc": "This represents the name of save button"
+        }
+      }
+    },
+    "booking-failure": {
+      "message": {
+        "value": "Booking failed!",
+        "desc": "Complete failure error message"
+      },
+      "content-part-one": {
+        "value": "We are sorry. There’s been a problem with your booking. Please contact us at",
+        "desc": "Error content message text part before contact"
+      },
+      "content-part-two": {
+        "value": "so we can help you resolve this issue.",
+        "desc": "Error content message text part after contact"
+      }
+    }
+  },
+  "traveler-info": {
+    "header_left_icon": {
+      "value": "Go to back page icon",
+      "desc": "Go back header icon"
+    },
+    "header_title": {
+      "value": "Traveler Information",
+      "desc": "Traveler information Page Header"
+    },
+    "review_pay_btn": {
+      "value": "Payments & review",
+      "desc": "Button which redirect to Traveler Information Page"
+    },
+    "traveler_contact_form": {
+      "heading": {
+        "value": "Contact Information",
+        "desc": "contact info section heading"
+      },
+      "sub-heading": {
+        "value": "Where should we send you confirmation email and any travel notifications?",
+        "desc": "contact info section sub heading"
+      },
+      "profile": {
+        "label": {
+          "value": "Traveler profile",
+          "desc": "This represents the label of traveller profile selection dropdown"
+        },
+        "placeholder": {
+          "value": "Select Profile",
+          "desc": "This represents placeholder for profile dropdown"
+        }
+      },
+      "phone": {
+        "label": {
+          "value": "Phone number*",
+          "desc": "This represents the phone field text"
+        },
+        "placeholder": {
+          "value": "Phone number",
+          "desc": "This represents placeholder for phone input box"
+        },
+        "validations": {
+          "invalid": {
+            "value": "Please enter valid phone number",
+            "desc": "This represents validation message for phone input"
+          },
+          "blank": {
+            "value": "Please provide your phone number",
+            "desc": "This represents validation message for phone input"
+          }
+        }
+      },
+      "secondaryPhone": {
+        "label": {
+          "value": "Secondary phone number",
+          "desc": "This represents the secondary phone field text"
+        },
+        "placeholder": {
+          "value": "Secondary phone number",
+          "desc": "This represents placeholder for secondary phone input box"
+        },
+        "validations": {
+          "invalid": {
+            "value": "Please enter valid phone number",
+            "desc": "This represents validation message for secondary phone input"
+          }
+        }
+      },
+      "emailId": {
+        "label": {
+          "value": "Email*",
+          "desc": "This represents the email id field text"
+        },
+        "placeholder": {
+          "value": "Email address",
+          "desc": "This represents placeholder for email input box"
+        },
+        "validations": {
+          "invalid": {
+            "value": "Please enter valid email address",
+            "desc": "This represents validation message for email input"
+          },
+          "blank": {
+            "value": "Please provide your email address",
+            "desc": "This represents validation message for blank email input"
+          }
+        }
+      },
+      "verifyEmailId": {
+        "label": {
+          "value": "Verify Email*",
+          "desc": "This represents the validate email id field text"
+        },
+        "placeholder": {
+          "value": "Re-enter email address",
+          "desc": "This represents placeholder for verify email address input box"
+        },
+        "validations": {
+          "invalid": {
+            "value": "Email addresses do not match",
+            "desc": "This represents validation message for retype email input"
+          },
+          "blank": {
+            "value": "Please re-enter the above email address",
+            "desc": "This represents validation message for empty retype email input"
+          }
+        }
+      },
+      "contact_info": {
+        "phone_number": {
+          "value": "Phone number",
+          "desc": "This represents the phone number label"
+        },
+        "edit_btn": {
+          "value": "Edit",
+          "desc": "This represent button name to edit contact information"
+        },
+        "secondary_phone_number": {
+          "value": "Secondary phone number",
+          "desc": "This represents the secondary phone number label"
+        },
+        "email": {
+          "value": "Email",
+          "desc": "This represents the email label"
+        }
+      }
+    },
+    "validations": {
+      "blank": {
+        "value": "This field is required",
+        "desc": "This represents blank field error message"
+      },
+      "invalid": {
+        "value": "Invalid value",
+        "desc": "This represents error message for invalid input"
+      }
+    }
+  },
+  "confirmation-page": {
+    "non_refund": {
+      "value": "Non-refundable",
+      "desc": "Non-refundable"
+    },
+    "title": {
+      "value": "Confirmation",
+      "desc": "Confirmation page title"
+    },
+    "leftIconA11y": {
+      "value": "go to back page icon",
+      "desc": "go to back page icon"
+    },
+    "timeline": {
+      "value": "Booking is in progress",
+      "desc": "Booking status"
+    },
+    "timeline_orderid": {
+      "value": "Trip ID:",
+      "desc": "Trip id"
+    },
+    "timeline_confirmed": {
+      "value": "Confirmed",
+      "desc": "confirmed label"
+    },
+    "active_timeline_title": {
+      "value": "Booking is in progress",
+      "desc": "Booking active state"
+    },
+    "timeline_text": {
+      "value": "Your booking is being finalized! You will receive a confirmation email once your ticket is issued",
+      "desc": "timeline text"
+    },
+    "traveler_info_heading": {
+      "value": "Order Summary",
+      "desc": "title"
+    },
+    "traveler_info_subheading": {
+      "value": "Contact Information",
+      "desc": "contact information"
+    },
+    "traveler_info_edit_link": {
+      "value": "Edit",
+      "desc": "Edit link"
+    },
+    "partial_confirmed": {
+      "value": "Partially Confirmed",
+      "desc": "Partially Confirmed"
+    },
+    "failed": {
+      "value": "Failed",
+      "desc": "Failed"
+    },
+    "email_check_notice": {
+      "value": "You should receive a confirmation email very soon. Please be sure to check your spam and junk mail folder, should you fail to receive an email confirmation.",
+      "desc": "email notice"
+    },
+    "disclaimer": {
+      "value": "Carefully review this itinerary for any error or discrepancies. Any fees incurred due to reissue of this itinerary will be the responsibility of the traveler. All voluntary charges at any time are subject to airline, agency and program rules and penalties. Make sure to print this itinerary for your records.",
+      "desc": "disclaimer"
+    },
+    "success_description_text": {
+      "value": "Your order has been processed.",
+      "desc": "Your order has been processed."
+    },
+    "failure_description_text": {
+      "value": "Your order has failed.",
+      "desc": "Your order has failed."
+    },
+    "partial_failure_description_text": {
+      "value": "Your order has been partially processed.",
+      "desc": "partially processed."
+    },
+    "success_text": {
+      "value": "Reservation confirmed",
+      "desc": "Your booking is Confirmed!"
+    },
+    "failure_text": {
+      "value": "Your booking Failed!",
+      "desc": "Your booking Failed!"
+    },
+    "partial_failure_text": {
+      "value": "We were unable to book part of your itinerary",
+      "desc": "Partially Confirmed!"
+    },
+    "partial_failure_details": {
+      "value": "See details below.",
+      "desc": "Partially Confirmed case See details below."
+    },
+    "share_itinerary_button_text": {
+      "value": "Share itinerary",
+      "desc": "Share this itinerary link label"
+    },
+    "my_trips_button_text": {
+      "value": "My Trips",
+      "desc": "My trips page"
+    },
+    "view_booking_text": {
+      "value": "To manage this reservation, go to",
+      "desc": "You can view this booking in"
+    },
+    "success_message": {
+      "value": "Your booking is being finalized. You will receive a confirmation email once your ticket is issued.",
+      "desc": "Your booking is being finalized. You will receive a confirmation email once your ticket is issued."
+    },
+    "booking-support-footer": {
+      "title": {
+        "value": "All prices are in USD.",
+        "desc": "The title of footer"
+      },
+      "terms_and_condition_first_label": {
+        "value": "Charges will show with the merchant name of the airline, hotel chain, car rental company, and/or travel insurance agency, each a ‘Travel Supplier’ on your card billing statement. Remaining balance not charged by the Travel Supplier will also appear on your card billing statements as Rewards Travel. If applicable, any fees or redemption-associated charges will also appear on your card billing statement as Rewards Travel. Please take a moment to review our ",
+        "desc": "terms and condition label one"
+      },
+      "terms_and_condition_link_label": {
+        "value": "Terms and Conditions",
+        "desc": "Terms and conditions link label"
+      },
+      "terms_and_condition_second_label": {
+        "value": ".",
+        "desc": "Terms and conditions secod label"
+      },
+      "need_assistance_label": {
+        "value": "If you have questions or need assistance, please call:",
+        "desc": "Need assistance label"
+      },
+      "customer_service_title": {
+        "value": "Customer Service",
+        "desc": "Customer service title"
+      },
+      "have_trip_number_label": {
+        "value": "Have your Trip ID Number ({{tripId}}) ready.",
+        "desc": "Customer service title"
+      }
+    }
+  },
+  "validations": {
+    "blank": {
+      "value": "This field is required",
+      "desc": "This represents blank field error message"
+    },
+    "invalid": {
+      "value": "Invalid value",
+      "desc": "This represents error message for invalid input"
+    }
+  },
+  "orxe-date-selector": {
+    "error_message": {
+      "value": "Please enter a ",
+      "desc": "required error message for date-selector"
+    }
+  },
+  "promo-code-overlay": {
+    "apply_promo_code": {
+      "value": "Apply a promo code",
+      "desc": "This represents a link to close the promo code overlay"
+    },
+    "promo_code": {
+      "value": "Promo code",
+      "desc": "This represent promo code input field"
+    },
+    "invalid_code": {
+      "value": "The claim code you entered is invalid",
+      "desc": "This represents invalid promo code error"
+    },
+    "cancel_button": {
+      "value": "Cancel",
+      "desc": "This represents text on cancel button"
+    },
+    "apply_button": {
+      "value": "Apply",
+      "desc": "This represents text on Apply button"
+    }
+  },
+  "promo-code": {
+    "remove_link": {
+      "value": "Remove",
+      "desc": "This represent remove link to remove promo code"
+    },
+    "retry_link": {
+      "value": "Retry",
+      "desc": "This represent link for retry promo code"
+    },
+    "promo-code-apply": {
+      "value": "Promo code applied!",
+      "desc": "This represent success message"
+    },
+    "failed-to-apply": {
+      "value": "Failed to apply promo code",
+      "desc": "This represent internal server error message while applying promo code"
+    },
+    "failed-to-remove": {
+      "value": "Failed to remove promo code",
+      "desc": "This represents service failure while removing promo code"
+    },
+    "promo-code-discount": {
+      "value": "Promo code discount",
+      "desc": "promo discount"
+    }
+  },
+  "share-itinerary": {
+    "overlay_heading": {
+      "value": "Share the Itinerary",
+      "desc": "This represents the heading of share itinerary overlays"
+    },
+    "overlay_subheading": {
+      "value": "Send a copy of your confirmation email to:",
+      "desc": "This represents the subheading of share itinerary overlays"
+    },
+    "add-email-link": {
+      "value": "Add another email",
+      "desc": "This represents the name of add another email link"
+    },
+    "cancel-btn": {
+      "value": "Cancel",
+      "desc": "This represents the name of cancel button"
+    },
+    "share-btn": {
+      "value": "Share",
+      "desc": "This represents the name of share button"
+    },
+    "email-input": {
+      "label": {
+        "value": "Email",
+        "desc": "This represents the label for email input"
+      },
+      "invalid-error": {
+        "value": "Please Enter valid email address",
+        "desc": "This represents the error message for invalid input"
+      }
+    }
+  },
+  "contact-info": {
+    "heading": {
+      "value": "Contact information",
+      "desc": "Contact information section heading"
+    },
+    "edit_link_label": {
+      "value": "Edit",
+      "desc": "Edit contact information link label"
+    },
+    "overlay_heading": {
+      "value": "Edit contact information",
+      "desc": "Edit contact information overlay heading"
+    },
+    "profile_title": {
+      "value": "Traveler profile: ",
+      "desc": "Edit contact information overlay profile title"
+    },
+    "phone": {
+      "label": {
+        "value": "Phone number",
+        "desc": "This represents the phone field text"
+      },
+      "validations": {
+        "invalid": {
+          "value": "Please enter valid phone number",
+          "desc": "This represents validation message for phone input"
+        },
+        "blank": {
+          "value": "Please provide your phone number",
+          "desc": "This represents validation message for phone input"
+        }
+      }
+    },
+    "secondary_phone": {
+      "label": {
+        "value": "Secondary phone number",
+        "desc": "This represents the phone field text"
+      },
+      "validations": {
+        "invalid": {
+          "value": "Please enter valid phone number",
+          "desc": "This represents validation message for phone input"
+        },
+        "blank": {
+          "value": "Please provide your phone number",
+          "desc": "This represents validation message for phone input"
+        }
+      }
+    },
+    "email": {
+      "label": {
+        "value": "Email",
+        "desc": "This represents the email id field text"
+      },
+      "validations": {
+        "invalid": {
+          "value": "Please enter valid email address",
+          "desc": "This represents validation message for email input"
+        },
+        "blank": {
+          "value": "Please provide your email address",
+          "desc": "This represents validation message for blank email input"
+        }
+      }
+    },
+    "verify_email": {
+      "label": {
+        "value": "Verify email",
+        "desc": "This represents the validate email id field text"
+      },
+      "validations": {
+        "invalid": {
+          "value": "Email addresses do not match",
+          "desc": "This represents validation message for retype email input"
+        },
+        "blank": {
+          "value": "Please re-enter the above email address",
+          "desc": "This represents validation message for empty retype email input"
+        }
+      }
+    },
+    "button_label": {
+      "cancel": {
+        "value": "Cancel",
+        "desc": "This represents the contact info cancel button label"
+      },
+      "save": {
+        "value": "Save changes",
+        "desc": "This represents the contact info save button label"
+      }
+    }
+  },
+  "orxe-points-header": {
+    "points_worth": {
+      "value": "Your {{points}} points are worth {{amount}}",
+      "desc": "This is points header text"
+    }
+  },
+  "orxe-flight-remove-item": {
+    "remove_flight": {
+      "value": "Remove flight",
+      "desc": "Remove flight overlay heading"
+    },
+    "remove_flight_description": {
+      "value": "Are you sure you want to remove this flight from your cart?",
+      "desc": "Remove flight overlay content"
+    },
+    "cancel": {
+      "value": "Cancel",
+      "desc": "Remove flight overlay cancel link"
+    },
+    "proceed": {
+      "value": "Yes I'm sure",
+      "desc": "Remove flight continue"
+    }
+  },
+  "orxe-flight-vertical-timeline": {
+    "seat_map_button_text": {
+      "value": "Seat Map",
+      "desc": "Seat Map Button Text"
+    },
+    "different_arrival_airport_text": {
+      "value": "Different Airport",
+      "desc": "Different Airport Text"
+    },
+    "layover_text": {
+      "value": "{{duration}} layover in {{cityName}}",
+      "desc": "Layover description"
+    },
+    "airline_logo_alt_text": {
+      "value": "Airline Logo",
+      "desc": "Airline Logo"
+    },
+    "airline_logo_ally_text": {
+      "value": "{{airlineName}} Logo",
+      "desc": "Airline Name"
+    },
+    "seat_map_button_ally_text": {
+      "value": "Clickable seat map",
+      "desc": "Clickable seat map text"
+    },
+    "location_ally_text": {
+      "value": "Flight {{locationType}} at {{time}}",
+      "desc": "Flight location at time text"
+    },
+    "duration_ally_text": {
+      "value": "Flight duration is {{duration}}",
+      "desc": "Flight duration text"
+    },
+    "first_checked_baggage": {
+      "value": "1st Checked bag-",
+      "desc": "1st Checked bag text"
+    },
+    "first_a11y_checked_baggage": {
+      "value": "first Checked bag",
+      "desc": "first Checked bag a11y"
+    },
+    "second_checked_baggage": {
+      "value": "2nd Checked bag-",
+      "desc": "2nd Checked bag text"
+    },
+    "second_a11y_checked_baggage": {
+      "value": "second Checked bag",
+      "desc": "second Checked bag a11y"
+    },
+    "carry_on_text": {
+      "value": "Carry-on-",
+      "desc": "Carry-on text"
+    },
+    "carry_on_a11y_text": {
+      "value": "Carry on",
+      "desc": "Carry on a11y"
+    },
+    "fees_may_apply_button_text": {
+      "value": "Fees may apply",
+      "desc": "Fees may apply button text"
+    },
+    "per_pax_paid_on_check_in": {
+      "value": "*per passenger, paid upon check-in",
+      "desc": "*per passenger, paid upon check-in text"
+    },
+    "per_pax_paid_on_check_in_ally_text": {
+      "value": "conditions apply per passenger, paid upon check in",
+      "desc": "conditions apply per passenger, paid upon check in a11y"
+    },
+    "no_fees": {
+      "value": "No fee",
+      "desc": "No fee Text"
+    }
+  },
+  "orxe-flight-baggage-fees": {
+    "link_text": {
+      "value": "Fees may apply",
+      "desc": "Fees may apply Link Text"
+    },
+    "title": {
+      "value": "You will be redirected",
+      "desc": "You will be redirected overlay heading"
+    },
+    "message": {
+      "value": "You will be redirected to <span class='special-text'>{{baggageUrl}}</span> where you can see all the details of your baggage fees. Do you wish to continue?",
+      "desc": "baggage fees overlay description"
+    },
+    "button": {
+      "value": "Yes, continue",
+      "desc": "Yes, continue button text"
+    },
+    "a11y_announce_open": {
+      "value": "Baggage fees modal opened",
+      "desc": "Baggage fees modal opened a11y"
+    },
+    "a11y_announce_close": {
+      "value": "Baggage fees modal closed",
+      "desc": "Baggage fees modal closed a11y"
+    },
+    "a11y_close_label": {
+      "value": "close baggage fees modal",
+      "desc": "close baggage fees modal a11y"
+    },
+    "btn_a11y-label": {
+      "value": "you will be redirected on click",
+      "desc": "you will be redirected on click a11y"
+    }
+  },
+  "orxe-overlay": {
+    "a11y_announce_close": {
+      "value": "Close Remove Flight Overlay",
+      "desc": "Aria close remove flight overlay"
+    },
+    "ally_close_label": {
+      "value": "Close Remove Flight Overlay",
+      "desc": "Aria close label remove flight overlay"
+    },
+    "a11y_announce_open": {
+      "value": "Remove Flight Overlay Opened",
+      "desc": "Aria open label remove flight overlay"
+    }
+  },
+  "orxe-flight-journey-header": {
+    "a11y_travel_date_label": {
+      "value": "Travel dates",
+      "desc": "Travel date label"
+    },
+    "a11y_journey_details_label": {
+      "value": "journey details",
+      "desc": "Journey origin,destination text"
+    },
+    "a11y_travel_label_to": {
+      "value": "to",
+      "desc": "To text"
+    },
+    "traveller_label": {
+      "value": "{​​​​​{​​​​​count}​​​​​}​​​​​ Traveller",
+      "desc": "Traveler count"
+    },
+    "traveller_label_plural": {
+      "value": "{​​​​​{​​​​​count}​​​​​}​​​​​ Travellers",
+      "desc": "Travellers count"
+    },
+    "passenger_label": {
+      "value": "{​​​​​{​​​​​count}​​​​​}​​​​​ Passenger",
+      "desc": "Passenger count"
+    },
+    "passenger_label_plural": {
+      "value": "{​​​​​{​​​​​count}​​​​​}​​​​​ Passengers",
+      "desc": "Passengers count"
+    }
+  },
+  "orxe-flight-horizontal-timeline": {
+    "stop": {
+      "value": "{​​​​​{​​​​​number}​​​​​}​​​​​ Stop",
+      "desc": "Number of stop text"
+    },
+    "stops": {
+      "value": "{​​​​​{​​​​​number}​​​​​}​​​​​ Stops",
+      "desc": "Number of stops text"
+    },
+    "nonStops": {
+      "value": "Non-stop",
+      "desc": "Non stop text"
+    },
+    "different_airport": {
+      "value": "Different airport",
+      "desc": "Different airport highlight text"
+    },
+    "airline_logo_description": {
+      "value": "Airline logo",
+      "desc": "Airline logo"
+    },
+    "departure_time_a11y": {
+      "value": "Departure time is {​​​​​{​​​​​time}​​​​​}​​​​​",
+      "desc": "Departure time text"
+    },
+    "departure_location_a11y": {
+      "value": "Departure location code is {​​​​​{​​​​​code}​​​​​}​​​​​",
+      "desc": "Departure location code text"
+    },
+    "destination_time_a11y": {
+      "value": "Destination time is {​​​​​{​​​​​time}​​​​​}​​​​​",
+      "desc": "Destination time text"
+    },
+    "destination_location_a11y": {
+      "value": "Destination location code is {​​​​​{​​​​​code}​​​​​}​​​​​",
+      "desc": "Destination location code text"
+    },
+    "total_duration_a11y": {
+      "value": "Total duration of trip is {​​​​​{​​​​​duration}​​​​​}​​​​​",
+      "desc": "Total duration text"
+    }
+  }
+}

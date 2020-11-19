@@ -1,0 +1,50 @@
+<div
+  class="orxe-grid container__booking-support-footer"
+  orxe-id="booking-support-footer"
+>
+  <span
+    class="col-grid-full txt--sm-r-sm"
+    orxe-id="booking-support-footer--title"
+    >{{
+      "confirmation-page.booking-support-footer.title" | orxeTranslate
+    }}</span
+  >
+  <span class="col-grid-full txt--sm-r-lg"
+    >{{
+      "confirmation-page.booking-support-footer.terms_and_condition_first_label"
+        | orxeTranslate
+    }}
+    <orxe-button
+      orxe-id="booking-support-footer--terms-and-conditions-link"
+      href="javascript:void(0)"
+      size="small"
+      >{{
+        "confirmation-page.booking-support-footer.terms_and_condition_link_label"
+          | orxeTranslate
+      }}</orxe-button
+    >
+    <!-- {{
+      "confirmation-page.booking-support-footer.terms_and_condition_second_label"
+        | orxeTranslate
+    }} -->
+  </span>
+  <span class="col-grid-full txt--sm-r-lg">{{
+    "confirmation-page.booking-support-footer.need_assistance_label"
+      | orxeTranslate
+  }}</span>
+  <dl class="col-grid-full txt--md-r-lg text-center">
+    <dd>
+      {{
+        "confirmation-page.booking-support-footer.customer_service_title"
+          | orxeTranslate
+      }}
+    </dd>
+    <dd>1-234-XXX-XXXX</dd>
+    <dd id="helper-tracking-id">
+      {{
+        "confirmation-page.booking-support-footer.have_trip_number_label"
+          | orxeTranslate: { tripId: orderSummaryDetail?.trackingId }
+      }}
+    </dd>
+  </dl>
+</div>

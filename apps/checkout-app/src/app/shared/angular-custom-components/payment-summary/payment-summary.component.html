@@ -1,0 +1,58 @@
+<!-- Payment Summary Component - Start -->
+<orxe-card
+  class="orxe-card-style"
+  role="region"
+  aria-labelledby="payment-summary-heading"
+  orxe-id="payment-summary-card"
+>
+  <div class="orxe-grid container__payment-summary-section">
+    <!-- Payment Summary - Heading Start -->
+    <span
+      class="col-grid-full txt--lg-sb-sm container__payment-summary-heading"
+      orxe-id="payment-summary-heading"
+      id="payment-summary-heading"
+      >{{ "payment-summary.heading" | orxeTranslate }}</span
+    >
+    <!-- Payment Summary - Heading End -->
+
+    <!-- Payment Summary - Product Type, Payment Info - Start -->
+    <app-payment-product-section
+      [productsList]="cartDetail?.productsList"
+      [flow]="flow"
+      [readOnly]="readOnly"
+    >
+    </app-payment-product-section>
+    <!-- Payment Summary - Product Type, Payment Info - End -->
+
+    <!-- Payment Summary - Insurance Product - Start -->
+
+    <app-products-insurance [addOnProductsList]="cartDetail?.addOnProductsList">
+    </app-products-insurance>
+    <!-- Payment Summary - Insurance Product - End -->
+
+    <!-- Payment Summary - Client Program Fee - Start -->
+    <app-program-fee [clientProgramFee]="clientPrgramFee"></app-program-fee>
+    <!-- Payment Summary - Client Program Fee - End -->
+
+    <!-- Promo code start  -->
+    <app-promo-code
+      [readOnly]="readOnly"
+      (updateCartResponse)="updateCartResponse($event)"
+    ></app-promo-code>
+    <!-- Promo code End -->
+
+    <!-- Payment Summary - Payment Details - Start -->
+    <app-cart-total
+      [userProfile]="userProfile"
+      [flow]="flow"
+      [readOnly]="readOnly"
+      [screen]="screen"
+      [cartDetail]="cartDetail"
+      (updateCartResponse)="updateCartResponse($event)"
+      [paymentOption] = "paymentOption"
+    >
+    </app-cart-total>
+    <!-- Payment Summary - Payment Details - End -->
+  </div>
+</orxe-card>
+<!-- Payment Summary Component - End -->

@@ -1,0 +1,16 @@
+.review-pay-info-action {
+  margin: var(--spacing-05);
+}
+.orxe-card-style {
+  display: flex;
+  flex-direction: column;
+}
+.orxe-grid {
+  grid-gap: 0;
+}
+orxe-button orxe-spinner-loader {
+  display: inline-block;
+  vertical-align: middle;
+  --loader-size: 35;
+  --loader-dot-color: var(--neutral);
+}

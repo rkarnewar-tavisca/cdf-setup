@@ -1,0 +1,46 @@
+<form [formGroup]="emailInputForm">
+  <div
+    class="orxe-grid"
+    orxe-id="email-container--email-input-form"
+  >
+    <div
+      class="col-grid-one-third"
+      orxe-id="email-container--email-input"
+    >
+      <orxe-input
+        label="{{ 'share-itinerary.email-input.label' | orxeTranslate }} {{
+          labelId
+        }}"
+        clear-input-icon
+        class="input col-grid-full"
+        formControlName="email"
+        attr.error-message-invalid-data="{{
+          'share-itinerary.email-input.invalid-error' | orxeTranslate
+        }}"
+        (onChange)="onInputChange($event)"
+        (onBlur)="onInputBlur($event)"
+        [invalid]="errorState"
+        orxe-id="email-container--share-email-input"
+      >
+      </orxe-input>
+    </div>
+    <div
+      class="col-grid-one-fourth"
+      orxe-id="email-container--remove-container"
+    >
+      <div
+        class="icon-container"
+        *ngIf="labelId > 1"
+        orxe-id="email-container--remove-icon"
+      >
+        <orxe-icon
+          icon="ic-close"
+          size="small"
+          (click)="onClickClose()"
+          orxe-id="email-container--remove-btn-icon-{{ labelId }}"
+        >
+        </orxe-icon>
+      </div>
+    </div>
+  </div>
+</form>

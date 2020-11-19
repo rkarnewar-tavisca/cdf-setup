@@ -1,0 +1,30 @@
+<div class="edit-cart-points">
+ <orxe-expansion-panel
+      hide-toggle-icon="true"
+      (onPanelOpened)="toggleRedeemPoints($event)"
+      (onPanelClosed)="toggleRedeemPoints($event)"
+      orxe-id="edit-cart-points--panel"
+      *ngIf="!readOnly && flow === PAYMENT_SUMMARY_CONST?.CLP"
+      aria-labelledby="want-to-use-less-points"
+      role="region"
+      [isExpanded]= "isOpen"
+    >
+      <div slot="panel-title">
+        <div orxe-id="edit-cart-points--panel-title" id="want-to-use-less-points" class="txt--md-sb-lg edit-cart-points--accordion-title">
+            {{ "payment-summary.edit_cart_level_points_btn" | orxeTranslate }}?
+          <div><orxe-icon [icon]="icon" size="medium"></orxe-icon></div>
+        </div>
+      </div>
+      <div slot="panel-content">
+        <orxe-payment-options
+          [totalPoints]="totalPoints"
+          [redeemedPoints]="redeemedPoints"
+          [cartDetails]="cartDetail"
+          [userProfile]="userProfile"
+          orxe-id="edit-cart-points--panel-content"
+          (updateCartResp)="updateCartResp($event)"
+          [paymentsOption]="paymentOption"
+        ></orxe-payment-options>
+      </div>
+    </orxe-expansion-panel>
+  </div>

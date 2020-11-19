@@ -1,0 +1,109 @@
+<div class="orxe-grid">
+  <div class="col-grid-full">
+    <checkout-header
+      [title]="'confirmation-page.title' | orxeTranslate"
+      leftIcon="ic-menu"
+      [leftIconA11y]="'confirmation-page.leftIconA11y' | orxeTranslate"
+      role="banner"
+      orxe-id="confirmation-header"
+    >
+    </checkout-header>
+  </div>
+  <div class="col-grid-full" role="main">
+    <!-- Booking status - starts -->
+    <div
+      class="col-grid-full mb-8"
+      *skeletonUntil="orderSummary; svg: 'booking-status'"
+    >
+      <app-order-status
+        [orderSummaryDetail]="orderSummary"
+        [maxEmailsAllowed]="maxEmailsAllowed"
+        [shareEmailStatus]="viewModel?.shareEmailStatus"
+        (shareEmails)="onShareEmail($event)"
+      ></app-order-status>
+    </div>
+    <!-- Booking status - end -->
+
+    <!-- traveler-information-start -->
+    <!-- <div class="col-grid-full">
+      <app-traveler-info
+        *skeletonUntil="travelInfo?.loading; svg: 'traveler-info-confirmation'"
+        [contactInfo]="(travelerInfo$ | async)?.contactFormData"
+        [productTravelerDetails]="viewModel.productTravelerDetails"
+      ></app-traveler-info>
+    </div> -->
+    <!-- traveler-information-end -->
+
+    <!-- Product-placeholder-start -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="orderSummary; svg: 'confirm-product'"
+    >
+      <app-dynamic-confirm-product
+        [productsList]="orderSummary?.productsList"
+        [orderSummaryResponse]="orderSummary"
+      >
+      </app-dynamic-confirm-product>
+    </div>
+    <!-- Product-placeholder-end -->
+    <!-- Insurance-placeholder-start -->
+    <div
+      class="col-grid-full mb-8"
+      *skeletonUntil="orderSummary; svg: 'addon-product'"
+    >
+      <app-insurance-placeholder
+        [addonProductList]="orderSummary?.addOnProductsList"
+      ></app-insurance-placeholder>
+    </div>
+    <!-- Insurance-placeholder-end -->
+    <!-- client-program-fee-start -->
+    <div
+      class="col-grid-full"
+      *ngIf="orderSummary?.price?.breakup?.fees?.length > 0"
+    >
+      <client-program-fee
+        *skeletonUntil="orderSummary; svg: 'activity'"
+        [breakup]="orderSummary?.price?.breakup?.fees"
+      ></client-program-fee>
+    </div>
+    <!-- client-program-fee-end -->
+    <!-- Contact Information Card - Starts -->
+    <div
+      class="col-grid-full mb-8"
+      *skeletonUntil="
+        (travelerInfo$ | async)?.contactFormData;
+        svg: 'contact-info-card';
+        inline: false
+      "
+    >
+      <app-contact-info
+        [contactInfo]="(travelerInfo$ | async)?.contactFormData"
+        (onSubmitted)="onContactInfoSubmitted($event)"
+        [contactInfoSaveStatus]="viewModel?.contactInfoSaveStatus"
+      ></app-contact-info>
+    </div>
+    <!-- Contact Information Card - Ends -->
+    <!-- Payment Summary Start -->
+    <div class="col-grid-full mb-8" *ngIf="orderSummary">
+      <orxe-payment-summary
+        [cartDetail]="orderSummary"
+        [userProfile]="userSessionDetails$ | async"
+        [screen]="'confirmation'"
+        *skeletonUntil="orderSummary; svg: 'confirmation-payment-summary'"
+        [clientPrgramFee]="viewModel?.clientProgramFee"
+      >
+      </orxe-payment-summary>
+    </div>
+    <!-- Payment Summary End -->
+  </div>
+  <!-- Booking Support Footer - Start -->
+  <div
+    class="col-grid-full"
+    *skeletonUntil="orderSummary; svg: 'booking-support-footer'"
+  >
+    <app-booking-support-footer
+      [orderSummaryDetail]="orderSummary"
+    ></app-booking-support-footer>
+  </div>
+  <!-- Booking Support Footer - Ends -->
+</div>

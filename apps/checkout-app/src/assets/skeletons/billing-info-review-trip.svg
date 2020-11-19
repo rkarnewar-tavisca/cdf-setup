@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 288 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>55C95C1A-803D-4610-A90A-E011BD9BB0E3</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Loaders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Skeleton-Loader---Billing-Information" transform="translate(-16.000000, -1224.000000)">
+            <g id="Group-4" transform="translate(16.000000, 1224.000000)">
+                <rect id="Rectangle-Copy-40" fill="url(#linearGradient-1)" x="0" y="0" width="140" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-42" fill="url(#linearGradient-1)" x="0" y="64" width="140" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-41" fill="url(#linearGradient-2)" x="0" y="24" width="288" height="16" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

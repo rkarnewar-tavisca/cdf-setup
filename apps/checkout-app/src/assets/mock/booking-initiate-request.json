@@ -1,0 +1,60 @@
+{
+  "idempotencyToken": "123-456-789",
+  "items": [
+    {
+      "id": "1e817cd6-85ba-451d-9553-dee99e04eeec"
+    }
+  ],
+  "customer": {
+    "name": {
+      "title": "Mr",
+      "first": "John",
+      "middle": "Alex",
+      "last": "Smith"
+    },
+    "phone": {
+      "type": "Unknown"
+    },
+    "address": {
+      "line1": "3077 ACME Street",
+      "line2": "Landmark: Beside the ACME Shopping Mall",
+      "cityName": "San Francisco",
+      "state": {
+        "code": "CA",
+        "name": "California"
+      },
+      "countryCode": "US",
+      "postalCode": "94133"
+    },
+    "email": "abc@xyz.com"
+  },
+  "agent": {
+    "id": "p@r"
+  },
+  "formOfPayment": {
+    "card": {
+      "token": "skfwefh$@fkew0fwy32ryr$#8ffjn3",
+      "number": "444433******1111",
+      "holderName": "John Doe",
+      "cvv": "123",
+      "issuedBy": "VI",
+      "expiry": {
+        "month": 12,
+        "year": 2020
+      },
+      "contactInfo": {
+        "billingAddress": {
+          "line1": "Address line 1",
+          "line2": "Address line 2",
+          "cityName": "Pune",
+          "state": {
+            "code": "MH",
+            "name": "Maharashtra"
+          },
+          "countryCode": "IN",
+          "postalCode": "411014"
+        }
+      }
+    }
+  }
+}

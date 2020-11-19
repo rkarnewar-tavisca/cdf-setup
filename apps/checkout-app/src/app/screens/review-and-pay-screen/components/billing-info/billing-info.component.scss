@@ -1,0 +1,79 @@
+.container-billing-info {
+  .container__heading {
+    letter-spacing: 0;
+    color: var(--primary-text);
+  }
+  .container__subheading {
+    margin-top: var(--spacing-03);
+    color: var(--secondary-text);
+    font-size: var(--txt-sm-fs);
+    letter-spacing: 0.14px;
+    line-height: var(--lh-sm);
+  }
+
+  .container__card-title {
+    padding: var(--spacing-06) 0 var(--spacing-05) 0;
+    font-size: var(--txt-md-fs);
+    line-height: var(--lh-lg);
+    font-weight: var(--fw-sb);
+    color: var(--primary-text);
+  }
+
+  .billing-info--form {
+    grid-gap: 0;
+  }
+
+  .date-selector__error-message {
+    font-size: var(--txt-xl-fs);
+    line-height: var(--lh-lg);
+    font-weight: var(--fw-sb);
+    color: var(--error);
+  }
+  .error-msg {
+    color: var(--error-text);
+  }
+}
+
+.grid-zero {
+  grid-gap: 0;
+}
+
+orxe-dropdown {
+  background-color: var(--neutral);
+  --dropdown-label-font-weight: var(--fw-sb);
+}
+
+orxe-input {
+  background-color: var(--neutral);
+  --input-label-font-weight: var(--fw-sb);
+}
+
+orxe-date-selector {
+  --date-selector-dropdown-label-font-weight:var(--fw-sb);
+  --date-selector-background: var(--neutral);
+}
+
+.cvv--container {
+  &.orxe-grid {
+    --ai-grid: center;
+  }
+  orxe-tooltip {
+    --tooltip-font-size: var(--txt-md-fs);
+    --tooltip-font-color: var(--neutral);
+    --tooltip-background-color: var(--primary-text);
+
+    .cvv-popover--container {
+      orxe-image {
+        --image-height: 46.37px;
+        --image-width: 73px;
+
+        &:first-child {
+          margin-right: var(--spacing-05);
+        }
+      }
+    }
+  }
+}
+.billing-info--form-expiration-date {
+  --date-selector-title-font-color: var(--secondary-text);
+}

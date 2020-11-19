@@ -1,0 +1,27 @@
+<!-- Client program fee section Starts -->
+<orxe-card
+  orxe-id="client-fee-card"
+  class="orxe-card-style"
+  role="region"
+  aria-labelledby="client-fee-card__section--client-fee"
+>
+  <div orxe-id="client-fee-card__section" class="orxe-grid col-grid-full">
+    <span
+      class="col-grid-half txt--lg-sb-sm"
+      orxe-id="client-fee-card__section--text"
+      id="client-fee-card__section--client-fee"
+    >
+      {{ "landing-screen.client_program_fee" | orxeTranslate }}
+    </span>
+    <span
+      class="col-grid-half align-right txt--lg-sb-sm"
+      orxe-id="client-fee-card__section--amount"
+    >
+      {{ clientProgramFee | orxeCurrency }}
+  </span>
+    <span class="txt--md-r-sm" orxe-id="client-fee-card__section--note">
+      {{ "landing-screen.client_program_fee_note" | orxeTranslate }}</span
+    >
+  </div>
+</orxe-card>
+<!-- Client program fee section Ends-->

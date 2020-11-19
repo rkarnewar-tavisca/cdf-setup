@@ -1,0 +1,42 @@
+.booking-confirmation-section {
+  .btn-confirm-booking {
+    // padding: var(--spacing-02) 0;
+  }
+
+  .terms-and-conditions {
+    font-size: var(--txt-md-fs);
+    line-height: var(--lh-lg);
+    font-weight: var(--fw-r);
+    color: var(--secondary-text);
+  }
+}
+.section-booking--failure {
+  margin: var(--spacing-05);
+}
+.orxe-grid {
+  grid-gap: 0;
+}
+orxe-button orxe-spinner-loader {
+  display: inline-block;
+  vertical-align: middle;
+  --loader-size: 35;
+  --loader-dot-color: var(--neutral);
+}
+.review-trip--note-container {
+  padding: var(--spacing-05);
+  .review-trip--note {
+    color: var(--tertiary-text);
+    font-size: var(--txt-md-fs);
+    letter-spacing: 0;
+    line-height: var(--lh-lg);
+  }
+  .review-trip--title {
+    margin-top: var(--spacing-05);
+    padding-top: var(--spacing-05);
+    color: var(--primary-text);
+    font-size: var(--txt-lg-fs);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: var(--lh-lg);
+  }
+}

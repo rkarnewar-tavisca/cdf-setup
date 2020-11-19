@@ -1,0 +1,36 @@
+# compiled output
+/dist
+/dist-es2015
+/build
+/compiled
+packages/**/dist/*
+packages/**/dist-es2015/*
+/bundle
+packages/**/bundle/*
+/package-lock.json
+package-lock.json
+
+# dependencies
+/node_modules
+/coverage
+/*/node_modules/*
+components/**/node_modules/*
+components/**/coverage/*
+apps/
+tools/sdk/
+tools/**/**/node_modules/*
+tools/**/**/coverage/*
+.bitmap
+node_modules/
+
+bundle.js
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#configs
+/webpack.config.js
+/commitlint.config.js
+/husky.config.js
+/prettier.config.js

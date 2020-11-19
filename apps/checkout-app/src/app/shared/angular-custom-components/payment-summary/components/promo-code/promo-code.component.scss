@@ -1,0 +1,24 @@
+.promo-code {
+  border-radius: 4px;
+  background-color: var(--global-bg);
+  padding: var(--spacing-04);
+  .promo-code__code--color {
+    color: var(--primary-text);
+  }
+  .promo-code__code--icon-align {
+    display: flex;
+  }
+  .promo-code__success-icon--margin-right {
+    margin-right: var(--spacing-03);
+  }
+  .promo-code__applied-promo {
+    color: var(--pricing);
+  }
+}
+.promo-section::after {
+  content: "";
+  border-bottom: 1px solid var(--separator-01);
+  display: block;
+  margin: 0 calc(-1 * var(--spacing-05)) 0
+    calc(-1 * var(--spacing-05));
+}

@@ -1,0 +1,90 @@
+@import "style.scss";
+
+:host {
+  .grid-ji--center {
+    --ji-grid: center;
+  }
+
+  .grid-nogap {
+    --gap-grid: 0;
+  }
+
+  .grid-ac--center {
+    --ac-grid: center;
+  }
+
+  .grid-ac--start {
+    --ac-grid: start;
+  }
+
+  .container-empty-cart {
+    background-color: var(--neutral);
+    text-align: center;
+    padding-top: var(--spacing-08);
+    .container__subheading {
+      font-size: var(--body-font-size);
+      font-weight: var(--font-weight-regular);
+      line-height: 17px;
+      width: 201px;
+    }
+    // ORXE Grid style
+    @extend .grid-ji--center;
+    @extend .grid-ac--start;
+  }
+
+  .container__products {
+    @extend .grid-nogap;
+    @extend .grid-ji--center;
+    @extend .grid-ac--center;
+
+    margin: 30px auto;
+    .product__navigation {
+      margin: var(--spacing-05);
+      height: 100px;
+      width: 100px;
+      background-color: var(--neutral);
+      border-radius: 2px;
+      -webkit-box-shadow: 0px 0px 8px 0px rgba(139, 139, 139, 0.5);
+      -moz-box-shadow: 0px 0px 8px 0px rgba(139, 139, 139, 0.5);
+      box-shadow: 0px 0px 8px 0px rgba(139, 139, 139, 0.5);
+      .product-content {
+        height: 100%;
+      }
+    }
+  }
+
+  .product--active {
+    border: 1px solid var(--secondary);
+  }
+  .prduct--inactive {
+    border: none;
+  }
+}
+
+.text-link {
+  color: var(--secondary);
+}
+
+.text-primary {
+  color: var(--primary-text);
+}
+
+.container__add-to-cart__section {
+  border: var(--spacing-01) solid var(--separator-01);
+  border-radius: var(--spacing-02);
+
+  div {
+    padding-bottom: var(--spacing-04);
+  }
+
+  .cross-sale-product {
+    border-bottom: var(--spacing-01) solid var(--separator-01);
+    margin-bottom: var(--spacing-05);
+  }
+
+  orxe-spinner-loader {
+    display: inline-block;
+    vertical-align: middle;
+     --loader-size: 35;
+  }
+}

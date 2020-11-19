@@ -1,0 +1,17 @@
+<div class="orxe-grid col-grid-full">
+  <dl class="col-grid-one-third row-grid-one-third txt--md-sb-lg billing-address--text"
+    orxe-id="billing-address--summary-container">
+    <dd orxe-id="billing-address--summary">
+      {{selectedAddressProfile?.line1}} <br />
+      {{selectedAddressProfile?.line2}} <br />
+      {{selectedAddressProfile?.city?.name}} {{selectedAddressProfile?.state?.code}} {{selectedAddressProfile?.postalCode}} <br />
+      {{selectedAddressProfile?.countryCode}}<br />
+    </dd>
+  </dl>
+  <div class="col-grid-one-fourth billing-address--edit-action" orxe-id="billing-address--edit-btn-container">
+    <orxe-button class="txt--md-sb-sm" orxe-id="billing-address--edit-summary" (click)="onEditAddress()"
+      href="javascript:void(0)" size="medium">
+      {{"review-and-pay-screen.billing_address.action.edit_address" | orxeTranslate}}
+    </orxe-button>
+  </div>
+</div>

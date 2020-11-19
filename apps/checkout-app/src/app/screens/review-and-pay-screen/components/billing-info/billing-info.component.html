@@ -1,0 +1,231 @@
+<div
+  orxe-id="billing-info"
+  class="orxe-grid orxe-card-style container-billing-info grid-zero"
+  role="region"
+  aria-labelledby="billing-info-heading"
+>
+  <div
+    orxe-id="billing-info--heading"
+    id="billing-info-heading"
+    class="col-grid-full txt--lg-sb-md container__heading"
+  >
+    {{ "review-and-pay-screen.billing_info.heading" | orxeTranslate }}
+  </div>
+  <div
+    orxe-id="billing-info--subheading"
+    class="col-grid-full container__subheading"
+  >
+    *{{ "review-and-pay-screen.billing_info.subheading" | orxeTranslate }}
+  </div>
+  <div class="col-grid-full">
+    <app-card-issuer-list
+      [allowedCardTypes]="allowedCards"
+    ></app-card-issuer-list>
+  </div>
+  <div orxe-id="billing-info--error" class="error-msg" *ngIf="errors">
+    {{
+      errors?.info?.length > 0 ? (errors?.info)[0]?.message : errors[1]?.message
+    }}
+  </div>
+  <form [formGroup]="billingInfoForm">
+    <div orxe-id="billing-info--form" class="orxe-grid billing-info--form">
+      <!-- Payment option -->
+      <div class="col-grid-full">
+        <orxe-dropdown
+          orxe-id="billing-info--form-savecard-dropdown"
+          placeholder="{{
+            'review-and-pay-screen.billing_info.placeholder.saved_card'
+              | orxeTranslate
+          }}"
+          attr.label-value="{{
+            'review-and-pay-screen.billing_info.label.saved_card'
+              | orxeTranslate
+          }}"
+          extra-label-text="*"
+          [items]="cardData"
+          formControlName="savedCard"
+          (onChange)="onCardChange($event)"
+        >
+        </orxe-dropdown>
+      </div>
+
+      <!-- Cardholder name -->
+      <div class="col-grid-full mt-16" *ngIf="isNewCard">
+        <orxe-input
+          orxe-id="billing-info--form-card-holder-name-input"
+          label="{{
+            'review-and-pay-screen.billing_info.label.cardholder_name'
+              | orxeTranslate
+          }}"
+          placeholder="{{
+            'review-and-pay-screen.billing_info.label.cardholder_name'
+              | orxeTranslate
+          }}"
+          formControlName="cardHolderName"
+          always-floated-label
+          clear-input-icon
+          required
+          extra-label-text="*"
+          validation-reg-ex="^[a-zA-Z ]*$"
+          [invalid]="errorState('cardHolderName')"
+          attr.error-message-blank-field="{{
+            'review-and-pay-screen.billing_info.validations_blank.cardholder_name'
+              | orxeTranslate
+          }}"
+          attr.error-message-invalid-data="{{
+            'review-and-pay-screen.billing_info.validations_invalid.cardholder_name'
+              | orxeTranslate
+          }}"
+          (onBlur)="onBlurValidateInputs('cardHolderName')"
+        >
+        </orxe-input>
+      </div>
+      <!-- Card number -->
+      <div class="orxe-grid col-grid-full">
+        <div class="mt-16 col-grid-full" [hidden]="readonlyCCComponent">
+          <ng-container #CcContainer></ng-container>
+        </div>
+        <div class="mt-16 col-grid-full" [hidden]="pciComponentLoaded">
+          <orxe-input
+            id="cardNumberInput"
+            orxe-id="billing-info--form-card-number-input"
+            label="{{
+              'review-and-pay-screen.billing_info.label.card_number'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'review-and-pay-screen.billing_info.label.card_number'
+                | orxeTranslate
+            }}"
+            formControlName="number"
+            always-floated-label
+            readonly
+            disabled
+          >
+          </orxe-input>
+        </div>
+      </div>
+      <!-- Expiration date -->
+      <div class="mt-16 col-grid-full" *ngIf="isNewCard">
+        <orxe-date-selector
+          class="billing-info--form-expiration-date"
+          orxe-id="billing-info--form-expiration-date-selector"
+          #dateSelector
+          order="M-Y"
+          placeholder="{{
+            'review-and-pay-screen.billing_info.placeholder.expiration_date'
+              | orxeTranslate
+          }}"
+          required-symbol="*"
+          title="{{
+            'review-and-pay-screen.billing_info.label.expiration_date_title'
+              | orxeTranslate
+          }}"
+          attr.field-labels="{{
+            'review-and-pay-screen.billing_info.label.expiration_date'
+              | orxeTranslate
+          }}"
+          formControlName="expirationDate"
+          required="true"
+          locale="en"
+          (onBlur)="onBlurDateSelector()"
+        >
+        </orxe-date-selector>
+        <span
+          orxe-id="billing-info--form-error-msg"
+          class="date-selector__error-message"
+          *ngIf="
+            isInvalidExpirationDate &&
+            billingInfoForm.controls.expirationDate.errors
+          "
+          >{{
+            "review-and-pay-screen.billing_info.validations_invalid.expirationDate"
+              | orxeTranslate
+          }}</span
+        >
+      </div>
+
+      <div *ngIf="!isNewCard" class="mt-16 form__billing--summary">
+        <app-billing-info-summary
+          [billingFormValues]="billingInfoForm?.value"
+        ></app-billing-info-summary>
+      </div>
+
+      <!-- Security code -->
+      <div class="orxe-grid col-grid-full mt-16">
+        <div class="col-grid-half" orxe-id="billing-info--form-cvv-container">
+          <orxe-input
+            orxe-id="billing-info--form-cvv-input"
+            label="{{
+              'review-and-pay-screen.billing_info.label.security_code_input'
+                | orxeTranslate
+            }}"
+            placeholder="{{
+              'review-and-pay-screen.billing_info.label.security_code_input'
+                | orxeTranslate
+            }}"
+            type="password"
+            [maxLength]="cvvValidation.maxLength"
+            [minLength]="cvvValidation.minLength"
+            formControlName="cvv"
+            required="true"
+            clear-input-icon
+            extra-label-text="*"
+            [invalid]="setInvalidCvv"
+            always-floated-label
+            [validationRegEx]="cvvValidation.regex"
+            attr.error-message-blank-field="{{
+              'review-and-pay-screen.billing_info.validations_blank.cvv'
+                | orxeTranslate
+            }}"
+            attr.error-message-invalid-data="{{
+              'review-and-pay-screen.billing_info.validations_invalid.cvv'
+                | orxeTranslate
+            }}"
+            (onBlur)="onBlurValidateInputs('cvv')"
+            (keyup)="checkValidity('cvv')"
+            (keydown)="restrict($event)"
+          >
+          </orxe-input>
+        </div>
+        <div
+          class="cvv--container orxe-grid col-grid-half"
+          orxe-id="billing-info--form-cvv-hint"
+        >
+          <orxe-tooltip position="bottom" icon-src="ic-information">
+            <div class="orxe-grid col-grid-full cvv-popover--container">
+              <div class="col-grid-full">
+                {{
+                  "review-and-pay-screen.billing_info.cvv_info_back"
+                    | orxeTranslate
+                }}
+              </div>
+              <div class="col-grid-full">
+                {{
+                  "review-and-pay-screen.billing_info.cvv_info_front"
+                    | orxeTranslate
+                }}
+              </div>
+              <div class="col-grid-full">
+                <orxe-image
+                  src="assets/img/cvv_front.png"
+                  alt="{{
+                    'review-and-pay-screen.billing_info.cvv_info_front'
+                      | orxeTranslate
+                  }}"
+                ></orxe-image>
+                <orxe-image
+                  src="assets/img/cvv_back.png"
+                  alt="{{
+                    'review-and-pay-screen.billing_info.cvv_info_back'
+                      | orxeTranslate
+                  }}"
+                ></orxe-image>
+              </div>
+            </div>
+          </orxe-tooltip>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,40 @@
+.container-contact-info__input__bg {
+  background-color: var(--neutral);
+}
+
+.dropdown {
+  background-color: var(--neutral);
+}
+
+.container__heading {
+  margin: var(--spacing-03) 0;
+}
+
+.mt-16 {
+  margin-top: var(--spacing-05);
+}
+
+orxe-dropdown {
+  --dropdown-placeholder-font-color: var(--dropdown-placeholder-font-color);
+}
+
+.orxe-card-style {
+  display: flex;
+  flex-direction: column;
+}
+.container__payment-summary-section {
+  color: var(--primary-text);
+}
+
+orxe-button {
+  --link-touch-target: 0;
+}
+
+.contact-info__section {
+  .orxe-grid {
+    grid-gap: 0;
+  }
+}
+.container__heading {
+  color: var(--primary-text);
+}

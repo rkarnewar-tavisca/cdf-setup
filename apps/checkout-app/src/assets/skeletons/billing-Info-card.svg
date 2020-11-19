@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 288 1057" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>20042415-2914-4EF4-BD76-6A7C45E49944</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-6">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-7">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-8">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-9">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-10">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Loaders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Skeleton-Loader---Billing-Information" transform="translate(-16.000000, -135.000000)">
+            <g id="Billing-Info-card-Copy" transform="translate(16.000000, 135.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="288" height="952"></rect>
+                <rect id="Rectangle-Copy-28" fill="url(#linearGradient-1)" x="0" y="511" width="113" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-32" fill="url(#linearGradient-2)" x="0" y="969" width="17" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-36" fill="url(#linearGradient-3)" x="25" y="969" width="263" height="88" rx="1"></rect>
+                <rect id="Rectangle-Copy" fill="url(#linearGradient-4)" x="0" y="0" width="140" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-5" fill="url(#linearGradient-5)" x="0" y="56" width="288" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-7" fill="url(#linearGradient-6)" x="0" y="80" width="144" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-8" fill="url(#linearGradient-7)" x="0" y="112" width="25" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-9" fill="url(#linearGradient-7)" x="33" y="112" width="25" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-10" fill="url(#linearGradient-7)" x="66" y="112" width="25" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-34" fill="url(#linearGradient-7)" x="99" y="112" width="25" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-12" fill="url(#linearGradient-8)" x="0" y="24" width="70" height="16" rx="1"></rect>
+                <rect id="Rectangle-Copy-4" fill="url(#linearGradient-9)" x="0" y="143" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-6" fill="url(#linearGradient-9)" x="0" y="215" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-11" fill="url(#linearGradient-9)" x="0" y="287" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-13" fill="url(#linearGradient-10)" x="0" y="359" width="136" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-14" fill="url(#linearGradient-10)" x="0" y="431" width="136" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-15" fill="url(#linearGradient-10)" x="0" y="897" width="136" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-33" fill="url(#linearGradient-10)" x="152" y="431" width="136" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-35" fill="url(#linearGradient-10)" x="152" y="897" width="136" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-18" fill="url(#linearGradient-9)" x="0" y="543" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-19" fill="url(#linearGradient-9)" x="0" y="615" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-20" fill="url(#linearGradient-9)" x="0" y="681" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-21" fill="url(#linearGradient-9)" x="0" y="753" width="288" height="56" rx="1"></rect>
+                <rect id="Rectangle-Copy-22" fill="url(#linearGradient-9)" x="0" y="825" width="288" height="56" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

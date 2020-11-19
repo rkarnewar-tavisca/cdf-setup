@@ -1,0 +1,36 @@
+<orxe-overlay
+  (onClose)="close()"
+  orxe-id="policy-overlay"
+  fullscreen="true"
+  [isOpen]="isOpen"
+  name="policyOverlay"
+>
+  <div
+    class="overlay-title"
+    orxe-id="policy-overlay--title"
+    slot="modal-heading"
+  >
+    {{ data.rules.title }}
+  </div>
+  <div
+    slot="modal-content"
+    orxe-id="policy-overlay--content"
+    class="overlay-content"
+  >
+    <div class="col-grid-full">
+      <p
+        orxe-id="policy-overlay--content-desc"
+        class="mb-20 text-tertiary policy-overlay policy-overlay-description"
+      >
+        {{ data.rules.description }}
+      </p>
+      <p
+        attr.orxe-id="policy-overlay--content-rule{{ i }}"
+        class="mb-20 text-tertiary policy-overlay"
+        *ngFor="let rule of data.rules.policy_cancellation; let i = index"
+      >
+        {{ i + 1 }}. {{ rule }}
+      </p>
+    </div>
+  </div>
+</orxe-overlay>

@@ -1,0 +1,10 @@
+@import '../../styles/style.scss';
+
+.product-type {
+  .product-title {
+    color: var(--primary-text);
+  }
+  .product-component {
+    color: var(--secondary-text);
+  }
+}

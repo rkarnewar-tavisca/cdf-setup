@@ -1,0 +1,125 @@
+{
+  "profile": {
+    "id": "y9g4e1hj6w",
+    "basicInfo": {
+      "name": {
+        "title": "Mr",
+        "first": "John",
+        "middle": "P",
+        "last": "Smith"
+      },
+      "gender": "Male",
+      "dob": "1990-07-13",
+      "email": "jsmith@gmail.com"
+    },
+    "addresses": [
+      {
+        "id": "k10g4e1hj6q",
+        "type": "Home",
+        "line1": "1010 South connexions loyalty Boulevard",
+        "line2": "South Northern Ireland MS 110001",
+        "city": {
+          "code": "AUS",
+          "name": "Austin"
+        },
+        "state": {
+          "code": "Tx",
+          "name": "Texas"
+        },
+        "countryCode": "United States",
+        "postalCode": "73301"
+      }
+    ],
+    "phones": [
+      {
+        "id": "k13g4e1hj6q",
+        "areaCode": "200",
+        "type": "Office",
+        "countryCode": "+1",
+        "ext": "123",
+        "num": "5556136635"
+      }
+    ],
+    "emails": [
+      {
+        "id": "k11g4e1hj6q",
+        "type": "Personal",
+        "value": "jsmith@gmail.com"
+      },
+      {
+        "id": "k12g4e1hj6q",
+        "type": "Business",
+        "value": "johnsmith@gmail.com"
+      }
+    ],
+    "cards": [
+      {
+        "id": "sddwe-123",
+        "num": "4444XXXXXXXX4448",
+        "token": "fgfg8-kk89n-5656ki-57hyt",
+        "nameOnCard": "John Doe",
+        "issuedBy": "VI",
+        "expiry": {
+          "month": 12,
+          "year": 2020
+        }
+      }
+    ]
+  },
+  "subProfiles": [
+    {
+      "id": "k9g4e1hj6q",
+      "basicInfo": {
+        "name": {
+          "title": "Mr",
+          "first": "Sam",
+          "middle": "P",
+          "last": "Smith"
+        },
+        "gender": "Male",
+        "dob": "1992-07-13",
+        "email": "ssmith@gmail.com"
+      },
+      "addresses": [
+        {
+          "id": "k14g4e1hj6q",
+          "type": "Home",
+          "line1": "1010 South connexions loyalty Boulevard",
+          "line2": "South Northern Ireland MS 110001",
+          "city": {
+            "code": "AUS",
+            "name": "Austin"
+          },
+          "state": {
+            "code": "Tx",
+            "name": "Texas"
+          },
+          "countryCode": "United States",
+          "postalCode": "73301"
+        }
+      ],
+      "phones": [
+        {
+          "id": "k18g4e1hj6q",
+          "areaCode": "200",
+          "type": "Office",
+          "countryCode": "+1",
+          "ext": "123",
+          "num": "5556136636"
+        }
+      ],
+      "emails": [
+        {
+          "id": "k16g4e1hj6q",
+          "type": "Personal",
+          "value": "ssmith@gmail.com"
+        },
+        {
+          "id": "k17g4e1hj6q",
+          "type": "Business",
+          "value": "samsmith@gmail.com"
+        }
+      ]
+    }
+  ]
+}

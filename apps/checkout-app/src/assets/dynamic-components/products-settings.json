@@ -1,0 +1,238 @@
+{
+  "payment-summary": [
+    {
+      "type": "giftcard",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-payment-summary/main-es2015.js",
+        "path": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-payment-summary/main-es2015.js",
+        "tagName": "gift-card-payment-summary"
+      },
+      "input": {
+        "default": ["lng", "owner", "cultureBaseUrl", "applicationId"],
+        "initial": ["id", "productId", "pageContext"],
+        "runtime": ["loadingStatus"]
+      },
+      "events": ["loadingStatus"],
+      "isFullView": false
+    },
+    {
+      "type": "Flight",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://common-microapp.qa.cnxloyalty.com/flight/flight-payment-summary/smart-component/main-es2015.js",
+        "path": "https://common-microapp.qa.cnxloyalty.com/flight/flight-payment-summary/smart-component/main-es2015.js",
+        "tagName": "orxe-flight-payment-summary"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId",
+          "pageContext"
+        ],
+        "initial": ["id", "productId"],
+        "runtime": ["loadingStatus"]
+      },
+      "events": ["loadingStatus"],
+      "isFullView": true
+    }
+  ],
+  "main-product": [
+    {
+      "type": "giftcard",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product/main-es2015.js",
+        "path": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product/main-es2015.js",
+        "tagName": "gift-card-product"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": ["id", "productId", "isConfirmationScreen", "pageContext"],
+        "runtime": [
+          "isBookingProcessed",
+          "bookingStatus",
+          "bookingId",
+          "vouchersList"
+        ]
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    },
+    {
+      "type": "Flight",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://common-microapp.qa.cnxloyalty.com/flight/flight-product-summary/smart-component/main-es2015.js",
+        "path": "https://common-microapp.qa.cnxloyalty.com/flight/flight-product-summary/smart-component/main-es2015.js",
+        "tagName": "orxe-flight-product-summary"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": ["id", "productId", "isConfirmationScreen", "pageContext"],
+        "runtime": [
+          "isBookingProcessed",
+          "bookingStatus",
+          "bookingId",
+          "vouchersList"
+        ]
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    }
+  ],
+  "traveller-info": [
+    {
+      "type": "giftcard",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-form/main-es2015.js",
+        "path": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-form/main-es2015.js",
+        "tagName": "gift-card-form"
+      },
+      "input": {
+        "default": ["lng", "owner", "cultureBaseUrl", "applicationId"],
+        "initial": ["id", "productId", "profiles", "pageContext"],
+        "runtime": ["formSubmitted", "ofacCheckStatus", "bookingInfo"]
+      },
+      "events": ["loadingStatus", "submitted"]
+    },
+    {
+      "type": "Flight",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://common-microapp.qa.cnxloyalty.com/flight/flight-traveler-form/smart-component/main-es2015.js",
+        "path": "https://common-microapp.qa.cnxloyalty.com/flight/flight-traveler-form/smart-component/main-es2015.js",
+        "tagName": "orxe-flight-traveler-form"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": ["id", "productId", "profiles", "pageContext"],
+        "runtime": ["formSubmitted", "ofacCheckStatus", "bookingInfo"]
+      },
+      "events": ["loadingStatus", "submitted"]
+    }
+  ],
+  "review-and-pay": [
+    {
+      "type": "giftcard",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product-review/main-es2015.js",
+        "path": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product-review/main-es2015.js",
+        "tagName": "gift-card-product-review"
+      },
+      "input": {
+        "default": ["lng", "owner", "cultureBaseUrl", "applicationId"],
+        "initial": ["id", "productId", "pageContext"],
+        "runtime": []
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    },
+    {
+      "type": "Flight",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://common-microapp.qa.cnxloyalty.com/flight/flight-product-summary/smart-component/main-es2015.js",
+        "path": "https://common-microapp.qa.cnxloyalty.com/flight/flight-product-summary/smart-component/main-es2015.js",
+        "tagName": "orxe-flight-product-summary"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": [
+          "id",
+          "productId",
+          "isConfirmationScreen",
+          "pageContext",
+          "bookingInfo"
+        ],
+        "runtime": [
+          "isBookingProcessed",
+          "bookingStatus",
+          "bookingId",
+          "vouchersList"
+        ]
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    }
+  ],
+  "confirmation": [
+    {
+      "type": "giftcard",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product/main-es2015.js",
+        "path": "https://checkout-smartcomponent.qa.cnxloyalty.com/gift-card-product/main-es2015.js",
+        "tagName": "gift-card-product"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": ["id", "productId", "isConfirmationScreen", "pageContext"],
+        "runtime": [
+          "isBookingProcessed",
+          "bookingStatus",
+          "bookingId",
+          "vouchersList"
+        ]
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    },
+    {
+      "type": "Flight",
+      "primaryCulture": "",
+      "resources": {
+        "modulePath": "https://common-microapp.qa.cnxloyalty.com/flight/flight-order-details/smart-component/main-es2015.js",
+        "path": "https://common-microapp.qa.cnxloyalty.com/flight/flight-order-details/smart-component/main-es2015.js",
+        "tagName": "orxe-flight-order-details"
+      },
+      "input": {
+        "default": [
+          "lng",
+          "owner",
+          "cultureBaseUrl",
+          "applicationId",
+          "sessionId"
+        ],
+        "initial": ["id", "productId", "isConfirmationScreen", "pageContext"],
+        "runtime": [
+          "isBookingProcessed",
+          "bookingStatus",
+          "bookingId",
+          "vouchersList"
+        ]
+      },
+      "events": ["loadingStatus", "onClickOfLinks"]
+    }
+  ]
+}

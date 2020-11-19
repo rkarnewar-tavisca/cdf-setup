@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 288 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>C24CDE67-1BD8-40B0-801A-DC0B1A8FCE7B</title>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#F5F8FB" offset="0%"></stop>
+            <stop stop-color="#E1E6ED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Loaders" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Skeleton-Loader---Traveler-Information" transform="translate(-16.000000, -2240.000000)" fill="url(#linearGradient-1)">
+            <rect id="Rectangle-Copy-54" x="16" y="2240" width="288" height="48" rx="1"></rect>
+        </g>
+    </g>
+</svg>

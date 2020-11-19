@@ -1,0 +1,62 @@
+<div orxe-id="trip-review-subtotal" class="orxe-grid container__sub-total">
+  <div class="orxe-grid col-grid-full payable-amount">
+    <div orxe-id="trip-review-subtotal--payable-amount" class="col-grid-half">
+      {{ "review-and-pay-screen.trip_review.you_are_paying" | orxeTranslate }}
+    </div>
+    <div
+      orxe-id="trip-review-subtotal--price"
+      class="col-grid-half align-right"
+    >
+      <div>
+        <ng-template
+          orxe-id="trip-review-subtotal--price-points"
+          [ngIf]="cartDetails?.price?.points"
+        >
+          {{ cartDetails?.price?.points | orxeDecimal }}
+          {{ "review-and-pay-screen.trip_review.points_label" | orxeTranslate }}
+        </ng-template>
+        <ng-template
+          [ngIf]="cartDetails?.price?.points && cartDetails?.price?.amount"
+        >
+          +
+        </ng-template>
+        <ng-template
+          orxe-id="trip-review-subtotal--price-amount"
+          [ngIf]="cartDetails?.price?.amount"
+        >
+          {{ cartDetails?.price?.amount | orxeCurrency }}
+        </ng-template>
+      </div>
+      <!-- TO DO : Integration with bff -->
+      <!-- <span class="fees-note">
+        {{ "review-and-pay-screen.trip_review.fees" | orxeTranslate }}
+      </span> -->
+    </div>
+  </div>
+  <div class="orxe-grid col-grid-full border-bottom remain-amount-section">
+    <div
+      orxe-id="trip-review-subtotal--point-balance-label"
+      class="col-grid-half"
+    >
+      {{
+        "review-and-pay-screen.trip_review.remain_point_balance_label"
+          | orxeTranslate
+      }}
+    </div>
+    <div orxe-id="trip-review-subtotal-price" class="col-grid-half align-right">
+      {{
+        userSessionData?.programCurrency?.value - cartDetails?.price?.points
+          | orxeDecimal
+      }}
+      {{ "review-and-pay-screen.trip_review.points_label" | orxeTranslate }}
+    </div>
+  </div>
+  <div
+    orxe-id="trip-review-subtotal-extra-info"
+    class="col-grid-full merchant-extra-label"
+  >
+    {{
+      "review-and-pay-screen.trip_review.merchant_extra_info" | orxeTranslate
+    }}
+  </div>
+</div>

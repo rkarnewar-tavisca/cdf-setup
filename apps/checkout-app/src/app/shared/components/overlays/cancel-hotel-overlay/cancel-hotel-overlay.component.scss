@@ -1,0 +1,75 @@
+@import "style.scss";
+
+.overlay-content {
+  margin-top: var(--spacing-06);
+  font-size: var(--body-font-size);
+}
+
+.trip-id {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+ul {
+  list-style: none;
+  padding: var(--spacing-05);
+
+  li {
+    padding: var(--spacing-03);
+  }
+
+  li::before {
+    content: "\2022";
+    color: var(--secondary);
+    font-weight: var(--font-weight-semi-bold);
+    display: inline-block;
+    width: 1em;
+    font-size: var(--headline-font-size);
+    margin-left: -1em;
+  }
+}
+
+.booking {
+  &-refund {
+    background-color: $bg-success;
+    border-radius: var(--border-radius);
+    font-size: var(--body-font-size);
+    padding: var(--spacing-03);
+    margin: var(--spacing-04) 0 var(--spacing-05) 0;
+
+    &--description {
+      padding: var(--spacing-05) var(--spacing-04);
+    }
+
+    &--text-bold {
+      font-weight: var(--font-weight-semi-bold);
+      color: var(--primary);
+    }
+  }
+}
+.seperator {
+  height: 1px;
+  background-color: var(--separator-01);
+  border: none;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mt-12 {
+  margin-top: var(--spacing-04);
+}
+.text-link {
+  color: var(--secondary);
+}
+.text-primary {
+  color: var(--primary-text);
+}
+.text-secondary {
+  color: var(--secondary-text);
+}
+.text-tertiary {
+  color: var(--tertiary-text);
+}
+.fs-14 {
+  font-size: var(--caption-font-size);
+}

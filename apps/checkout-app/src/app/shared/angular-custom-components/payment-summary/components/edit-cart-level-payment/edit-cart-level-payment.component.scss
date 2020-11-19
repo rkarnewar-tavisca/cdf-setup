@@ -1,0 +1,15 @@
+orxe-expansion-panel {
+  --accordion-title-font-color: var(--links);
+  --accordion-title-padding: 0;
+  --accordion-content-padding: 0;
+  --accordion-touch-target: 0;
+}
+.edit-cart-points--accordion-title {
+  display: flex;
+  .edit-cart-points--title {
+    padding-top: var(--spacing-01);
+  }
+}
+.edit-cart-points {
+    margin-top: var(--spacing-05);
+}

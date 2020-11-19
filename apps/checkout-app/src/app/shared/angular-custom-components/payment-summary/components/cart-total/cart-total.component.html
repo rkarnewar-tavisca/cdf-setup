@@ -1,0 +1,109 @@
+<div
+  orxe-id="cart-total-section"
+  class="orxe-grid col-grid-full cart-total__payment-detail"
+  *ngIf="!readOnly"
+>
+  <div class="cart-total__price-separtion"></div>
+  <div class="payment-detail--payable-amount txt--lg-sb-sm mt-16">
+    <div
+      orxe-id="cart-total-section-label"
+      class="col-grid-half payment-detail--payable-amount-label"
+    >
+      {{ "payment-summary.you_will_pay_label" | orxeTranslate }}
+    </div>
+    <div class="align-right">
+      <app-payment-info [paymentBreakup]="cartDetail?.price"></app-payment-info>
+    </div>
+  </div>
+  <div
+    class="orxe-grid col-grid-full txt--md-r-sm payment-detail--remain-amount-section"
+  >
+    <div orxe-id="cart-total-section-remaining-points" class="col-grid-half">
+      {{ "payment-summary.remaining_points" | orxeTranslate }}
+    </div>
+    <div orxe-id="cart-total-section-points" class="col-grid-half align-right">
+      {{
+        userProfile?.programCurrency?.value - cartDetail?.price?.points
+          | orxeDecimal
+      }}
+      {{ "payment-summary.points_label" | orxeTranslate }}
+    </div>
+  </div>
+
+  <!--Cart Level Points update -->
+  <div
+    class="orxe-grid col-grid-full"
+    *ngIf="!readOnly && flow === PAYMENT_SUMMARY_CONST?.CLP"
+  >
+    <app-edit-cart-level-payment
+      [totalPoints]="userProfile?.programCurrency?.availablePoints"
+      [redeemedPoints]="cartDetail?.price?.points"
+      [cartDetail]="cartDetail"
+      [readOnly]="readOnly"
+      [userProfile]="userProfile"
+      [flow]="flow"
+      [paymentOption]="paymentOption"
+      (updateCartRes)="updateCartRes($event)"
+    ></app-edit-cart-level-payment>
+  </div>
+</div>
+<!--Cart Level Points update End -->
+<div
+  orxe-id="confirmation-cart"
+  class="orxe-grid col-grid-full"
+  *ngIf="readOnly"
+>
+  <div class="cart-total__price-separtion"></div>
+  <div
+    orxe-id="confirmation-cart--payable-amount"
+    class="orxe-grid col-grid-full pt-16 txt--lg-sb-small"
+    *ngIf="cartDetail?.price?.points"
+  >
+    <div
+      orxe-id="confirmation-cart--payable-amount-redeem-point"
+      class="col-grid-half"
+    >
+      {{ updatedPaymentLabels.pointsRedeemed }}
+    </div>
+    <div
+      orxe-id="confirmation-cart--payable-amount-points"
+      class="col-grid-half align-right"
+    >
+      {{ cartDetail?.price?.points | orxeDecimal }}
+      {{ "payment-summary.points_label" | orxeTranslate }}
+    </div>
+  </div>
+  <div
+    orxe-id="confirmation-cart--payable-amount-remain-amount"
+    class="orxe-grid col-grid-full pt-16 txt--lg-sb-small"
+    *ngIf="cartDetail?.price?.amount"
+  >
+    <div
+      orxe-id="confirmation-cart--payable-amount-remain-amount-billed-amount"
+      class="col-grid-half"
+    >
+      {{ updatedPaymentLabels.amountToCard }}
+    </div>
+    <div
+      orxe-id="confirmation-cart--payable-amount-remain-amount-cart-amount"
+      class="col-grid-half align-right"
+    >
+      {{ cartDetail?.price?.amount | orxeCurrency }}
+    </div>
+  </div>
+  <div
+    class="col-grid-full payment-detail--remain-amount-section txt--sm-r-medium mt-4"
+    *ngIf="
+      cartDetail?.price?.amount &&
+      screen === PAYMENT_SUMMARY_CONST.CONFIRM_SCREEN
+    "
+  >
+    {{ billingInfo?.issuedBy }}
+    {{ "payment-summary.card_ending" | orxeTranslate }}
+    {{
+      billingInfo?.number
+        ? (billingInfo?.number | slice: -4)
+        : (billingInfo?.num | slice: -4)
+    }}
+  </div>
+</div>

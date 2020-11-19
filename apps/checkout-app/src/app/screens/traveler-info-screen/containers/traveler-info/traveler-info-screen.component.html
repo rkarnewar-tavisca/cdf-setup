@@ -1,0 +1,73 @@
+<div class="orxe-grid">
+  <div class="col-grid-full">
+    <checkout-header
+      [title]="'traveler-info.header_title' | orxeTranslate"
+      leftIcon="ic-arrow-left"
+      [leftIconA11y]="'traveler-info.header_left_icon' | orxeTranslate"
+      role="banner"
+      (onLeftIconClick)="onLeftIconClick()"
+      orxe-id="travler-info-header"
+    >
+    </checkout-header>
+  </div>
+
+  <!-- Traveller Info section - Starts -->
+  <div class="col-grid-full" role="main">
+    <!-- Product Placeholder Starts Here -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'traveler-product-placeholder'
+      "
+    >
+      <product-placeholder
+        [productsList]="
+          viewModel.cartDetails?.cartInfo?.cartDetails?.productsList
+        "
+        [formSubmitted]="formSubmitted"
+        (productsFormData)="onSubmitProductData($event)"
+        (profileData)="onSubmitProfileData($event)"
+        [ofacFailed]="ofacStatus"
+      ></product-placeholder>
+    </div>
+    <!-- Product Placeholder Ends Here -->
+
+    <!-- Contact Form Starts Here -->
+    <div
+      class="col-grid-full"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'traveler-contact-form'
+      "
+    >
+      <contact-info-form
+        [profileData]="profileData"
+        [formSubmitted]="formSubmitted"
+        [submittedContactFormData]="viewModel.contactFormData"
+        (contactFormData)="contactSubmit($event)"
+        (contactFormValid)="validateContactForms($event)"
+      ></contact-info-form>
+    </div>
+    <!-- Contact Form ends here -->
+
+    <div
+      class="col-grid-full review-pay-info-action"
+      *skeletonUntil="
+        viewModel?.cartDetails?.cartInfo?.cartDetails;
+        svg: 'payments-review-btn'
+      "
+    >
+      <orxe-button orxe-id="review-pay-btn" size="large" (click)="validateOnClickReviewAndPay()"
+        >{{
+          viewModel.buttonLoader
+            ? ""
+            : ("traveler-info.review_pay_btn" | orxeTranslate)
+        }}
+        <orxe-spinner-loader *ngIf="viewModel.buttonLoader" loading>
+        </orxe-spinner-loader>
+      </orxe-button>
+    </div>
+  </div>
+  <!-- Traveller Info section - Ends -->
+</div>

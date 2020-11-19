@@ -1,0 +1,15 @@
+.container__contact-info-edit__heading {
+  color: var(--checkout-primary-text);
+}
+
+.container__contact-info-edit__content {
+  color: var(--primary-text);
+
+  orxe-input {
+    --input-label-font-weight: var(--fw-sb);
+  }
+
+  orxe-button {
+    margin-top: var(--spacing-03);
+  }
+}

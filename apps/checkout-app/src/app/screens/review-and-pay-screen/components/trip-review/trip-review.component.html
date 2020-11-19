@@ -1,0 +1,51 @@
+<orxe-card
+  orxe-id="trip-review"
+  class="orxe-grid orxe-card-style mb-8"
+  role="region"
+  aria-labelledby="trip-review-heading"
+>
+  <div
+    orxe-id="trip-review--heading"
+    class="col-grid-full container__trip-review__heading"
+  >
+    {{ "review-and-pay-screen.trip_review.heading" | orxeTranslate }}
+  </div>
+  <div
+    orxe-id="trip-review--placeholder"
+    class="container__traveler-details orxe-grid col-grid-full"
+  >
+    <ng-template ngFor [ngForOf]="productTravelerDetails" let-item>
+      <div class="col-grid-full container__traveler-details__heading">
+        {{ item?.productType | titlecase }}
+      </div>
+      <div class="col-grid-full">
+        {{ item?.bookingInfo?.firstName }}
+        {{ item?.bookingInfo?.lastName }}
+      </div>
+      <div class="col-grid-full">
+        {{ item?.bookingInfo?.email }}
+      </div>
+      <div class="col-grid-full">
+        {{ item?.bookingInfo?.message }}
+      </div>
+    </ng-template>
+  </div>
+  <!-- Product Details - Start -->
+  <app-product-detail-placeholder
+    [productsList]="cartDetails?.productsList"
+  ></app-product-detail-placeholder>
+  <!-- Product Details - Ends -->
+
+  <!-- Add on Product Details - Start -->
+  <app-addon-product-detail-placeholder
+    [addOnProductsList]="cartDetails?.addOnProductsList"
+  ></app-addon-product-detail-placeholder>
+  <!-- Add on Product Details - Ends -->
+
+  <!-- Sub total section - Start -->
+  <app-trip-review-sub-total
+    [cartDetails]="cartDetails"
+    [userSessionData]="userSessionData"
+  ></app-trip-review-sub-total>
+  <!-- Sub total section - Ends -->
+</orxe-card>

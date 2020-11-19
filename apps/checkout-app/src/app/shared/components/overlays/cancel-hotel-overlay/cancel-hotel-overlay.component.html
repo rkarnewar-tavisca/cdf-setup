@@ -1,0 +1,113 @@
+<orxe-overlay
+  (onClose)="close()"
+  orxe-id="cancel-hotel-overlay"
+  fullscreen="true"
+  [isOpen]="isOpen"
+  name="cancelHotelOverlay"
+>
+  <div
+    orxe-id="cancel-hotel-overlay--title"
+    slot="modal-heading"
+    class="overlay-title"
+  >
+    {{ data.hotelInfo.title }}
+  </div>
+  <div
+    orxe-id="cancel-hotel-overlay--content"
+    slot="modal-content"
+    class="policy-overlay overlay-content"
+  >
+    <div class="orxe-grid">
+      <div class="col-grid-full">
+        <p orxe-id="cancel-hotel-overlay--content-label">
+          Trip ID:
+          <strong orxe-id="cancel-hotel-overlay--content-tripid">23232</strong>
+        </p>
+      </div>
+      <div
+        orxe-id="cancel-hotel-overlay--content-hotelinfo"
+        class="col-grid-full"
+      >
+        <p
+          orxe-id="cancel-hotel-overlay--content-hotelinfo-title"
+          class="trip-id"
+        >
+          {{ data.hotelInfo.description }}
+        </p>
+        <ul class="text-secondary">
+          <li
+            class="policy-overlay"
+            *ngFor="let description of data.hotelInfo.details"
+          >
+            {{ description }}
+          </li>
+        </ul>
+        <hr class="seperator" />
+        <div class="col-grid-full">
+          <h3>
+            The Cliffton Hotel
+            <span class="text-tertiary fs14 fwn">Ubud, Bali</span>
+          </h3>
+          <p class="text-tertiary">
+            Wed, Mar 7, 2020 - Sun, Mar 10, 2020<br />
+            4 Nights, 2 Guests
+          </p>
+        </div>
+        <orxe-accordion id="accordion" type="fullStretched">
+          <orxe-expansion-panel icon-size="small">
+            <div slot="panel-title">
+              <h5 class="text-link">Rules, Policies and Cancellation</h5>
+            </div>
+            <div slot="panel-content">
+              <p class="mb-20 text-tertiary fs-14">
+                {{ data.rules.description }}
+              </p>
+              <p
+                class="mb-20 text-tertiary fs-14"
+                *ngFor="
+                  let rule of data.rules.policy_cancellation;
+                  let i = index
+                "
+              >
+                {{ i + 1 }}. {{ rule }}
+              </p>
+            </div>
+          </orxe-expansion-panel>
+        </orxe-accordion>
+        <div
+          *ngIf="data.orderStatus === CHECKOUT_CONST.CONFIRMED_STATUS"
+          class="booking-refund"
+        >
+          <div class="booking-refund--description">
+            <p class="booking-refund--text-bold">Total Refund</p>
+            <p><strong class="text-primary">3000 points + $80.58</strong></p>
+            <div class="col-grid-full" class="mt-12 text-tertiary">
+              Total refund has been adjusted to reflect non-refundable fees
+              and/or promotional discounts. Refunds may require up to 5 business
+              days for processing.
+            </div>
+          </div>
+        </div>
+        <hr class="seperator" />
+      </div>
+      <div class="col-grid-full">
+        <h4>
+          Are you sure you want to cancel your hotel? You cannot undo this
+        </h4>
+      </div>
+      <div class="col-grid-half">
+        <orxe-button orxe-id="cancel-hotel-btn" kind="tertiary" size="small"
+          >Not now</orxe-button
+        >
+      </div>
+      <div class="col-grid-half">
+        <orxe-button
+          orxe-id="cancel-hotel-submit-btn"
+          kind="secondary"
+          size="small"
+          >Yes, cancel</orxe-button
+        >
+      </div>
+    </div>
+  </div>
+</orxe-overlay>

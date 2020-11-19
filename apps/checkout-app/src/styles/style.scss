@@ -1,0 +1,136 @@
+/**
+* @description - Checkout APP styling
+*/
+// Mapped variables imports
+@import "./checkout-variables";
+@import "./overide-grid";
+
+:root {
+  orxe-alert {
+    --feedback-top: var(--spacing-12);
+    --feedback-right: 3.5%;
+    --feedback-width: 93%;
+    --alert-animation-time: 0;
+  }
+  orxe-button {
+    --link-touch-target: 0;
+  }
+}
+
+// Reset CSS - Starts
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--separator-01);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+// Reset CSS - Ends
+// Resuable Styles
+.currency-to-point-note-card {
+  text-align: center;
+  background-color: var(--neutral);
+  margin-bottom: 1px;
+}
+
+.orxe-card-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-8 {
+  margin-bottom: var(--spacing-03);
+}
+
+.mb-16 {
+  margin-bottom: var(--spacing-05);
+}
+
+.mt-16 {
+  margin-top: var(--spacing-05);
+}
+
+.py-16 {
+  padding: var(--spacing-05) 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--separator-01);
+}
+.align-right {
+  text-align: right;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-4 {
+  margin-top: var(--spacing-02);
+}
+
+// Common across app classes - Starts
+.txt--lg-r-lg {
+  font-size: var(--txt-lg-fs);
+  font-weight: var(--fw-r);
+  line-height: var(--lh-lg);
+}
+
+.txt--xl-sb-lg {
+  font-size: var(--txt-xl-fs);
+  font-weight: var(--fw-sb);
+  line-height: var(--lh-lg);
+}
+
+.txt--xl-r-lg {
+  font-size: var(--txt-xl-fs);
+  font-weight: var(--fw-r);
+  line-height: var(--lh-lg);
+}
+
+.txt--lg-sb-small {
+  font-size: var(--txt-lg-fs);
+  font-weight: var(--fw-sb);
+  line-height: var(--lh-sm);
+}
+.txt--md-r-small {
+  font-size: var(--txt-md-fs);
+  font-weight: var(--fw-r);
+  line-height: var(--lh-sm);
+}
+.txt--sm-r-medium {
+  font-size: var(--txt-sm-fs);
+  font-weight: var(--fw-r);
+  line-height: var(--lh-md);
+}
+.txt--lg-sb-lg {
+  font-size: var(--txt-lg-fs);
+  font-weight: var(--fw-sb);
+  line-height: var(--lh-lg);
+}
+.overlay-container__inputs {
+  app-email-input:not(:last-child) {
+    margin-bottom: var(--spacing-05);
+    display: block;
+  }
+}
+// Common across app classes - Ends
+orxe-create-overlay {
+  --overlay-min-width: 100%;
+}
+.promo-code-overlay {
+  --overlay-min-width: 92%;
+}
+
+// This styling will align orxe-date-selector components dropdown in row
+orxe-date-selector {
+  --col-grid: span 1;
+}

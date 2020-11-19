@@ -1,0 +1,64 @@
+<ng-template ngFor [ngForOf]="viewModel.productsList" let-item let-i="index">
+  <span
+    class="product-type orxe-grid col-grid-full border-bottom py-16"
+    attr.orxe-id="payment-{{ item?.productType }}-{{ item?.id }}-section"
+  >
+    <div
+      class="orxe-grid txt--md-r-lg"
+      role="region"
+      attr.aria-labelledby="{{ item.productType }}{{ i + 1 }}-payment-summary"
+    >
+      <ng-template [ngIf]="item?.settings?.isFullView" [ngIfElse]="halfRowView">
+        <span
+          class="col-grid-full"
+          *ngIf="!item?.settings; else dynamicComponentBlock"
+          id="{{ item.productType }}{{ i + 1 }}-payment-summary"
+        >
+          {{ item?.productType | titlecase }} Payment Summary Component
+          Placeholder
+        </span>
+      </ng-template>
+      <ng-template #halfRowView>
+        <div
+          class="col-grid-half row-grid-half product-title"
+          attr.orxe-id="payment-{{ item?.productType }}-section-placeholder"
+        >
+          <!-- Payment Summary - Product Payment Summary Component - Start -->
+          <span
+            *ngIf="!item?.settings; else dynamicComponentBlock"
+            id="{{ item.productType }}{{ i + 1 }}-payment-summary"
+          >
+            {{ item?.productType | titlecase }} Payment Summary Component
+            Placeholder
+          </span>
+          <!-- Payment Summary - Product Payment Summary Component - End -->
+        </div>
+        <!-- Payment Summary - Product Payment Info - Start -->
+        <div class="col-grid-half align-right payment-info">
+          <app-payment-info
+            [paymentBreakup]="item?.sellingPrice"
+          ></app-payment-info>
+        </div>
+      </ng-template>
+      <!-- Payment Summary - Product Payment Info - End -->
+      <ng-template #dynamicComponentBlock>
+        <orxe-dynamic-element-loader
+          [orxe-id]="item?.settings?.resources?.tagName"
+          [module-url]="item?.settings?.resources?.modulePath"
+          [url]="item?.settings?.resources?.path"
+          [tag]="item?.settings?.resources?.tagName"
+          [events]="item?.settings?.events?.toString()"
+          [props]="item | dynamicComponentProps: item?.settings?.input"
+          (status)="status($event)"
+          (loadingStatus)="onLoadingStatusEvent($event)"
+        >
+          <div slot="loader">Loading</div>
+          <div slot="error">
+            {{ item?.productType | titlecase }} Payment Summary Component
+            Placeholder
+          </div>
+        </orxe-dynamic-element-loader>
+      </ng-template>
+    </div>
+  </span>
+</ng-template>

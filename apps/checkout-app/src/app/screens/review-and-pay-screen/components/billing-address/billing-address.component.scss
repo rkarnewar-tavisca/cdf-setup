@@ -1,0 +1,44 @@
+.container-billing-address {
+  margin-top: var(--spacing-06);
+  .container__heading {
+    color: var(--primary-text);
+    font-size: var(--txt-md-fs);
+  }
+  .container__heading--new {
+    line-height: var(--lh-md);
+    font-weight: var(--fw-sb);
+  }
+  .container__heading--edit {
+    letter-spacing: 0;
+    line-height: var(--lh-sm);
+  }
+  .save-for-future {
+    .save-for-future__label {
+      font-size: var(--txt-md-fs);
+      line-height: var(--lh-lg);
+      font-weight: var(--fw-r);
+      color: var(--primary-text);
+      margin-bottom: var(--spacing-05);
+    }
+    .save-for-future__extra-label {
+      font-size: var(--txt-sm-fs);
+      line-height: var(--lh-lg);
+      font-weight: var(--fw-r);
+      color: var(--tertiary-text);
+    }
+  }
+}
+
+orxe-dropdown {
+  background-color: var(--neutral);
+  --dropdown-label-font-weight: var(--fw-sb);
+}
+
+orxe-input {
+  background-color: var(--neutral);
+  --input-label-font-weight: var(--fw-sb);
+}
+
+orxe-date-selector {
+  --date-selector-title-font-weight: var(--fw-sb);
+}

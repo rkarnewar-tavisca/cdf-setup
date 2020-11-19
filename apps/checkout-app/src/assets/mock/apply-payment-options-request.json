@@ -1,0 +1,27 @@
+{
+  "currency": "USD",
+  "pointsType": "points",
+  "item": {
+    "id": "fad5b-d9cb-461f-a165-7086772897",
+    "paymentOptions": [
+      {
+        "rewardId": "123",
+        "amount": 2000,
+        "points": 12000,
+        "rewardFee": {
+          "amount": 0,
+          "points": 0
+        }
+      }
+    ]
+  },
+  "paymentOptions": {
+    "rewardId": "aad5b-d9cb-461f-a165-7086772789",
+    "amount": 2000,
+    "points": 12000,
+    "rewardFee": {
+      "amount": 0,
+      "points": 0
+    }
+  }
+}

@@ -1,0 +1,36 @@
+/**
+* @description - The style used here is to defined grid.css propertes
+*/
+
+:root {
+  --grid-col-full: 4;
+  --grid-col-half: 2;
+  --grid-col-one-fourth: 1;
+  --grid-col-one-third: 3;
+  --grid-row-half: 2;
+  --grid-row-one-third: 3;
+}
+
+.col-grid-full {
+  --col-grid: span var(--grid-col-full);
+}
+
+.col-grid-half {
+  --col-grid: span var(--grid-col-half);
+}
+
+.col-grid-one-fourth {
+  --col-grid: span var(--grid-col-one-fourth);
+}
+
+.col-grid-one-third {
+  --col-grid: span var(--grid-col-one-third);
+}
+
+.row-grid-half {
+  --row-grid: span var(--grid-row-half);
+}
+
+.row-grid-one-third {
+  --row-grid: span var(--grid-row-one-third);
+}

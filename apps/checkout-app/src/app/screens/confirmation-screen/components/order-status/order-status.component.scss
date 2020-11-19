@@ -1,0 +1,38 @@
+.container__order-status-card {
+  color: var(--primary-text);
+
+  .container__order-status-card__trip-title,
+  .booking-error--content {
+    color: var(--checkout-secondary-text);
+  }
+  .container__order-status-card__success-title {
+    color: var(--primary);
+  }
+  .container__order-status-card__success-icon {
+    border: var(--spacing-01) solid var(--primary);
+    border-radius: 50%;
+    margin-right: var(--spacing-02);
+    .container__order-status-card__success-icon-align {
+      vertical-align: text-top;
+      display: inline-block;
+      width: var(--spacing-06);
+      height: var(--spacing-06);
+    }
+  }
+  .container__order-status-card__disclaimer {
+    color: var(--tertiary-text);
+  }
+  .container__order-status-card__confirm-date {
+    color: var(--secondary-text);
+  }
+
+  .container__order-status-card__share-itinerary-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.grid-gap-zero {
+  grid-gap: 0;
+}

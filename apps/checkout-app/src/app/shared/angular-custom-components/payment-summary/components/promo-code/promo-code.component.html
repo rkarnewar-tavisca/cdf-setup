@@ -1,0 +1,138 @@
+<div
+  orxe-id="promo-code"
+  class="col-grid-full"
+>
+  <div
+    orxe-id="promo-code--add-promo"
+    *ngIf="!promoCodeResp.promoStatus && !readOnly"
+    class="orxe-grid col-grid-full align-right txt--md-sb-sm mt-16"
+  >
+    <orxe-button
+      id="apply-promo-code-btn"
+      orxe-id="promo-code--add-promo-btn"
+      href="javascript:void(0)"
+      size="medium"
+      (click)="onClickOnLinks('add-a-promo-code')"
+      >{{ "payment-summary.add_promo_btn" | orxeTranslate }}</orxe-button
+    >
+  </div>
+  <div
+    orxe-id="promo-code--success"
+    *ngIf="
+      promoCodeResp.promoStatus == PAYMENT_SUMMARY_CONST.OFFER && appliedPromo 
+    "
+    class="orxe-grid col-grid-full"
+  >
+    <div class="orxe-grid col-grid-full promo-code mt-16" *ngIf="!readOnly">
+      <div class="orxe-grid col-grid-full">
+        <div class="col-grid-half">
+          <span class="promo-code__code--color promo-code__code--icon-align">
+            <span orxe-id="promo-code--success-icon" class="promo-code__success-icon--margin-right">
+              <!-- Use checkout-outline icon once icon lib updated -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="14px"
+                height="14px"
+                viewBox="0 0 14 14"
+                version="1.1"
+              >
+                <g
+                  id="Icons"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g
+                    transform="translate(-303.000000, -556.000000)"
+                    id="16px-icons"
+                  >
+                    <g transform="translate(33.000000, 110.000000)">
+                      <g
+                        id="checkmark-filled"
+                        transform="translate(237.000000, 421.000000)"
+                      >
+                        <g
+                          id="Organization-/-Status-/-checkmark--filled-/-16"
+                          transform="translate(32.000000, 24.000000)"
+                        >
+                          <path
+                            d="M8,1 C4.1,1 1,4.1 1,8 C1,11.9 4.1,15 8,15 C11.9,15 15,11.9 15,8 C15,4.1 11.9,1 8,1 Z M7,11 L4.3,8.3 L5.2,7.5 L7,9.3 L11,5.4 L11.9,6.2 L7,11 Z"
+                            id="Fill"
+                            fill="#238738"
+                          />
+                          <polygon
+                            id="Inner-Fill"
+                            fill="#000000"
+                            opacity="0"
+                            points="7 11 4.3 8.3 5.2 7.5 7 9.3 11 5.4 11.9 6.2"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <span orxe-id="promo-code--success-code" class="txt--md-sb-sm">{{ promoCode.code }}</span>
+          </span>
+        </div>
+        <div class="col-grid-half txt--md-sb-sm align-right">
+          <app-payment-info
+            class="promo-code__code--color"
+            [paymentBreakup]="promoCode"
+            [readOnly]="true"
+          ></app-payment-info>
+        </div>
+      </div>
+      <div
+        orxe-id="promo-code--success-msg"
+        *ngIf="!readOnly"
+        class="orxe-grid col-grid-full txt--md-r-sm"
+        role="region"
+        aria-labelledby="applied-promo-code"
+      >
+        <div class="col-grid-half">
+          <span
+            orxe-id="promo-code--success-msg-apply"
+            class="promo-code__applied-promo"
+            id="applied-promo-code"
+            >{{ "promo-code.promo-code-apply" | orxeTranslate }}</span
+          >
+        </div>
+        <div class="col-grid-half align-right">
+          <orxe-button
+            orxe-id="promo-code--success-msg-remove-btn"
+            href="javascript:void(0)"
+            size="medium"
+            (click)="onClickRemovePromo(promoCode.code)"
+            id="remove-promo-code-link"
+            >{{ "promo-code.remove_link" | orxeTranslate }}</orxe-button
+          >
+        </div>
+      </div>
+    </div>
+    <div class="orxe-grid col-grid-full py-16 txt--md-r-small" *ngIf="readOnly">
+      <div class="col-grid-half">
+        {{ "promo-code.promo-code-discount" | orxeTranslate }}
+      </div>
+      <div class="col-grid-half align-right">
+        <app-payment-info
+          class="promo-code__code--color"
+          [paymentBreakup]="promoCode"
+          [readOnly]="true"
+        ></app-payment-info>
+      </div>
+    </div>
+  </div>
+</div>
+<orxe-alert
+  type="error"
+  feedback
+  [showAlert]="promoAlert"
+  disable-auto-hide="true"
+>
+  {{ promoAlertText }}
+</orxe-alert>
+

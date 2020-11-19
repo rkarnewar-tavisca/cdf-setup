@@ -1,0 +1,70 @@
+<orxe-overlay
+  (onClose)="close()"
+  orxe-id="promo-code-overlay"
+  [isOpen]="isOpen"
+  aria-modal="true"
+  role="dialog"
+  class="promo-code-overlay"
+  attr.aria-labelledby="promo-code-overlay-title"
+  name="promoCodeOverlay"
+>
+  <div slot="modal-heading">
+    <div
+      orxe-id="promo-code-overlay--title"
+      class="txt--md-sb-sm"
+      id="promo-code-overlay-title"
+    >
+      {{ "promo-code-overlay.apply_promo_code" | orxeTranslate }}
+    </div>
+  </div>
+  <div slot="modal-content">
+    <form [formGroup]="promoCodeForm">
+      <div class="overlay-content orxe-grid">
+        <div class="col-grid-full promo-code-overlay--input-bg-color">
+          <orxe-input
+            orxe-id="promo-code-overlay--input"
+            label="{{ 'promo-code-overlay.promo_code' | orxeTranslate }}"
+            formControlName="promocode"
+            clear-input-icon
+            always-floated-label
+            extra-label-text=""
+            [invalid]="errorState"
+            (onBlur)="onBlurValidateInputs()"
+            attr.error-message-invalid-data="{{
+              'promo-code-overlay.invalid_code' | orxeTranslate
+            }}"
+          >
+          </orxe-input>
+        </div>
+        <div class="col-grid-half btn--cancel">
+          <orxe-button
+            orxe-id="promo-code-overlay--cancel-apply-btn"
+            size="medium"
+            href="javascript:void(0)"
+            id="discard-promo"
+            (click)="discardPromo()"
+            >{{
+              "promo-code-overlay.cancel_button" | orxeTranslate
+            }}</orxe-button
+          >
+        </div>
+        <div class="col-grid-half btn--apply">
+          <orxe-button
+            orxe-id="promo-code-overlay--apply-promo-submit-btn"
+            size="medium"
+            kind="secondary"
+            [disabled]="disableBtn"
+            (click)="applyPromo(promoCodeForm.controls['promocode'].value)"
+            >{{
+              buttonLoader
+                ? ""
+                : ("promo-code-overlay.apply_button" | orxeTranslate)
+            }}
+            <orxe-spinner-loader *ngIf="buttonLoader" loading>
+            </orxe-spinner-loader>
+          </orxe-button>
+        </div>
+      </div>
+    </form>
+  </div>
+</orxe-overlay>

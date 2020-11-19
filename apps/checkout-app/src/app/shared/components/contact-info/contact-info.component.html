@@ -1,0 +1,33 @@
+<orxe-card
+  class="orxe-card-style container__contact-info"
+  role="region"
+  aria-labelledby="contact-info-heading"
+  orxe-id="contact-info-card"
+>
+  <div class="orxe-grid">
+    <span
+      class="col-grid-full txt--lg-sb-lg container__contact-info__title"
+      orxe-id="contact-info--heading"
+      id="contact-info--heading"
+    >
+      {{ "contact-info.heading" | orxeTranslate }}</span
+    >
+    <span
+      orxe-id="contact-info--email-phone"
+      class="col-grid-half row-grid-half txt--md-r-md container__contact-info__content"
+    >
+      {{ contactInfo?.email }}<br />
+      {{ contactInfo?.phone }}<br />
+      {{ contactInfo?.secondaryPhone }}
+    </span>
+    <span class="col-grid-half align-right container__contact-info__edit">
+      <orxe-button
+        orxe-id="contact-info--edit-link"
+        href="javascript:void(0)"
+        size="medium"
+        (click)="onEditContactInfo()"
+        >{{ "contact-info.edit_link_label" | orxeTranslate }}</orxe-button
+      >
+    </span>
+  </div>
+</orxe-card>

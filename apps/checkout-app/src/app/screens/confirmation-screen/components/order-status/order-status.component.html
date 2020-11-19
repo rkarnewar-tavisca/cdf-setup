@@ -1,0 +1,144 @@
+<orxe-card orxe-id="order-status-card" class="orxe-card-style">
+  <div
+    orxe-id="order-status-card--message"
+    class="orxe-grid container__order-status-card grid-gap-zero"
+  >
+    <div
+      class="col-grid-half txt--xl-r-lg container__order-status-card__trip-title mb-8"
+      orxe-id="order-status-card--tripid-title"
+    >
+      {{ "confirmation-page.timeline_orderid" | orxeTranslate }}
+      <span orxe-id="order-status-card--tripid-value" class="txt--xl-sb-lg">
+        {{ orderSummaryDetail?.trackingId }}</span
+      >
+    </div>
+    <div
+      class="col-grid-half container__order-status-card__share-itinerary-link"
+    >
+      <ng-template
+        [ngIf]="
+          orderSummaryDetail?.orderStatus ===
+          CHECKOUT_CONST.ORDER_CONFIRMED_STATUS
+        "
+      >
+        <svg
+          width="13px"
+          height="14px"
+          viewBox="0 0 13 14"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>Tools / Technology / share / 16</title>
+          <g
+            id="Symbols"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Button-/-tertiary-icon-button"
+              transform="translate(-1.000000, -11.000000)"
+              fill="#0A57A1"
+            >
+              <g
+                id="Tools-/-Technology-/-share-/-16"
+                transform="translate(0.000000, 10.000000)"
+              >
+                <path
+                  d="M11.5,10 C10.7419216,10.0038111 10.0265211,10.3513965 9.555,10.945 L5.9,8.66 C6.03320814,8.23008205 6.03320814,7.76991795 5.9,7.34 L9.555,5.055 C10.3209795,6.00347618 11.659401,6.26113013 12.7227623,5.66481274 C13.7861237,5.06849535 14.2642879,3.7921268 13.8544766,2.64391672 C13.4446653,1.49570664 12.2664028,0.810538631 11.065777,1.02226809 C9.86515115,1.23399754 8.99233304,2.28087207 9,3.5 C9.00236045,3.72358944 9.03602065,3.94574676 9.1,4.16 L5.445,6.445 C4.78362558,5.61241548 3.66797395,5.28927561 2.66400616,5.63950665 C1.66003836,5.98973768 0.987456897,6.93669708 0.987456897,8 C0.987456897,9.06330292 1.66003836,10.0102623 2.66400616,10.3604934 C3.66797395,10.7107244 4.78362558,10.3875845 5.445,9.555 L9.1,11.84 C9.03602065,12.0542532 9.00236045,12.2764106 9,12.5 C9,13.8807119 10.1192881,15 11.5,15 C12.8807119,15 14,13.8807119 14,12.5 C14,11.1192881 12.8807119,10 11.5,10 Z M11.5,2 C12.3284271,2 13,2.67157288 13,3.5 C13,4.32842712 12.3284271,5 11.5,5 C10.6715729,5 10,4.32842712 10,3.5 C10,2.67157288 10.6715729,2 11.5,2 Z M3.5,9.5 C2.67157288,9.5 2,8.82842712 2,8 C2,7.17157288 2.67157288,6.5 3.5,6.5 C4.32842712,6.5 5,7.17157288 5,8 C5,8.82842712 4.32842712,9.5 3.5,9.5 L3.5,9.5 Z M11.5,14 C10.6715729,14 10,13.3284271 10,12.5 C10,11.6715729 10.6715729,11 11.5,11 C12.3284271,11 13,11.6715729 13,12.5 C13,13.3284271 12.3284271,14 11.5,14 L11.5,14 Z"
+                  id="Fill"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <orxe-button
+          (click)="onClickOnLinks('share-itinerary')"
+          orxe-id="order-status-card--share-itinerary-btn"
+          id="confirmation-share-itinerary-btn"
+          href="javascript:void(0)"
+          >{{
+            "confirmation-page.share_itinerary_button_text" | orxeTranslate
+          }}</orxe-button
+        >
+      </ng-template>
+    </div>
+    <!-- TO DO: will be updated once the date is updated in response -->
+    <div class="mb-16">
+      <span
+        class="col-grid-full container__order-status-card__confirm-date"
+        orxe-id="order-status-card--confirmation-date"
+      >
+        {{ viewModel?.todaysDate | date: "longDate" }}
+      </span>
+    </div>
+    <div
+      orxe-id="order-status-card--message-success"
+      class="col-grid-full txt--xl-sb-lg container__order-status-card__success-title mb-16"
+      *ngIf="
+        orderSummaryDetail?.orderStatus ===
+        CHECKOUT_CONST.ORDER_CONFIRMED_STATUS
+      "
+    >
+      <span class="container__order-status-card__success-icon">
+        <orxe-icon
+          icon="ic-check"
+          size="small"
+          class="container__order-status-card__success-icon-align"
+        ></orxe-icon>
+      </span>
+      {{ "confirmation-page.success_text" | orxeTranslate }}
+    </div>
+    <div
+      orxe-id="order-status-card--message-partial-fail"
+      class="col-grid-full mb-16"
+      *ngIf="
+        orderSummaryDetail?.orderStatus ===
+        CHECKOUT_CONST.ORDER_PARTIAL_CONFIRMED_STATUS
+      "
+    >
+      <orxe-alert
+        hide-close-icon="true"
+        type="error"
+        show-description
+        show-alert="true"
+      >
+        {{ "confirmation-page.partial_failure_text" | orxeTranslate }}
+        <span slot="description" class="txt--md-r-md booking-error--content">
+          {{ "confirmation-page.partial_failure_details" | orxeTranslate }}
+        </span>
+      </orxe-alert>
+    </div>
+    <div
+      class="col-grid-full txt--md-r-lg mb-8"
+      orxe-id="order-status-card--confirmation-message-details"
+      *ngIf="
+        orderSummaryDetail?.orderStatus ===
+        CHECKOUT_CONST.ORDER_CONFIRMED_STATUS
+      "
+    >
+      {{ "confirmation-page.success_message" | orxeTranslate }}
+    </div>
+    <div
+      orxe-id="order-status-card--message-disclaimer"
+      class="col-grid-full txt--sm-r-lg container__order-status-card__disclaimer mb-16"
+    >
+      {{ "confirmation-page.disclaimer" | orxeTranslate }}
+    </div>
+    <p
+      orxe-id="order-status-card--message-booking-text"
+      class="col-grid-full txt--md-sb-lg"
+    >
+      {{ "confirmation-page.view_booking_text" | orxeTranslate }}
+      <orxe-button
+        orxe-id="order-status-card--my-trips-btn"
+        href="javascript:void(0)"
+        >{{
+          "confirmation-page.my_trips_button_text" | orxeTranslate
+        }}</orxe-button
+      >
+    </p>
+  </div>
+</orxe-card>

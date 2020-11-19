@@ -1,0 +1,27 @@
+@import '../../styles/style.scss';
+
+.cart-total__payment-detail {
+  padding-top: var(--spacing-05);
+  .payment-detail--payable-amount {
+    color: var(--primary);
+    padding-bottom: var(--spacing-05);
+    display: flex;
+    justify-content: space-between;
+    .payment-detail--payable-amount-label {
+     min-width: 35%;
+    }
+  }
+}
+.payment-detail--remain-amount-section {
+  color: var(--secondary-text);
+}
+.cart-total__price-separtion::after {
+  content: "";
+  border-bottom: 1px solid var(--separator-01);
+  display: block;
+  margin: 0 calc(-1 * var(--spacing-05)) 0
+    calc(-1 * var(--spacing-05));
+}
+.pt-16 {
+  padding-top: var(--spacing-05);
+}

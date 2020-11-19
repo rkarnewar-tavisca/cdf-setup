@@ -1,0 +1,8 @@
+<div *ngIf="totalCartFee.amount > 0 || totalCartFee.points > 0">
+  <div orxe-id="cart-level-fee" id="cartFee">
+    {{ "payment-summary.fee_includes" | orxeTranslate }}
+    {{ (totalCartFee.amount > 0) ? (totalCartFee.amount | currency: cartDetails?.currency) : '' }} 
+    {{ (totalCartFee.points > 0) ? (' + ' + (totalCartFee.points | orxeDecimal) + ' ' + ("payment-summary.points_label" | orxeTranslate)) : '' }}
+    {{ "payment-summary.fee_label" | orxeTranslate }}
+  </div>
+</div>

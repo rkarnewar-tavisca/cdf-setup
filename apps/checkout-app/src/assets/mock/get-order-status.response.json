@@ -1,0 +1,35 @@
+{
+    "orderId": "123",
+    "trackingId": "123",
+    "status": "InProgress",
+    "items": [
+        {
+            "id": "123-456-789",
+            "status": "Confirmed",
+            "errors": [
+                {
+                    "code": "001",
+                    " message": "Error: Could not process the request due to network connectivity issues. Please try again."
+                }
+            ],
+            "warnings": [
+                {
+                    "code": "002",
+                    "message": "Warning: Due to heavy traffic, the processing might take longer than expected."
+                }
+            ]
+        }
+    ],
+    "errors": [
+        {
+            "code": "001",
+            "message": "The payment for order fails."
+        }
+    ],
+    "warnings": [
+        {
+            "code": "002",
+            "message": "The credit card provided in the request has insufficent balance"
+        }
+    ]
+}

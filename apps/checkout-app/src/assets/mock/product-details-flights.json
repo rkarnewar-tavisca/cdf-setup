@@ -1,0 +1,57 @@
+{
+  "flight": {
+    "type": "Roundtrip",
+    "details": {
+      "depatureCity": {
+        "name": "Delhi",
+        "code": "DEL"
+      },
+      "arrivalCity": {
+        "name": "Addis Ababa",
+        "code": "ADD"
+      }
+    }
+  },
+  "bookingInfo": {
+    "guests": [{
+      "type": "Adult",
+      "name": {
+        "title": "Mr",
+        "first": "John",
+        "middle": "Alex",
+        "last": "Smith",
+        "suffix": "Jr"
+      },
+      "age": 25
+    }, {
+      "type": "Adult",
+      "name": {
+        "title": "Mr",
+        "first": "Johny",
+        "middle": "Alex",
+        "last": "Smith",
+        "suffix": "Jr"
+      },
+      "age": 26
+    }, {
+      "type": "Child",
+      "name": {
+        "title": "Mr",
+        "first": "Pony",
+        "middle": "Alex",
+        "last": "Smith",
+        "suffix": "Jr"
+      },
+      "age": 10
+    }]
+  },
+  "searchRequest": {
+    "searchQuery": {
+      "stayPeriod": {
+        "start": "2020-06-04",
+        "end": "2020-06-07"
+      }
+    },
+    "freeCancellationUpto": "2020-06-04"
+  }
+}

@@ -1,0 +1,17 @@
+  <div
+    orxe-id="program-fee-section"
+    class="txt--md-r-sm orxe-grid col-grid-full border-bottom py-16"
+    *ngIf="clientProgramFee > 0"
+    role="region"
+    attr.aria-labelledby="payment-summary-order-level-fee"
+  >
+    <span class="col-grid-half" orxe-id="program-fee-section--text" id="payment-summary-order-level-fee">
+      {{ "payment-summary.order_fee_label" | orxeTranslate }}
+    </span>
+    <span
+    class="col-grid-half align-right"
+    orxe-id="program-fee-section--amount"
+  >
+    {{ clientProgramFee | orxeCurrency }}
+</span>
+  </div>

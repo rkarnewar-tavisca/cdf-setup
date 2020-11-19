@@ -1,0 +1,90 @@
+<div
+  orxe-id="billing-address"
+  class="orxe-grid orxe-card-style container-billing-address"
+>
+  <div
+    orxe-id="billing-address--heading"
+    class="col-grid-full container__heading"
+    [ngClass]="
+      newCardFlag
+        ? 'container__heading--new'
+        : 'container__heading--edit'
+    "
+  >
+    {{ "review-and-pay-screen.billing_address.heading" | orxeTranslate }}
+  </div>
+  <!-- <form [formGroup]="billingAddressForm"> -->
+  <!-- <div orxe-id="billing-address--form" class="orxe-grid"> -->
+  <div
+    class="col-grid-full"
+    *ngIf="newCardFlag"
+  >
+    <orxe-dropdown
+      orxe-id="billing-address--form-address-dropdown"
+      placeholder="{{
+        'review-and-pay-screen.billing_address.placeholder.select_address'
+          | orxeTranslate
+      }}"
+      attr.label-value="{{
+        'review-and-pay-screen.billing_address.label.select_address'
+          | orxeTranslate
+      }}"
+      [items]="this.viewModel.addressData"
+      [value]="viewModel.address?.value"
+      (onChange)="onBillingAddressChange($event)"
+    >
+    </orxe-dropdown>
+  </div>
+
+  <!-- </div> -->
+  <!-- </form> -->
+  <!-- <ng-container *ngIf="newCardFlag && viewModel.isNewAddress">
+    <app-billing-address-form
+      [submittedBillingAddressFormData]="submittedBillingAddressFormData"
+      (onSubmitFormData)="submitBillingAddressForm($event)"
+    >
+    </app-billing-address-form>
+  </ng-container> -->
+
+  <!-- For dynamic loading of Components -->
+  <ng-template #loadDynamicComponent></ng-template>
+
+  <!-- Address Summary  Start --->
+  <!-- <ng-template #addressSummary>
+    <app-billing-address-summary [selectedAddressProfile]="this.viewModel.selectedAddressProfile"
+      [submittedBillingAddressFormData]="submittedBillingAddressFormData"
+      (onSubmitFormData)="submitBillingAddressForm($event)"></app-billing-address-summary>
+  </ng-template> -->
+
+  <!-- Address Summary  End --->
+
+  <div
+    class="col-grid-full"
+    [ngClass]="{ 'mt-16': !newCardFlag }"
+    *ngIf="newCardFlag"
+  >
+    <orxe-checkbox
+      orxe-id="billing-address--form-address-save-for-future-checkbox"
+      [value]="viewModel.isSaveForFuture"
+      name="save-for-future"
+      (onChange)="onSaveForFutureChange($event)"
+    >
+      <div class="save-for-future">
+        <div
+          orxe-id="billing-address--form-address-save-for-future-label"
+          class="save-for-future__label"
+        >
+          {{ "review-and-pay-screen.save_for_future_label" | orxeTranslate }}
+        </div>
+        <div
+          orxe-id="billing-address--form-address-save-for-future-extra-label"
+          class="save-for-future__extra-label"
+        >
+          {{
+            "review-and-pay-screen.save_for_future_extra_label" | orxeTranslate
+          }}
+        </div>
+      </div>
+    </orxe-checkbox>
+  </div>
+</div>

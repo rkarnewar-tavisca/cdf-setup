@@ -1,0 +1,47 @@
+{
+  "hotel": {
+    "name": "The Cliffton Hotel",
+    "room": {
+      "amenities": [
+        {
+          "name": "Internet Access",
+          "desc": "Complimentary standard Internet access is available to all guests at all ACME Hotels and Resorts.",
+          "category": "Room Amenities",
+          "masterAmenityName": "Wifi (surcharge)",
+          "masterAmenityId": "3"
+        }
+      ],
+      "bedDetails": [
+        {
+          "type": "King",
+          "desc": "King-size bed",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "bookingInfo": {
+    "guests": [
+      {
+        "type": "Adult",
+        "name": {
+          "title": "Mr",
+          "first": "John",
+          "middle": "Alex",
+          "last": "Smith",
+          "suffix": "Jr"
+        },
+        "age": 25
+      }
+    ]
+  },
+  "searchRequest": {
+    "searchQuery": {
+      "stayPeriod": {
+        "start": "2020-06-04",
+        "end": "2020-06-07"
+      }
+    },
+    "freeCancellationUpto": "2020-06-04"
+  }
+}
